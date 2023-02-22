@@ -2,9 +2,43 @@ TCEFORM {
   tt_content {
     bodytext {
       label = Alternative Bodytext Überschrift
+      types {
+        textmedia {
+          label = Alternative nur für Textmedia Bodytext
+        }
+      }
     }
+
     subheader {
       label = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.subheader.altlabel
+      types {
+        textmedia {
+          label = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.subheader.bodytext.altlabel
+        }
+      }
+    }
+
+    layout {
+      altLabels {
+        1 = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.layout.option.1
+        2 = Eine zweite neue Option
+      }
+
+      addItems {
+        4 = Was komplett Neues
+      }
+
+      removeItems = 0,3,100
+      types {
+        textmedia {
+          altLabels {
+            1 = neue Option nur für Textmedia
+          }
+          addItems {
+            1001 = Hier ist mal was anderes
+          }
+        }
+      }
     }
   }
 }

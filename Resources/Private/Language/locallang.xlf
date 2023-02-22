@@ -6,6 +6,12 @@
 			<trans-unit id="tt_content.subheader.altlabel">
 				<source>Alternativer Untertitel</source>
 			</trans-unit>
+			<trans-unit id="tt_content.subheader.bodytext.altlabel">
+				<source>Alternativer Untertitel für Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tt_content.layout.option.1">
+				<source>Das ist eine ganz neue Option</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
