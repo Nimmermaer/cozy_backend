@@ -25,7 +25,9 @@ TCEFORM {
       }
 
       addItems {
-        4 = Was komplett Neues
+        159 = Tolles Layout
+        160 = Super Layout
+        161 = Ganz anderes Layout
       }
 
       removeItems = 0,3,100

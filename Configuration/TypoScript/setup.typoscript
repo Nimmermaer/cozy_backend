@@ -3,8 +3,37 @@ tt_content {
   tx_cozybackend_doubletext {
     templateName = DoubleText
   }
+
   tx_cozybackend_slider < .image
   tx_cozybackend_slider {
     templateName = Slider
+  }
+}
+
+// Shorthand Element
+temp.textmedia < tt_content.textmedia
+tt_content.textmedia >
+tt_content {
+  textmedia = CASE
+  textmedia {
+    key {
+      field = layout
+    }
+
+    default < temp.textmedia
+    159 < temp.textmedia
+    159 {
+      templateName = Shorthand/Layout1
+    }
+
+    160 < temp.textmedia
+    160 {
+      templateName = Shorthand/Layout2
+    }
+
+    161 < temp.textmedia
+    161 {
+      templateName = Shorthand/Layout3
+    }
   }
 }

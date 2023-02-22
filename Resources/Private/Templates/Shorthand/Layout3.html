@@ -1,0 +1,229 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header">
+</f:section>
+<f:section name="Main">
+    <!-- Layout 3  -->
+    <f:asset.css identifier="textmedia-layout">
+        /* Vars */
+        /* Reset */
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: "Work Sans", sans-serif;
+        margin: 0;
+        }
+        @media (min-width: 720px) {
+        body {
+        font-size: 1.3rem;
+        }
+        }
+
+        img {
+        width: 100%;
+        display: block;
+        }
+
+        h2 {
+        margin: 0;
+        }
+
+        a {
+        color: #154aeb;
+        }
+
+        /* Typography */
+        h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        }
+        @media (min-width: 720px) {
+        h2 {
+        font-size: 3rem;
+        }
+        }
+
+        p {
+        line-height: 1.6;
+        }
+        p:last-of-type {
+        margin-bottom: 0;
+        }
+
+        /* Layout */
+        .text-media {
+        --py: 4rem;
+        background-color: #c3d0fa;
+        }
+        .text-media + .text-media {
+        margin-top: 0.5rem;
+        }
+        @media (min-width: 960px) {
+        .text-media {
+        display: flex;
+        /* Alternate layouts are reversed */
+        }
+        .text-media:nth-child(even) {
+        flex-direction: row-reverse;
+        }
+        .text-media:nth-child(even) .text-media__content {
+        margin-left: auto;
+        }
+        }
+
+        .text-media__col {
+        position: relative;
+        flex: 0 0 50%;
+        }
+
+        @media (min-width: 960px) {
+        .text-media__img-wrapper {
+        height: 100%;
+        }
+        }
+
+        .text-media__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/2;
+        }
+
+        .text-media__content {
+        max-width: 45rem;
+        padding: 1rem;
+        }
+        .text-media__content > * + * {
+        margin-top: 1rem;
+        }
+        @media (min-width: 720px) {
+        .text-media__content > * + * {
+        margin-top: 1.75rem;
+        }
+        }
+        @media (min-width: 720px) {
+        .text-media__content {
+        padding: 2rem;
+        }
+        }
+        @media (min-width: 960px) {
+        .text-media__content {
+        padding: var(--pt, var(--py)) 4rem var(--py) 4rem;
+        }
+        }
+
+        .text-media__links {
+        display: inline-block;
+        }
+        .text-media__links > * + * {
+        margin-top: 0.75rem;
+        }
+        .text-media__links .button {
+        display: block;
+        }
+        .text-media__links .button:nth-child(2n) {
+        background-color: #ff26cc;
+        }
+        .text-media__links .button:nth-child(2n):hover, .text-media__links .button:nth-child(2n):focus {
+        background-color: #d900a6;
+        }
+
+        .button {
+        display: inline-block;
+        color: white;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        background-color: #154aeb;
+        border-radius: 0.3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: background-color 200ms;
+        }
+        .button:hover, .button:focus {
+        background-color: #0c2c8e;
+        }
+
+        .button--secondary {
+        background-color: #ff26cc;
+        color: black;
+        }
+        .button--secondary:hover, .button--secondary:focus {
+        background-color: #bf0092;
+        }
+
+        /* Variants */
+        @media (min-width: 960px) {
+        .text-media--narrow .text-media__col--media {
+        padding: var(--py) 0;
+        }
+        .text-media--narrow:nth-child(even) .text-media__img-wrapper {
+        padding: 0 4rem 0 0;
+        margin-left: 0;
+        margin-right: auto;
+        }
+        .text-media--narrow .text-media__img-wrapper {
+        position: relative;
+        max-width: 45rem;
+        padding: 0 0 0 4rem;
+        margin-left: auto;
+        }
+        .text-media--narrow .text-media__img {
+        object-fit: auto;
+        height: auto;
+        }
+        }
+
+        .text-media--no-bg {
+        --pt: 0;
+        background-color: transparent;
+        }
+        .text-media--no-bg.text-media--narrow {
+        --py: 0;
+        }
+
+        .text-media--no-img .text-media__content {
+        max-width: 65rem;
+        }
+        @media (min-width: 960px) {
+        .text-media--no-img {
+        justify-content: center;
+        }
+        .text-media--no-img .text-media__col {
+        flex: 0 1 75rem;
+        }
+        }
+        .text-media--no-img.text-media--no-bg {
+        --py: 0;
+        }
+
+        @media (min-width: 960px) {
+        .text-media + .text-media--no-bg,
+        .text-media--no-bg + .text-media {
+        margin-top: 6rem;
+        }
+        }
+    </f:asset.css>
+    <section class="text-media text-media--no-bg text-media--narrow">
+        <div class="text-media__col text-media__col--text">
+            <div class="text-media__content">
+                <h2>{data.header}</h2>
+                <f:format.html>{data.bodytext}</f:format.html>
+                <div class="text-media__links">
+                    <a class="button" href="{f:uri.typolink(parameter:data.header_link)}">{data.subheader}</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-media__col text-media__col--text">
+            <div class="text-media__img-wrapper">
+                <f:for as="image" each="{files}">
+                    <img class="text-media__img" src='{f:uri.image(image:image, absolute: 1,width: "925c" , height: "634c" )}' alt='{image.title}'>
+                </f:for>
+            </div>
+        </div>
+    </section>
+</f:section>
+</html>
