@@ -30,6 +30,12 @@
 			<trans-unit id="newContentElement.header.cozybackend">
 				<source>Cozy Backend</source>
 			</trans-unit>
+			<trans-unit id="tt_content.cozy_backend_list.description">
+				<source>gibt alle gepflegten Elemente aus</source>
+			</trans-unit>
+			<trans-unit id="tt_content.cozy_backend_list">
+				<source>Element Liste</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

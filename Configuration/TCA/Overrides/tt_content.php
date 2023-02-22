@@ -24,15 +24,22 @@ call_user_func(static function ($extensionKey): void {
             $extensionKey
         );
     }
-    ExtensionManagementUtility::addPlugin(
-        [
-            'List Elements',
-            'cozy_backend_list',
-            'content-book',
-        ],
-        ExtensionUtility::PLUGIN_TYPE_PLUGIN,
-        $extensionKey
-    );
+
+    $plugins = [
+        'cozy_backend_list' => 'content-book'
+    ];
+    foreach ($plugins as $pluginType => $iconIdentifier) {
+        ExtensionManagementUtility::addPlugin(
+            [
+                'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType,
+                $pluginType,
+                $iconIdentifier,
+            ],
+            ExtensionUtility::PLUGIN_TYPE_PLUGIN,
+            $extensionKey
+        );
+    }
+
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'alternative_bodytext' => [

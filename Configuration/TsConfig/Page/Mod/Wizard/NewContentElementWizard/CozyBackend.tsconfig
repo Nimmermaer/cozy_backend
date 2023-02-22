@@ -26,8 +26,17 @@ mod {
                 header_position = center
               }
             }
+            plugin_element {
+              description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list.description
+              iconIdentifier = content-book
+              title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list
+              tt_content_defValues {
+                CType = list
+                list_type = cozy_backend_list
+              }
+            }
           }
-          show := addToList(tx_cozybackend_slider, text_left_image_right)
+          show := addToList(tx_cozybackend_slider, text_left_image_right, plugin_element)
         }
       }
     }
