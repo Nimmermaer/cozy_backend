@@ -3,3 +3,4 @@
 #
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/Wizard/NewContentElementWizard.tsconfig'
+
