@@ -15,3 +15,4 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend'] = [
     'loginLogo' => 'EXT:cozy_backend/Resources/Public/Backend/Images/icon.png',
     'loginLogoAlt' => 'Cozy Backend logo',
 ];
+

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use TYPO3\CMS\Core\Core\Environment;
-
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 if (Environment::getContext()->isDevelopment()) {
@@ -19,3 +19,7 @@ if (Environment::getContext()->isDevelopment()) {
         ],
     ];
 }
+
+// Backend Customization
+ExtensionManagementUtility::addUserTSConfig("@import 'EXT:cozy_backend/Configuration/TsConfig/User/options.tsconfig'");
+ExtensionManagementUtility::addPageTSConfig("@import 'EXT:cozy_backend/Configuration/page.tsconfig'");

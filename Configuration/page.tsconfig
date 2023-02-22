@@ -1,0 +1,5 @@
+templates {
+  typo3/cms-backend {
+    100 = mblunck/cozy-backend:Resources/Private/TemplateOverrides/
+  }
+}
