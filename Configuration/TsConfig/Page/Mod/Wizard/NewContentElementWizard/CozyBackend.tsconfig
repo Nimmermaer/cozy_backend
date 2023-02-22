@@ -3,7 +3,7 @@ mod {
     newContentElement {
       wizardItems {
         cozyBackend {
-          header = Cozy Backend
+          header = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:newContentElement.header.cozybackend
           before = common
           elements {
             tx_cozybackend_slider {
