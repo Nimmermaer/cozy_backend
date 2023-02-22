@@ -1,0 +1,2 @@
+mod.SHARED.colPos_list = 0,1,2,3,
+@import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/Sidebar.tsconfig'
