@@ -1,0 +1,23 @@
+mod {
+  wizards {
+    newContentElement {
+      wizardItems {
+        cozyBackend {
+          header = Cozy Backend
+          before = common
+          elements {
+            tx_cozybackend_slider {
+              description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider.description
+              iconIdentifier = content-text-columns
+              title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider
+              tt_content_defValues {
+                CType = tx_cozybackend_slider
+              }
+            }
+          }
+          show := addToList(tx_cozybackend_slider)
+        }
+      }
+    }
+  }
+}

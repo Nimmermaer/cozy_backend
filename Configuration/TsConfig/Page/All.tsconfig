@@ -1,0 +1,4 @@
+#
+# PageTS for cozy_backend
+#
+@import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/Wizard/NewContentElementWizard.tsconfig'

@@ -12,6 +12,21 @@
 			<trans-unit id="tt_content.layout.option.1">
 				<source>Das ist eine ganz neue Option</source>
 			</trans-unit>
+			<trans-unit id="tt_content.alternative_bodytext.label">
+				<source>Zweiter Text</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_cozybackend_doubletext">
+				<source>Element mit zwei Textblöcken</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_cozybackend_doubletext.description">
+				<source>Element mit zwei Textblöcken</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_cozybackend_slider">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_cozybackend_slider.description">
+				<source>Image Slider</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
