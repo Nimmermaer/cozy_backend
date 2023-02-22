@@ -1,7 +1,7 @@
 mod.web_layout.BackendLayouts {
   sidebar {
     title = Sidebar
-    icon = EXT:cms-core/Resources/Public/Icons/T3Icons/svgs/content/content-idea.svg
+    icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo.png
     config {
       backend_layout {
         colCount = 2
