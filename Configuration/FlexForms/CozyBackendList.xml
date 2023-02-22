@@ -1,0 +1,52 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>
+                    General 1
+                </sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.sorting>
+                        <label>Sortierung nach..</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">Erstellungsdatum</numIndex>
+                                    <numIndex index="1">crdate</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="0">Titel</numIndex>
+                                    <numIndex index="1">header</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.sorting>
+                    <settings.singlePid>
+                        <label>
+                            Single Pid
+                        </label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <maxitems>1</maxitems>
+                            <minitems>0</minitems>
+                            <size>1</size>
+                            <suggestOptions>
+                                <default>
+                                    <additionalSearchFields>title, nav_title, slug</additionalSearchFields>
+                                    <addWhere>AND pages.doktype = 1</addWhere>
+                                </default>
+                            </suggestOptions>
+                        </config>
+                    </settings.singlePid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

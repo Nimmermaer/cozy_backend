@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') || die();
 
@@ -26,7 +26,7 @@ call_user_func(static function ($extensionKey): void {
     }
 
     $plugins = [
-        'cozy_backend_list' => 'content-book'
+        'cozy_backend_list' => 'content-book',
     ];
     foreach ($plugins as $pluginType => $iconIdentifier) {
         ExtensionManagementUtility::addPlugin(
@@ -38,8 +38,15 @@ call_user_func(static function ($extensionKey): void {
             ExtensionUtility::PLUGIN_TYPE_PLUGIN,
             $extensionKey
         );
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginType]
+            = 'pi_flexform';
     }
 
+    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['cozy_backend_list'] = 'pages,layout,select_key,recursive';
+    ExtensionManagementUtility::addPiFlexFormValue(
+        'cozy_backend_list',
+        'FILE:EXT:cozy_backend/Configuration/FlexForms/CozyBackendList.xml'
+    );
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'alternative_bodytext' => [

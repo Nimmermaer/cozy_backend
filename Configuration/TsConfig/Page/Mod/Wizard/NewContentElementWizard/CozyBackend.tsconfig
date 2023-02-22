@@ -14,6 +14,7 @@ mod {
                 CType = tx_cozybackend_slider
               }
             }
+
             text_left_image_right {
               iconIdentifier = content-beside-text-img-right
               title = Text links Bild rechts
@@ -26,6 +27,7 @@ mod {
                 header_position = center
               }
             }
+
             plugin_element {
               description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list.description
               iconIdentifier = content-book
@@ -33,9 +35,24 @@ mod {
               tt_content_defValues {
                 CType = list
                 list_type = cozy_backend_list
+                pi_flexform (
+                <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+                  <T3FlexForms>
+                      <data>
+                          <sheet index="sDEF">
+                              <language index="lDEF">
+                                  <field index="settings.sorting">
+                                      <value index="vDEF">header</value>
+                                  </field>
+                              </language>
+                          </sheet>
+                      </data>
+                  </T3FlexForms>
+                )
               }
             }
           }
+
           show := addToList(tx_cozybackend_slider, text_left_image_right, plugin_element)
         }
       }
