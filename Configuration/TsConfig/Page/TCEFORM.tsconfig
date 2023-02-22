@@ -86,7 +86,20 @@ TCEFORM {
       removeItems := addToList(div, html)
     }
   }
+
+  pages {
+    newUntil.disabled = 1
+    layout.disabled = 1
+    backend_layout.removeItems = -1
+    backend_layout_next_level.removeItems = -1
+    subtitle {
+      types {
+        // Remove subtitle in shortcut page
+        4.disabled = 1
+      }
+    }
+  }
 }
 
 // May no longer function in v12
-TCEFORM.tt_content.space_before_class.altLabels.. = Standard ohne Styles
+TCEFORM.tt_content.space_before_class.altLabels..= Standard ohne Styles
