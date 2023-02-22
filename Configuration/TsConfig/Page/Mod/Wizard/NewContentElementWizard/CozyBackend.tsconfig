@@ -8,14 +8,26 @@ mod {
           elements {
             tx_cozybackend_slider {
               description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider.description
-              iconIdentifier = content-text-columns
+              iconIdentifier = content-carousel-image
               title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider
               tt_content_defValues {
                 CType = tx_cozybackend_slider
               }
             }
+            text_left_image_right {
+              iconIdentifier = content-beside-text-img-right
+              title = Text links Bild rechts
+              desccription = Text und Bild vordefiniert
+              tt_content_defValues {
+                CType = textpic
+                layout = 2
+                imageorient = 6
+                header_layout = 3
+                header_position = center
+              }
+            }
           }
-          show := addToList(tx_cozybackend_slider)
+          show := addToList(tx_cozybackend_slider, text_left_image_right)
         }
       }
     }
