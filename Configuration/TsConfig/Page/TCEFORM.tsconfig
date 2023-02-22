@@ -81,6 +81,10 @@ TCEFORM {
         }
       }
     }
+
+    CType {
+      removeItems := addToList(div, html)
+    }
   }
 }
 
