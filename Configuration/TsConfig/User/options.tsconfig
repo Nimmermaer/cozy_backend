@@ -1,10 +1,10 @@
 options {
-    pageTree {
-        showPageIdWithTitle = 1
-        backgroundColor {
-            2 = red
-            3 = #AFAFAF
-            4 = rgba(255,204,7,0.7)
-        }
+  pageTree {
+    showPageIdWithTitle = 1
+    backgroundColor {
+      2 = red
+      3 = #AFAFAF
+      4 = rgba(255,204,7,0.7)
     }
+  }
 }
