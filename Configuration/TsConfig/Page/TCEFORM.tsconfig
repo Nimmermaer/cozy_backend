@@ -1,0 +1,10 @@
+TCEFORM {
+  tt_content {
+    bodytext {
+      label = Alternative Bodytext Überschrift
+    }
+    subheader {
+      label = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.subheader.altlabel
+    }
+  }
+}
