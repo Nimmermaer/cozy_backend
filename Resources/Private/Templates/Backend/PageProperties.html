@@ -49,8 +49,10 @@
                     <h5 class="card-title">Images</h5>
                     <p class="card-text">
                         <f:for as="image" key="title" each="{images}">
-                            {title}:
-                            <f:image image="{image.0}" width="50px"/>
+                            <f:if condition="{image.0}">
+                                {title}:
+                                <f:image image="{image.0}" width="50px"/>
+                            </f:if>
                         </f:for>
                     </p>
                     <be:link.editRecord uid="{page.uid}" table="pages" fields="og_image,twitter_image,media"
