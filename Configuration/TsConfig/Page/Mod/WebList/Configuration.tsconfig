@@ -1,0 +1,5 @@
+mod {
+  web_list {
+    deniedNewTables = fe_groups, fe_users
+  }
+}

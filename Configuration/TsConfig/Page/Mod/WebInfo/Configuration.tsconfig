@@ -1,0 +1,10 @@
+mod {
+  web_info {
+    fieldDefinitions {
+      1677159475 {
+        label = Custom Fields
+        fields = title,author, author_email
+      }
+    }
+  }
+}

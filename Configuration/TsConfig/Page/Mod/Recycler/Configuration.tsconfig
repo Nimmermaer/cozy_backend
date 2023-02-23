@@ -1,0 +1,4 @@
+mod {
+  recordsPageLimit = 2
+  allowDelete = 1
+}
