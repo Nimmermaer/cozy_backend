@@ -6,3 +6,8 @@ services:
   Mblunck\CozyBackend\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
+
+  Mblunck\CozyBackend\Provider\PageModuleProvider:
+    tags:
+      - name: event.listener
+        identifier: 'pageproperties-to-page-module'

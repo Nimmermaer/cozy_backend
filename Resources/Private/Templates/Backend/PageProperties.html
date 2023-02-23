@@ -1,0 +1,81 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+>
+<f:if condition="{page}">
+    <div class="row ">
+        <div class="col-sm-6">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">General</h5>
+                    <p class="card-text">
+                        {page.title} <br>
+                        {page.nav_title} <br>
+                        {page.subtitle} <br>
+                    </p>
+                    <be:link.editRecord uid="{page.uid}" table="pages" fields="title,nav_title,subtitle"
+                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
+                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    </be:link.editRecord>
+                    <be:link.editRecord uid="{page.uid}" table="pages" class="btn btn-default btn-sm"
+                                        returnUrl="{returnUrl}">
+                        <core:icon identifier="actions-page-open" alternativeMarkupIdentifier="inline"/>
+                        Seiteneigenschaften
+                    </be:link.editRecord>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Seo</h5>
+                    <p class="card-text">
+                        {page.seo_title} <br>
+                        {page.description} <br>
+                        {page.og_title} <br>
+                        {page.og_description} <br>
+                    </p>
+                    <be:link.editRecord uid="{page.uid}" table="pages"
+                                        fields="seo_title,description,og_title,og_description "
+                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
+                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    </be:link.editRecord>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-dark bg-info mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Images</h5>
+                    <p class="card-text">
+                        <f:for as="image" key="title" each="{images}">
+                            {title}:
+                            <f:image image="{image.0}" width="50px"/>
+                        </f:for>
+                    </p>
+                    <be:link.editRecord uid="{page.uid}" table="pages" fields="og_image,twitter_image,media"
+                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
+                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    </be:link.editRecord>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-dark bg-info mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Metadata</h5>
+                    <p class="card-text">
+                        {page.abstract} <br>
+                        {page.keywords} <br>
+                        {page.author} <br>
+                    </p>
+                    <be:link.editRecord uid="{page.uid}" table="pages" fields="abstract,keywords,author"
+                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
+                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    </be:link.editRecord>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:if>
+</html>
