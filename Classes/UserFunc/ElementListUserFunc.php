@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Mblunck\CozyBackend\UserFunc;
 
 use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -38,10 +40,10 @@ class ElementListUserFunc
         return $view;
     }
 
-    private function getSettings(mixed $pi_flexform): array
+    private function getSettings(mixed $piFlexForm): array
     {
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
-        $flexFormArray = $flexFormService->convertFlexFormContentToArray($pi_flexform);
+        $flexFormArray = $flexFormService->convertFlexFormContentToArray($piFlexForm);
         if (array_key_exists('settings', $flexFormArray)) {
             return $flexFormArray['settings'];
         }
@@ -50,17 +52,26 @@ class ElementListUserFunc
 
     private function getElements(array $settings = []): array
     {
+
         $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
         $identifiers = [
             'deleted' => 0,
             'hidden' => 0,
         ];
-        $sorting = [];
+
+        $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
+        if($languageAspect > 0) {
+            $identifiers += [
+                'sys_language_uid' => $languageAspect->get('id')
+            ];
+        }
         if (array_key_exists('singlePid', $settings) && $settings['singlePid'] > 0) {
             $identifiers += [
                 'pid' => $settings['singlePid'],
             ];
         }
+
+        $sorting = [];
         if (array_key_exists('sorting', $settings)) {
             $sorting = [
                 $settings['sorting'] => QueryInterface::ORDER_ASCENDING,
