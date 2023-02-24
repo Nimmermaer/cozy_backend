@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Mblunck\CozyBackend\UserFunc;
 
 use Psr\Http\Message\ServerRequestInterface;
-use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Service\FlexFormService;
@@ -52,7 +51,6 @@ class ElementListUserFunc
 
     private function getElements(array $settings = []): array
     {
-
         $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
         $identifiers = [
             'deleted' => 0,
@@ -60,9 +58,9 @@ class ElementListUserFunc
         ];
 
         $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
-        if($languageAspect > 0) {
+        if ($languageAspect > 0) {
             $identifiers += [
-                'sys_language_uid' => $languageAspect->get('id')
+                'sys_language_uid' => $languageAspect->get('id'),
             ];
         }
         if (array_key_exists('singlePid', $settings) && $settings['singlePid'] > 0) {

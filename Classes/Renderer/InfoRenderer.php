@@ -19,7 +19,6 @@ class InfoRenderer
     ) {
     }
 
-
     public function showPageProperties(ServerRequestInterface $request, int $pid, string $returnUrl = ''): string
     {
         $images = [];
