@@ -26,7 +26,7 @@ call_user_func(static function ($extensionKey): void {
     }
 
     $plugins = [
-        'cozy_backend_list' => 'content-book',
+        'cozy_backend_list' => 'cozy-puzzle',
     ];
     foreach ($plugins as $pluginType => $iconIdentifier) {
         ExtensionManagementUtility::addPlugin(

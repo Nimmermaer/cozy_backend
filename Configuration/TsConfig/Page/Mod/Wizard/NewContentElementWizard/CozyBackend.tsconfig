@@ -30,7 +30,7 @@ mod {
 
             plugin_element {
               description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list.description
-              iconIdentifier = content-book
+              iconIdentifier = cozy-puzzle
               title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list
               tt_content_defValues {
                 CType = list
