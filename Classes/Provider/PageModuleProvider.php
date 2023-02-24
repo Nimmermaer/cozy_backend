@@ -19,8 +19,6 @@ namespace Mblunck\CozyBackend\Provider;
 
 use Mblunck\CozyBackend\Renderer\InfoRenderer;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
-use TYPO3\CMS\SysNote\Domain\Repository\SysNoteRepository;
-use TYPO3\CMS\SysNote\Renderer\NoteRenderer;
 
 /**
  * Event listener to render notes in the page module.
@@ -29,8 +27,9 @@ use TYPO3\CMS\SysNote\Renderer\NoteRenderer;
  */
 final class PageModuleProvider
 {
-    public function __construct(protected readonly InfoRenderer $infoRenderer)
-    {
+    public function __construct(
+        protected readonly InfoRenderer $infoRenderer
+    ) {
     }
 
     /**
@@ -39,7 +38,7 @@ final class PageModuleProvider
     public function __invoke(ModifyPageLayoutContentEvent $event): void
     {
         $request = $event->getRequest();
-        $id = (int)($request->getQueryParams()['id'] ?? 0);
+        $id = (int) ($request->getQueryParams()['id'] ?? 0);
         $returnUrl = $request->getAttribute('normalizedParams')->getRequestUri();
         $event->addHeaderContent($this->infoRenderer->showPageProperties($request, $id, $returnUrl));
     }
