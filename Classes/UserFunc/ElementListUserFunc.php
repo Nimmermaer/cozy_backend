@@ -24,7 +24,6 @@ class ElementListUserFunc
     public function listElements(string $content, array $conf, ServerRequestInterface $request): string
     {
         $view = $this->getView();
-        dd($this->cObj->data['pi_flexform']);
         $settings = $this->getSettings($this->cObj->data['pi_flexform']);
         $view->assign('data', $this->cObj->data);
         $view->assign('elements', $this->getElements($settings));
