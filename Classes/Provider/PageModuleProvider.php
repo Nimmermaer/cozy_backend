@@ -17,7 +17,7 @@ declare(strict_types=1);
 
 namespace Mblunck\CozyBackend\Provider;
 
-use Mblunck\CozyBackend\Renderer\InfoRenderer;
+use Mblunck\CozyBackend\Renderer\PagePropertiesRenderer;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 
 /**
@@ -28,18 +28,15 @@ use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 final class PageModuleProvider
 {
     public function __construct(
-        protected readonly InfoRenderer $infoRenderer
+        protected readonly PagePropertiesRenderer $pageRenderer
     ) {
     }
 
     /**
-     * Add sys_notes as additional content to the header and footer of the page module
+     * Add page properties as visible content to the header of the page module
      */
     public function __invoke(ModifyPageLayoutContentEvent $event): void
     {
-        $request = $event->getRequest();
-        $id = (int) ($request->getQueryParams()['id'] ?? 0);
-        $returnUrl = $request->getAttribute('normalizedParams')->getRequestUri();
-        $event->addHeaderContent($this->infoRenderer->showPageProperties($request, $id, $returnUrl));
+        $event->addHeaderContent($this->pageRenderer->showPageProperties($event->getRequest()));
     }
 }
