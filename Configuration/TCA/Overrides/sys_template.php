@@ -8,5 +8,4 @@ defined('TYPO3') || die();
 
 call_user_func(static function (): void {
     ExtensionManagementUtility::addStaticFile('cozy_backend', 'Configuration/TypoScript', 'cozy_backend');
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:cozy_backend/Configuration/TsConfig/Page/All.tsconfig"');
 });

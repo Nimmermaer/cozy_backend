@@ -22,5 +22,3 @@ if (Environment::getContext()->isDevelopment()) {
 
 // Backend Customization
 ExtensionManagementUtility::addUserTSConfig("@import 'EXT:cozy_backend/Configuration/TsConfig/User/options.tsconfig'");
-ExtensionManagementUtility::addPageTSConfig("@import 'EXT:cozy_backend/Configuration/TsConfig/Page/*.tsconfig'");
-ExtensionManagementUtility::addPageTSConfig("@import 'EXT:cozy_backend/Configuration/page.tsconfig'");
