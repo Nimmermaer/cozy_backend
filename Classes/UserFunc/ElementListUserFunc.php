@@ -35,7 +35,7 @@ class ElementListUserFunc
     {
         $view = GeneralUtility::makeInstance(StandaloneView::class);
         $view->setTemplateRootPaths(['EXT:cozy_backend/Resources/Private/Templates']);
-        $view->setTemplate('ListElements');
+        $view->setTemplatePathAndFilename('EXT:cozy_backend/Resources/Private/Templates/ListElements.html');
         return $view;
     }
 
