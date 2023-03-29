@@ -13,7 +13,10 @@ tt_content {
   list {
     20 {
       cozy_backend_list = USER
-      cozy_backend_list.userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
+      cozy_backend_list{
+        userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
+        templateName = ListElements
+      }
     }
   }
 }

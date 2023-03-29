@@ -10,23 +10,11 @@ use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Context\Exception\AspectNotFoundException;
 use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Fluid\View\StandaloneView;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-class ElementListUserFunc
+class ElementListUserFunc extends AbstractUserFunc
 {
-    private ContentObjectRenderer $cObj;
-
-    private string $templateName = '';
-
-    public function setContentObjectRenderer(ContentObjectRenderer $contentObjectRenderer): void
-    {
-        $this->cObj = $contentObjectRenderer;
-    }
-
     /**
      * @throws AspectNotFoundException
      * @throws AspectPropertyNotFoundException
@@ -34,30 +22,11 @@ class ElementListUserFunc
      */
     public function listElements(string $content, array $conf, ServerRequestInterface $request): string
     {
-        $this->templateName = 'ListElements';
-        $view = $this->getView();
+        $view = $this->getView($conf['templateName']);
         $settings = $this->getSettings($this->cObj->data['pi_flexform']);
         $view->assign('data', $this->cObj->data);
         $view->assign('elements', $this->getElements($settings));
         return $view->render();
-    }
-
-    private function getView(): StandaloneView
-    {
-        $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $view->setPartialRootPaths(['EXT:cozy_backend/Resources/Private/Partials/']);
-        $view->setTemplatePathAndFilename("EXT:cozy_backend/Resources/Private/Templates/{$this->templateName}.html");
-        return $view;
-    }
-
-    private function getSettings(mixed $piFlexForm): array
-    {
-        $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
-        $flexFormArray = $flexFormService->convertFlexFormContentToArray($piFlexForm);
-        if (array_key_exists('settings', $flexFormArray)) {
-            return $flexFormArray['settings'];
-        }
-        return [];
     }
 
     /**
