@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Mblunck\CozyBackend\UserFunc;
 
+use Doctrine\DBAL\Exception;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Context\Context;
+use TYPO3\CMS\Core\Context\Exception\AspectNotFoundException;
+use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -49,6 +52,11 @@ class ElementListUserFunc
         return [];
     }
 
+    /**
+     * @throws AspectNotFoundException
+     * @throws AspectPropertyNotFoundException
+     * @throws Exception
+     */
     private function getElements(array $settings = []): array
     {
         $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
