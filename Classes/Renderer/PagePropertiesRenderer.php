@@ -40,8 +40,10 @@ class PagePropertiesRenderer
         }
 
         foreach ($this->imageFields as $variableName => $field) {
-            $view->assign($variableName,
-                $this->fileRepository->findByRelation('pages', $field, $page['uid']));
+            $view->assign(
+                $variableName,
+                $this->fileRepository->findByRelation('pages', $field, $page['uid'])
+            );
         }
         $view->assignMultiple([
             'page' => $page,

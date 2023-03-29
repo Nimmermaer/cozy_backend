@@ -1,6 +1,6 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+<html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
       xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
-      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
 <f:if condition="{page}">
     <div class="row ">
@@ -13,13 +13,14 @@
                         {page.nav_title} <br>
                         {page.subtitle} <br>
                     </p>
-                    <be:link.editRecord uid="{page.uid}" table="pages" fields="title,nav_title,subtitle"
-                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
-                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    <be:link.editRecord class="btn btn-default btn-sm" fields="title,nav_title,subtitle"
+                                        returnUrl="{returnUrl}"
+                                        table="pages" uid="{page.uid}">
+                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
                     </be:link.editRecord>
-                    <be:link.editRecord uid="{page.uid}" table="pages" class="btn btn-default btn-sm"
-                                        returnUrl="{returnUrl}">
-                        <core:icon identifier="actions-page-open" alternativeMarkupIdentifier="inline"/>
+                    <be:link.editRecord class="btn btn-default btn-sm" returnUrl="{returnUrl}" table="pages"
+                                        uid="{page.uid}">
+                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-page-open"/>
                         Seiteneigenschaften
                     </be:link.editRecord>
                 </div>
@@ -35,10 +36,11 @@
                         {page.og_title} <br>
                         {page.og_description} <br>
                     </p>
-                    <be:link.editRecord uid="{page.uid}" table="pages"
+                    <be:link.editRecord class="btn btn-default btn-sm"
                                         fields="seo_title,description,og_title,og_description "
-                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
-                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                                        returnUrl="{returnUrl}"
+                                        table="pages" uid="{page.uid}">
+                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
                     </be:link.editRecord>
                 </div>
             </div>
@@ -48,16 +50,17 @@
                 <div class="card-body">
                     <h5 class="card-title">Images</h5>
                     <p class="card-text">
-                        <f:for as="image" key="title" each="{images}">
+                        <f:for as="image" each="{images}" key="title">
                             <f:if condition="{image.0}">
                                 {title}:
                                 <f:image image="{image.0}" width="50px"/>
                             </f:if>
                         </f:for>
                     </p>
-                    <be:link.editRecord uid="{page.uid}" table="pages" fields="og_image,twitter_image,media"
-                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
-                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    <be:link.editRecord class="btn btn-default btn-sm" fields="og_image,twitter_image,media"
+                                        returnUrl="{returnUrl}"
+                                        table="pages" uid="{page.uid}">
+                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
                     </be:link.editRecord>
                 </div>
             </div>
@@ -71,9 +74,10 @@
                         {page.keywords} <br>
                         {page.author} <br>
                     </p>
-                    <be:link.editRecord uid="{page.uid}" table="pages" fields="abstract,keywords,author"
-                                        class="btn btn-default btn-sm" returnUrl="{returnUrl}">
-                        <core:icon identifier="actions-open" alternativeMarkupIdentifier="inline"/>
+                    <be:link.editRecord class="btn btn-default btn-sm" fields="abstract,keywords,author"
+                                        returnUrl="{returnUrl}"
+                                        table="pages" uid="{page.uid}">
+                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
                     </be:link.editRecord>
                 </div>
             </div>

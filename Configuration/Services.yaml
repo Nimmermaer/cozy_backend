@@ -10,4 +10,4 @@ services:
   Mblunck\CozyBackend\Provider\PageModuleProvider:
     tags:
       - name: event.listener
-        identifier: 'pageproperties-to-page-module'
+        identifier: 'page-properties-to-page-module'

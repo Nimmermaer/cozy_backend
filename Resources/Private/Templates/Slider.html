@@ -1,5 +1,5 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:layout name="Default"/>
 <f:section name="Main">
     <f:asset.css identifier="123q2321312312">
 
@@ -126,8 +126,11 @@
             &#8250;
         </button>
         <ul class="slides-container" id="slides-container">
-            <f:for each="{files}" as="image">
-                <li class="slide" style="background-size: cover; background-image:url({f:uri.image(image:image, absolute:1, width:'1300c', height:'800c')});">{image.title}</li>
+            <f:for as="image" each="{files}">
+                <li class="slide"
+                    style="background-size: cover; background-image:url({f:uri.image(image:image, absolute:1, width:'1300c', height:'800c')});">
+                    {image.title}
+                </li>
             </f:for>
         </ul>
     </section>

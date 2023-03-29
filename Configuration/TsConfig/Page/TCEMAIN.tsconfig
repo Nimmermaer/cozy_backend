@@ -1,5 +1,5 @@
 TCEMAIN {
-  translateToMessage = Bitte den Artikel in "%s" übersetzen
+  translateToMessage = Bitte den Datensatz in "%s" übersetzen
   table {
     pages {
       disablePrependAtCopy = 1

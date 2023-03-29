@@ -4,6 +4,7 @@ TCAdefaults {
     header_layout = 2
     bodytext = Bitte Text einfügen
   }
+
   pages {
     abstract = Hier kommt ein Abstrakt
     keywords = typo3, cozy, backend

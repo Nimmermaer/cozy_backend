@@ -5,7 +5,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Accompanying extension for the TYPO3 housekeeping presentation',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-12.4.99',
+            'typo3' => '12.0.0-12.4.99',
         ],
     ],
     'autoload' => [

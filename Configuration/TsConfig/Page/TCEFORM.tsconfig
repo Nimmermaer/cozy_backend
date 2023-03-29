@@ -58,7 +58,13 @@ TCEFORM {
     endtime.disabled = 1
 
     // Appearance tab
-    space_before_class.disabled = 1
+
+    space_before_class {
+      disabled = 0
+
+      // May no longer function in v12
+      altLabels.. = Standard ohne Styles
+    }
     space_after_class.disabled = 1
     frame_class.disabled = 1
     linkToTop.disabled = 1
@@ -100,6 +106,3 @@ TCEFORM {
     }
   }
 }
-
-// May no longer function in v12
-TCEFORM.tt_content.space_before_class.altLabels..= Standard ohne Styles

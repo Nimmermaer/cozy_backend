@@ -1,7 +1,7 @@
 mod.web_layout.BackendLayouts {
   default {
     title = Default
-    icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo.png
+    icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo2.png
     config {
       backend_layout {
         colCount = 1

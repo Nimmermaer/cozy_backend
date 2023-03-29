@@ -1,0 +1,19 @@
+tt_content {
+  tx_cozybackend_doubletext < .text
+  tx_cozybackend_doubletext {
+    templateName = DoubleText
+  }
+
+  tx_cozybackend_slider < .image
+  tx_cozybackend_slider {
+    templateName = Slider
+  }
+
+  // Plugin Configuration
+  list {
+    20 {
+      cozy_backend_list = USER
+      cozy_backend_list.userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
+    }
+  }
+}

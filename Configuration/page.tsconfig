@@ -1,6 +1,3 @@
-#
-# PageTS for cozy_backend
-#
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/TCAdefaults.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/TCEFORM.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
