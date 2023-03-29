@@ -65,6 +65,7 @@ TCEFORM {
       // May no longer function in v12
       altLabels.. = Standard ohne Styles
     }
+
     space_after_class.disabled = 1
     frame_class.disabled = 1
     linkToTop.disabled = 1

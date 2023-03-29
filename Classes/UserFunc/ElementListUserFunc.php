@@ -20,13 +20,21 @@ class ElementListUserFunc
 {
     private ContentObjectRenderer $cObj;
 
+    private string $templateName = '';
+
     public function setContentObjectRenderer(ContentObjectRenderer $contentObjectRenderer): void
     {
         $this->cObj = $contentObjectRenderer;
     }
 
+    /**
+     * @throws AspectNotFoundException
+     * @throws AspectPropertyNotFoundException
+     * @throws Exception
+     */
     public function listElements(string $content, array $conf, ServerRequestInterface $request): string
     {
+        $this->templateName = 'ListElements';
         $view = $this->getView();
         $settings = $this->getSettings($this->cObj->data['pi_flexform']);
         $view->assign('data', $this->cObj->data);
@@ -37,8 +45,8 @@ class ElementListUserFunc
     private function getView(): StandaloneView
     {
         $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $view->setTemplateRootPaths(['EXT:cozy_backend/Resources/Private/Templates']);
-        $view->setTemplatePathAndFilename('EXT:cozy_backend/Resources/Private/Templates/ListElements.html');
+        $view->setPartialRootPaths(['EXT:cozy_backend/Resources/Private/Partials/']);
+        $view->setTemplatePathAndFilename("EXT:cozy_backend/Resources/Private/Templates/{$this->templateName}.html");
         return $view;
     }
 
