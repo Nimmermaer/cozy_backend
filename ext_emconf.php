@@ -1,7 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'cozy_backend',
+    'title' => 'Cozy Backend',
     'description' => 'Accompanying extension for the TYPO3 housekeeping presentation',
     'constraints' => [
         'depends' => [

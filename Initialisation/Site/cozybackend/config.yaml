@@ -1,0 +1,40 @@
+base: 'https://chaptedproject.ddev.site/'
+languages:
+  - title: English
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en-us
+    direction: ltr
+    flag: us
+    websiteTitle: 'English Cozy Backend'
+  - title: Deutsch
+    enabled: true
+    base: /de/
+    typo3Language: de
+    locale: de_DE.utf8
+    iso-639-1: de
+    websiteTitle: 'Deutsch Cozy Backend'
+    navigationTitle: deutsch
+    hreflang: de-DE
+    direction: ltr
+    fallbackType: strict
+    fallbacks: '0'
+    flag: de
+    languageId: 1
+rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: /
+    index: ''
+    map:
+      /: 0
+      sitemap.xml: 1533906435
+websiteTitle: 'Cozy Backend'
+imports:
+  - resource: 'EXT:pongback/Configuration/YAML/siteconfig.yaml'

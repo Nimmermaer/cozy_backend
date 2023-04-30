@@ -1,1 +1,2 @@
-@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/*.typoscript'
+@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Contentelements.typoscript'
+@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/CaseElement.typoscript'

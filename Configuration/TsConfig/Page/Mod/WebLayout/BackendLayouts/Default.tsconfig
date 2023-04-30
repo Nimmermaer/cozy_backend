@@ -1,17 +1,21 @@
-mod.web_layout.BackendLayouts {
-  default {
-    title = Default
-    icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo2.png
-    config {
-      backend_layout {
-        colCount = 1
-        rowCount = 1
-        rows {
-          1 {
-            columns {
+mod {
+  web_layout {
+    BackendLayouts {
+      default {
+        title = Default
+        icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo.png
+        config {
+          backend_layout {
+            colCount = 1
+            rowCount = 1
+            rows {
               1 {
-                name = Main
-                colPos = 0
+                columns {
+                  1 {
+                    name = Main
+                    colPos = 0
+                  }
+                }
               }
             }
           }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mblunck\CozyBackend\UserFunc;
 
 use TYPO3\CMS\Core\Service\FlexFormService;
@@ -7,12 +9,18 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-class AbstractUserFunc
+class UserFuncHelper
 {
+    protected ContentObjectRenderer $cObj;
+
     public function __construct(
-        protected readonly ContentObjectRenderer $cObj,
         private readonly StandaloneView $view
     ) {
+    }
+
+    public function setContentObjectRenderer(ContentObjectRenderer $cObj): void
+    {
+        $this->cObj = $cObj;
     }
 
     public function getView(string $templateName): StandaloneView

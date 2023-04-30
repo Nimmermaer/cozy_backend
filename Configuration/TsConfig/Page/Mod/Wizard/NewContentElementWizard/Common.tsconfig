@@ -3,6 +3,7 @@ mod {
     newContentElement {
       wizardItems {
         common {
+          header = TYPO3 Content Elemente
           elements {
             tx_cozybackend_doubletext {
               description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_doubletext.description

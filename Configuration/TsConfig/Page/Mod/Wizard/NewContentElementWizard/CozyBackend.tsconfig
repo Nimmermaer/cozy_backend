@@ -4,7 +4,8 @@ mod {
       wizardItems {
         cozyBackend {
           header = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:newContentElement.header.cozybackend
-          before = common
+          before = menu
+          after = common
           elements {
             tx_cozybackend_slider {
               description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider.description

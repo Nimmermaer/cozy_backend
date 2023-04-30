@@ -61,7 +61,6 @@ TCEFORM {
 
     space_before_class {
       disabled = 0
-
       // May no longer function in v12
       altLabels.. = Standard ohne Styles
     }
