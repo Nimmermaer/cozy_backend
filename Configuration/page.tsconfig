@@ -1,7 +1,7 @@
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/TCAdefaults.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/TCEFORM.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
-@import 'EXT:cozy_backend/Configuration/TsConfig/Page/BackendLayouts.tsconfig'
+@import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/Wizard/NewContentElementWizard.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/WebList/Configuration.tsconfig'
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/WebInfo/Configuration.tsconfig'
