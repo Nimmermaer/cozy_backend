@@ -7,7 +7,7 @@ services:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
-  Mblunck\CozyBackend\Provider\PageModuleProvider:
+  Mblunck\CozyBackend\EventListener\PageModulePreviewEventListener:
     tags:
       - name: event.listener
         identifier: 'page-properties-to-page-module'
