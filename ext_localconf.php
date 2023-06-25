@@ -16,6 +16,7 @@ if (Environment::getContext()->isDevelopment()) {
 }
 
 // Backend Login Customization
+//  system/additional.php
 $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend'] = [
     'backendFavicon' => 'EXT:cozy_backend/Resources/Public/Backend/Images/favicon.ico',
     'backendLogo' => 'EXT:cozy_backend/Resources/Public/Backend/Images/icon.png',

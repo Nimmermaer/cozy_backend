@@ -49,12 +49,15 @@
                 <div class="card-body">
                     <h5 class="card-title">Images</h5>
                     <p class="card-text">
-                        <f:for as="image" each="{images}" key="title">
-                            <f:if condition="{image.0}">
-                                {title}:
-                                <f:image image="{image.0}" width="50px"/>
-                            </f:if>
-                        </f:for>
+                        <f:if condition="{twitterImage}">
+                            <f:image image="{twitterImage.0}" width="50px"/>
+                        </f:if>
+                        <f:if condition="{facebookImage}">
+                            <f:image image="{facebookImage.0}" width="50px"/>
+                        </f:if>
+                        <f:if condition="{media}">
+                            <f:image image="{media.0}" width="50px"/>
+                        </f:if>
                     </p>
                     <be:link.editRecord class="btn btn-default btn-sm" fields="og_image,twitter_image,media"
                                         returnUrl="{returnUrl}"

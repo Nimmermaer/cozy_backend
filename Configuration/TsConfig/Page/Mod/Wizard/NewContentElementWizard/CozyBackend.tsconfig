@@ -19,7 +19,7 @@ mod {
             text_left_image_right {
               iconIdentifier = content-beside-text-img-right
               title = Text links Bild rechts
-              desccription = Text und Bild vordefiniert
+              description = Text und Bild vordefiniert
               tt_content_defValues {
                 CType = textpic
                 layout = 2
