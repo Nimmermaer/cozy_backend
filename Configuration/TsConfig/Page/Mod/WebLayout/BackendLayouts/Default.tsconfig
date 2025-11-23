@@ -14,6 +14,7 @@ mod {
                   1 {
                     name = Main
                     colPos = 0
+                    identifier = main
                   }
                 }
               }

@@ -15,6 +15,7 @@ mod {
                     name = Header
                     colspan = 6
                     colPos = 1
+                    identifier = header
                   }
                 }
               }
@@ -30,6 +31,7 @@ mod {
                     name = Main
                     colPos = 0
                     colspan = 5
+                    identifier = main
                   }
                 }
               }
