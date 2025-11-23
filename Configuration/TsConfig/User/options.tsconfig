@@ -7,15 +7,5 @@ options {
       4 = rgba(255,204,7,0.7)
     }
   }
-
-  // Example hide modules for Admins
-  // before v12
-  hideModules {
-    web {
-      system = BelogLog
-    }
-  }
-
-  // v12
-  hideModules = system_BelogLog
+  hideModules = system_reactions
 }
