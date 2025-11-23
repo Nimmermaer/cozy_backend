@@ -1,4 +1,6 @@
 mod {
-  recordsPageLimit = 2
-  allowDelete = 1
+    recycler {
+        recordsPageLimit = 2
+        allowDelete = 1
+    }
 }
