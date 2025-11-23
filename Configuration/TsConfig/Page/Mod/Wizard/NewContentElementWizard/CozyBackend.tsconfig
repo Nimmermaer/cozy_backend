@@ -5,17 +5,8 @@ mod {
         cozyBackend {
           header = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:newContentElement.header.cozybackend
           before = menu
-          after = common
+          after = default
           elements {
-            tx_cozybackend_slider {
-              description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider.description
-              iconIdentifier = content-carousel-image
-              title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider
-              tt_content_defValues {
-                CType = tx_cozybackend_slider
-              }
-            }
-
             text_left_image_right {
               iconIdentifier = content-beside-text-img-right
               title = Text links Bild rechts
@@ -29,13 +20,8 @@ mod {
               }
             }
 
-            plugin_element {
-              description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list.description
-              iconIdentifier = cozy-puzzle
-              title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list
+              cozy_backend_list {
               tt_content_defValues {
-                CType = list
-                list_type = cozy_backend_list
                 pi_flexform (
                 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
                   <T3FlexForms>

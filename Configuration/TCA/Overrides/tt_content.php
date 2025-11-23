@@ -2,27 +2,37 @@
 
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Schema\Struct\SelectItem;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') || die();
 
-call_user_func(static function ($extensionKey): void {
+call_user_func(static function ($extensionKey, $table): void {
+
+    $GLOBALS['TCA'][$table]['columns']['CType']['config']['itemGroups']['cozyBackend'] =
+        'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:cozy_backend.tt_content.group';
+
     $contentElements = [
         'tx_cozybackend_slider' => 'content-carousel-image',
         'tx_cozybackend_doubletext' => 'content-text-columns',
     ];
 
     foreach ($contentElements as $contentType => $iconIdentifier) {
-        ExtensionManagementUtility::addPlugin(
+        ExtensionManagementUtility::addTcaSelectItem(
+            'tt_content',
+            'CType',
             [
-                'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType,
-                $contentType,
-                $iconIdentifier,
+                'label' =>  'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType,
+                'description' =>  'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType . '.description',
+                'value' => $contentType,
+                'group' => 'cozyBackend',
+                'icon' => $iconIdentifier,
             ],
-            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
-            $extensionKey
+            'textmedia',
+            'after',
         );
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$contentType] = $iconIdentifier;
     }
 
     $plugins = [
@@ -30,23 +40,25 @@ call_user_func(static function ($extensionKey): void {
     ];
     foreach ($plugins as $pluginType => $iconIdentifier) {
         ExtensionManagementUtility::addPlugin(
-            [
+            new SelectItem (
+                '',
                 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType,
                 $pluginType,
                 $iconIdentifier,
-            ],
-            ExtensionUtility::PLUGIN_TYPE_PLUGIN,
+                'cozyBackend',
+                'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType .'.description',
+            ),
+            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
             $extensionKey
         );
-        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginType]
-            = 'pi_flexform';
+        ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;Configuration,pi_flexform,', $pluginType, 'after:subheader');
+        ExtensionManagementUtility::addPiFlexFormValue(
+            '*',
+            'FILE:EXT:cozy_backend/Configuration/FlexForms/' . $pluginType . '.xml',
+            $pluginType
+        );
     }
 
-    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['cozy_backend_list'] = 'pages,layout,select_key,recursive';
-    ExtensionManagementUtility::addPiFlexFormValue(
-        'cozy_backend_list',
-        'FILE:EXT:cozy_backend/Configuration/FlexForms/CozyBackendList.xml'
-    );
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'alternative_bodytext' => [
@@ -90,4 +102,4 @@ call_user_func(static function ($extensionKey): void {
             ],
         ],
     ];
-}, 'cozy_backend');
+}, 'cozy_backend', 'tt_content');

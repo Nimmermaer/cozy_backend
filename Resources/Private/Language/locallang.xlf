@@ -37,6 +37,12 @@
 			<trans-unit id="tt_content.cozy_backend_list">
 				<source>Element Liste</source>
 			</trans-unit>
+			<trans-unit id="cozy_backend.tt_content.group">
+				<source>Cozy Backend Elements</source>
+			</trans-unit>
+			<trans-unit id="field.definition.1763910501719">
+				<source>Field Definition</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

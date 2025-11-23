@@ -2,7 +2,7 @@ mod {
   wizards {
     newContentElement {
       wizardItems {
-        common {
+        default {
           header = TYPO3 Content Elemente
           elements {
             tx_cozybackend_doubletext {
@@ -14,7 +14,6 @@ mod {
               }
             }
           }
-
           show := addToList(tx_cozybackend_doubletext)
         }
       }

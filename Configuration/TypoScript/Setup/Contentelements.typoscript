@@ -10,13 +10,13 @@ tt_content {
   }
 
   // Plugin Configuration
-  list {
+  cozy_backend_list =< lib.contentElement
+  cozy_backend_list {
+    20 = USER
     20 {
-      cozy_backend_list = USER
-      cozy_backend_list{
-        userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
-        templateName = ListElements
-      }
+      userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
+      templateName = ListElements
     }
+    templateName = Generic
   }
 }
