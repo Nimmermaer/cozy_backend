@@ -7,15 +7,10 @@ namespace Mblunck\CozyBackend\EventListener;
 use Mblunck\CozyBackend\Renderer\PagePropertiesRenderer;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 
-/**
- * Event listener to render notes in the page module.
- *
- * @internal This is a specific listener implementation and is not considered part of the Public TYPO3 API.
- */
-final class PageModulePreviewEventListener
+final readonly class PageModulePreviewEventListener
 {
     public function __construct(
-        protected readonly PagePropertiesRenderer $pageRenderer
+        protected PagePropertiesRenderer $pageRenderer
     ) {
     }
 
