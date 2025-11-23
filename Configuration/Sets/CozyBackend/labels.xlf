@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+		<header/>
+		<body>
+			<trans-unit id="label">
+				<source>Cozy Backend</source>
+			</trans-unit>
+
+			<trans-unit id="categories.CozyBackend">
+				<source>Cozy Backend</source>
+			</trans-unit>
+			<trans-unit id="categories.CozyBackend.defaults.pages">
+				<source>Cozy Backend Default Einstellungen für Seiten</source>
+			</trans-unit>
+			<trans-unit id="categories.CozyBackend.defaults.tt_content">
+				<source>Cozy Backend Default Einstellungen für Seiteninhalte</source>
+			</trans-unit>
+			<trans-unit id="settings.tt_content.default.layout">
+				<source>Layout Einstellung</source>
+			</trans-unit>
+			<trans-unit id="settings.description.tt_content.default.layout">
+				<source>Die Layout Einstellungen aller Contentelemente kann hier voreingestellt werden</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

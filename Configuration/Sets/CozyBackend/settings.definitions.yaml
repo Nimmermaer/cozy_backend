@@ -1,0 +1,28 @@
+categories:
+  CozyBackend: ~
+  CozyBackend.defaults.tt_content:
+    parent: CozyBackend
+  CozyBackend.defaults.pages:
+    parent: CozyBackend
+
+settings:
+  tt_content.default.header:
+    label: 'Default Text für Inhaltselemente'
+    category: CozyBackend.defaults.tt_content
+    description: 'Overrides default text'
+    type: string
+    default: 'Hier ist ein Headertext'
+  tt_content.default.layout:
+    category: CozyBackend.defaults.tt_content
+    type: string
+    default: 2
+    enum:
+      0: 'Default'
+      1: 'Container'
+      2: 'Text'
+      3: 'Kachel'
+  pages.default.abstract:
+    label: 'Default Abstract of Page'
+    category: CozyBackend.defaults.pages
+    type: string
+    default: 'Hier kommt ein Abstrakt'

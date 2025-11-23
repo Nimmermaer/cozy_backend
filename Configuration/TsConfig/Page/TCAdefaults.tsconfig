@@ -1,12 +1,12 @@
 TCAdefaults {
   tt_content {
-    header = Hier ist ein Headertext
-    header_layout = 2
+    header = {$tt_content.default.header}
+    layout = {$tt_content.default.layout}
     bodytext = Bitte Text einfügen
   }
 
   pages {
-    abstract = Hier kommt ein Abstrakt
+    abstract = {$pages.default.abstract}
     keywords = typo3, cozy, backend
     author = Its me
   }
