@@ -1,0 +1,4 @@
+name: mblunck/cozy-backend
+label: Cozy Backend
+dependencies:
+  - typo3/fluid-styled-content
