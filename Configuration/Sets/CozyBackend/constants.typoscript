@@ -1,5 +1,0 @@
-styles {
-  templates {
-    templateRootPath = EXT:cozy_backend/Resources/Private/Templates/
-  }
-}
