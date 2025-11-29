@@ -1,11 +1,28 @@
 categories:
   CozyBackend: ~
+  CozyBackend.defaults.paths:
+    parent: CozyBackend
+    label: 'Paths'
   CozyBackend.defaults.tt_content:
     parent: CozyBackend
+    label: 'TTContent'
   CozyBackend.defaults.pages:
     parent: CozyBackend
+    label: 'Pages'
 
 settings:
+  componentsPath:
+    label: 'Component Path'
+    category: CozyBackend.defaults.paths
+    description: 'Paths für components'
+    type: string
+    default: 'Resources/Private/Components/'
+  designTokens:
+    label: 'Design Token Path'
+    category: CozyBackend.defaults.paths
+    description: 'Paths für designTokens'
+    type: string
+    default: 'Tokens/designTokens.json'
   tt_content.default.header:
     label: 'Default Text für Inhaltselemente'
     category: CozyBackend.defaults.tt_content
