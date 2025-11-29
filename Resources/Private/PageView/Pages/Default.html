@@ -1,5 +1,6 @@
 <html
         xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        xmlns:cozybackend="http://typo3.org/ns/Mblunck\CozyBackend\Component\ComponentCollection"
         data-namespace-typo3-fluid="true"
 >
 
@@ -8,6 +9,22 @@
     <cozybackend:atom.button text="my text">
         Button label
     </cozybackend:atom.button>
+
+    <cozybackend:atom.card image="{f:uri.image(src: 'EXT:cozy_backend/Resources/Public/Images/Distribution.png')}">
+
+        <f:fragment name="title">
+            Hier ist ein Titel
+        </f:fragment>
+        <f:fragment name="content">
+            <p>My first paragraph</p>
+            <p>My second paragraph</p>
+        </f:fragment>
+        <f:fragment name="link"><f:uri.external uri="google.de" /></f:fragment>
+        <f:fragment name="linktext">
+            <f:uri.external uri="google.de" />
+        </f:fragment>
+    </cozybackend:atom.card>
+
     <div class="row">
         <div class="col-lg">
             <f:render partial="Content" arguments="{records: content.main.records}"/>

@@ -1,0 +1,10 @@
+<f:argument name="image" type="string" />
+
+<div class="card text-bg-dark mb-3" style="width: 18rem;">
+    <img src="{image}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title"><f:slot name="title"/></h5>
+        <p class="card-text"><f:slot name="content"/></p>
+        <a href="{f:slot(name: 'link')}" class="btn btn-primary"><f:slot name="linktext"/></a>
+    </div>
+</div>
