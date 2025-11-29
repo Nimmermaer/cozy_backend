@@ -1,0 +1,27 @@
+{
+  "name": "cozy_backend",
+  "version": "1.0.0",
+  "description": "Frontend assets for cozy_backend TYPO3 extension, including Design Tokens.",
+  "main": "index.js",
+  "scripts": {
+    "build:tokens": "node config.js",
+    "build:css": "npm run build:tokens && sass --quiet-deps --update --style=compressed Resources/Private/Assets/Scss/main.scss:Resources/Public/Assets/Css/main.css",
+    "watch:css": "npm run build:tokens && sass --quiet-deps --watch Resources/Private/Assets/Scss:Resources/Public/Assets/Css/main.css --no-poll",
+
+    "build:js": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js Resources/Public/Assets/JavaScript/bootstrap.min.js && cp Resources/Private/Assets/JavaScript/*.js Resources/Public/Assets/JavaScript/",
+    "watch:js": "npx onchange 'Resources/Private/Assets/JavaScript/**/*.js' -- cp Resources/Private/Assets/JavaScript/ Resources/Public/Assets/JavaScript/",
+
+    "build:all": "npm run build:css && npm run build:js",
+    "build": "npm run build:all",
+    "watch": "npm run build:all && concurrently \"npm run watch:css\" \"npm run watch:js\""
+  },
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "onchange": "^7.1.0",
+    "sass": "^1.74.1",
+    "style-dictionary": "^3.9.0"
+  }
+}
