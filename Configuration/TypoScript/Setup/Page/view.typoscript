@@ -38,25 +38,13 @@ page {
         }
     }
 
-    includeCSSLibs {
-
-    }
-
     includeCSS {
-    }
-
-    includeJSLibs {
-
-    }
-
-    includeJS {
-
-    }
-
-    includeJSFooterlibs {
-
+        main =  EXT:cozy_backend/Resources/Public/Assets/Css/main.css
+        main.inline = 1
     }
 
     includeJSFooter {
+        bootrap = EXT:cozy_backend/Resources/Public/Assets/JavaScript/bootstrap.min.js
+        custom = EXT:cozy_backend/Resources/Public/Assets/JavaScript/custom.js
     }
 }
