@@ -1,0 +1,59 @@
+{
+  "color": {
+    "primary": {
+      "value": "#0070f3",
+      "type": "color",
+      "description": "Die Hauptfarbe für Call-to-Actions und aktive Elemente."
+    },
+    "text": {
+      "default": {
+        "value": "#1f2937",
+        "type": "color",
+        "description": "Die Standardfarbe für Haupttexte."
+      },
+      "secondary": {
+        "value": "#6b7280",
+        "type": "color",
+        "description": "Die Farbe für sekundäre oder dezente Texte."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Hintergrundfarbe der gesamten Seite."
+      }
+    }
+  },
+  "spacing": {
+    "xs": {
+      "value": "4px",
+      "type": "spacing",
+      "description": "Extra kleiner Abstand."
+    },
+    "sm": {
+      "value": "8px",
+      "type": "spacing",
+      "description": "Kleiner Abstand, basierend auf 8px Grid."
+    },
+    "md": {
+      "value": "16px",
+      "type": "spacing",
+      "description": "Mittlerer Abstand."
+    }
+  },
+  "fontSize": {
+    "body": {
+      "value": "16px",
+      "type": "fontSize",
+      "description": "Standard-Schriftgröße für Fließtext."
+    },
+    "heading": {
+      "lg": {
+        "value": "32px",
+        "type": "fontSize",
+        "description": "Große Schriftgröße für Hauptüberschriften (H1)."
+      }
+    }
+  }
+}

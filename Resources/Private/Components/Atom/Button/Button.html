@@ -1,0 +1,7 @@
+<f:argument name="color" type="string" optional="{true}" default="brand" />
+<f:argument name="text" type="string" optional="{true}" default="brand" />
+
+<button class="btn btn-primary" style="background-color:{designTokens.color.brand.primary.value}">
+    {text}
+    <f:slot />
+</button>

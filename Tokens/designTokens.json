@@ -1,0 +1,28 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "value": "#4A90E2",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "#50E3C2",
+        "type": "color"
+      }
+    }
+  },
+  "spacing": {
+    "unit": {
+      "value": "8px",
+      "type": "spacing"
+    },
+    "md": {
+      "value": "{spacing.unit.value} * 2",
+      "type": "spacing"
+    },
+    "lg": {
+      "value": "{spacing.unit.value} * 4",
+      "type": "spacing"
+    }
+  }
+}

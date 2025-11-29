@@ -8,7 +8,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') || die();
 
-call_user_func(static function ($extensionKey, $table): void {
+call_user_func(static function ($table, $extensionKey): void {
 
     $GLOBALS['TCA'][$table]['columns']['CType']['config']['itemGroups']['cozyBackend'] =
         'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:cozy_backend.tt_content.group';
@@ -102,4 +102,4 @@ call_user_func(static function ($extensionKey, $table): void {
             ],
         ],
     ];
-}, 'cozy_backend', 'tt_content');
+}, 'tt_content', 'cozy_backend' );
