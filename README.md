@@ -98,6 +98,13 @@ Demonstrates small backend UI enhancements using TYPO3’s own tools:
 
 ---
 
+
+### 7. Fluid Components 
+
+- Component Example 
+---
+
+
 ## Installation
 
 ```
