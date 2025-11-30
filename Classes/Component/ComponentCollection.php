@@ -30,4 +30,8 @@ class ComponentCollection extends AbstractComponentCollection
         ];
     }
 
+    protected function additionalArgumentsAllowed(string $viewHelperName): bool
+    {
+        return true;
+    }
 }
