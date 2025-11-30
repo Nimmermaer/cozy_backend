@@ -6,7 +6,7 @@
   "scripts": {
     "build:tokens": "node config.js",
     "build:css": "npm run build:tokens && sass --quiet-deps --update --style=compressed Resources/Private/Assets/Scss/main.scss:Resources/Public/Assets/Css/main.css",
-    "watch:css": "npm run build:tokens && sass --quiet-deps --watch Resources/Private/Assets/Scss:Resources/Public/Assets/Css/main.css --no-poll",
+    "watch:css": "npm run build:tokens && sass --quiet-deps --watch Resources/Private/Assets/Scss/main.scss:Resources/Public/Assets/Css/main.css --no-poll",
     "build:js": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js Resources/Public/Assets/JavaScript/bootstrap.min.js && cp Resources/Private/Assets/JavaScript/*.js Resources/Public/Assets/JavaScript/",
     "watch:js": "npx onchange 'Resources/Private/Assets/JavaScript/**/*.js' -- cp Resources/Private/Assets/JavaScript/ Resources/Public/Assets/JavaScript/",
     "build:all": "npm run build:css && npm run build:js",

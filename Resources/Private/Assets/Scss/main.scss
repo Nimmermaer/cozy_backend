@@ -1,11 +1,10 @@
-@use "../../../../node_modules/bootstrap/scss/bootstrap";
+@use "../../../../node_modules/bootstrap/scss/bootstrap.scss" as *;
 
 @use "tokens" as *;
 
-.typo3-backend-app {
-  // Alle Variablen ($color-brand-primary und $body-color) sind verfügbar.
+body {
   background-color: $color-brand-primary;
   padding: $spacing-lg;
 
-  color: red;
+  color: $color-brand-secondary;
 }
