@@ -20,7 +20,7 @@ site\.webmanifest {
                 "description": "{site:webmanifest_description}",
                 "icons":[|],
                 "lang": "{siteLanguage:hreflang}",
-                "dir":"auto"
+                "dir":"auto",
                 "theme_color":"{$pages.browser.color}",
                 "background_color":"{$pages.browser.color}",
                 "display":"standalone",

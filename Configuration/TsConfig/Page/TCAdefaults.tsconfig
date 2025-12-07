@@ -1,13 +1,13 @@
 TCAdefaults {
-  tt_content {
-    header = {$tt_content.default.header}
-    layout = {$tt_content.default.layout}
-    bodytext = Bitte Text einfügen
-  }
+    tt_content {
+        header = {$tt_content.default.header}
+        layout = {$tt_content.default.layout}
+        bodytext = Bitte Text einfügen
+    }
 
-  pages {
-    abstract = {$pages.default.abstract}
-    keywords = typo3, cozy, backend
-    author = Its me
-  }
+    pages {
+        abstract = {$pages.default.abstract}
+        keywords = typo3, cozy, backend
+        author = Its me
+    }
 }

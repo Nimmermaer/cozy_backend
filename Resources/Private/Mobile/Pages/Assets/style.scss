@@ -1,0 +1,21 @@
+@import "../node_modules/@picocss/pico/scss/pico";
+
+// Hier kannst du eigene Variablen überschreiben
+$primary: #007bff; // Ändert die primäre Farbe
+
+// Hier kommt dein Custom CSS
+body {
+  background-color: var(--background-color);
+}
+
+#app-content {
+  min-height: 80vh;
+  padding-top: 2rem;
+}
+
+.news-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}

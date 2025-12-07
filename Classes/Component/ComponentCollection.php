@@ -10,6 +10,7 @@ use TYPO3Fluid\Fluid\View\TemplatePaths;
 class ComponentCollection extends AbstractComponentCollection
 {
     private Site|null $site = null;
+
     public function getTemplatePaths(): TemplatePaths
     {
 
@@ -21,9 +22,11 @@ class ComponentCollection extends AbstractComponentCollection
         ]);
         return $templatePaths;
     }
+
     public function getAdditionalVariables(string $viewHelperName): array
     {
-        $designTokens ??= json_decode(file_get_contents( ExtensionManagementUtility::extPath('cozy_backend',$this->site->getSettings()->get('designTokens'))), true);
+        $designTokens ??= json_decode(file_get_contents(ExtensionManagementUtility::extPath('cozy_backend',
+            $this->site->getSettings()->get('designTokens'))), true);
 
         return [
             'designTokens' => $designTokens,

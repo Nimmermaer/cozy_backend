@@ -1,44 +1,45 @@
 mod {
-  web_layout {
-    BackendLayouts {
-      sidebar {
-        title = Sidebar
-        icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo.png
-        config {
-          backend_layout {
-            colCount = 2
-            rowCount = 2
-            rows {
-              1 {
-                columns {
-                  1 {
-                    name = Header
-                    colspan = 6
-                    colPos = 1
-                    identifier = header
-                  }
-                }
-              }
-              2 {
-                columns {
-                  1 {
-                    name = Sidebar
-                    colPos = 99
-                    colspan = 1
-                  }
+    web_layout {
+        BackendLayouts {
+            sidebar {
+                title = Sidebar
+                icon = EXT:cozy_backend/Resources/Public/Backend/Images/logo.png
+                config {
+                    backend_layout {
+                        colCount = 2
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Header
+                                        colspan = 6
+                                        colPos = 1
+                                        identifier = header
+                                    }
+                                }
+                            }
 
-                  2 {
-                    name = Main
-                    colPos = 0
-                    colspan = 5
-                    identifier = main
-                  }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Sidebar
+                                        colPos = 99
+                                        colspan = 1
+                                    }
+
+                                    2 {
+                                        name = Main
+                                        colPos = 0
+                                        colspan = 5
+                                        identifier = main
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }

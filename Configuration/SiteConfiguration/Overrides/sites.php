@@ -3,7 +3,7 @@
 $GLOBALS['SiteConfiguration']['site']['columns']['webmanifest_description'] = [
     'label' => 'Manifest description',
     'config' => [
-        'type' => 'text',
+        'type' => 'input',
     ],
 ];
 

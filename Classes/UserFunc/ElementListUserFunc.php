@@ -20,10 +20,10 @@ final class ElementListUserFunc extends UserFuncHelper
         private readonly ViewFactoryInterface $viewFactory,
         private readonly ConnectionPool $connectionPool,
         private readonly Context $context
-    )
-    {
+    ) {
         parent::__construct($this->viewFactory);
     }
+
     /**
      * @throws AspectNotFoundException
      * @throws AspectPropertyNotFoundException

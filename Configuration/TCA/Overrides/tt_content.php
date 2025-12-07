@@ -23,8 +23,8 @@ call_user_func(static function ($table, $extensionKey): void {
             'tt_content',
             'CType',
             [
-                'label' =>  'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType,
-                'description' =>  'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType . '.description',
+                'label' => 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType,
+                'description' => 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $contentType . '.description',
                 'value' => $contentType,
                 'group' => 'cozyBackend',
                 'icon' => $iconIdentifier,
@@ -46,12 +46,13 @@ call_user_func(static function ($table, $extensionKey): void {
                 $pluginType,
                 $iconIdentifier,
                 'cozyBackend',
-                'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType .'.description',
+                'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType . '.description',
             ),
             ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
             $extensionKey
         );
-        ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;Configuration,pi_flexform,', $pluginType, 'after:subheader');
+        ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;Configuration,pi_flexform,', $pluginType,
+            'after:subheader');
         ExtensionManagementUtility::addPiFlexFormValue(
             '*',
             'FILE:EXT:cozy_backend/Configuration/FlexForms/' . $pluginType . '.xml',
@@ -102,4 +103,4 @@ call_user_func(static function ($table, $extensionKey): void {
             ],
         ],
     ];
-}, 'tt_content', 'cozy_backend' );
+}, 'tt_content', 'cozy_backend');

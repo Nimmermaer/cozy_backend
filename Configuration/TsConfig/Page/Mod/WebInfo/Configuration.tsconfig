@@ -1,14 +1,15 @@
 mod {
-  web_info {
-    fieldDefinitions {
-      1677159475 {
-        label = Custom Fields
-        fields = title, author, author_email
-      }
-      1763910501719 {
-        label = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:field.definition.1763910501719
-        fields = title,uid,###ALL_TABLES###
-      }
+    web_info {
+        fieldDefinitions {
+            1677159475 {
+                label = Custom Fields
+                fields = title, author, author_email
+            }
+
+            1763910501719 {
+                label = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:field.definition.1763910501719
+                fields = title,uid,###ALL_TABLES###
+            }
+        }
     }
-  }
 }

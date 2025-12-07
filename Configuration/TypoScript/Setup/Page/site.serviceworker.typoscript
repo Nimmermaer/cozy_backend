@@ -1,0 +1,14 @@
+site\.serviceworker = PAGE
+site\.serviceworker {
+    typeNum = 176510299
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: text/javascript
+        admPanel = 0
+        debug = 0
+    }
+    10 = FLUIDTEMPLATE
+    10 {
+        file = EXT:cozy_backend/Resources/Public/Assets/Mobile/service-worker.js
+    }
+}

@@ -1,16 +1,16 @@
 <html
-        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
         data-namespace-typo3-fluid="true"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
 <ul>
-    <f:for each="{mainnavigation}" as="mainnavigationItem">
+    <f:for as="mainnavigationItem" each="{mainnavigation}">
         <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
             <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
                 {mainnavigationItem.title}
             </a>
             <f:if condition="{mainnavigationItem.children}">
                 <ul>
-                    <f:for each="{mainnavigationItem.children}" as="child">
+                    <f:for as="child" each="{mainnavigationItem.children}">
                         <li class="{f:if(condition: child.active, then:'active')}">
                             <a href="{child.link}" target="{child.target}" title="{child.title}">
                                 {child.title}
@@ -22,5 +22,5 @@
         </li>
     </f:for>
 </ul>
-<f:render section="Main" />
+<f:render section="Main"/>
 </html>

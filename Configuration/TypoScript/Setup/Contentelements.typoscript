@@ -1,22 +1,23 @@
 tt_content {
-  tx_cozybackend_doubletext < .text
-  tx_cozybackend_doubletext {
-    templateName = DoubleText
-  }
-
-  tx_cozybackend_slider < .image
-  tx_cozybackend_slider {
-    templateName = Slider
-  }
-
-  // Plugin Configuration
-  cozy_backend_list =< lib.contentElement
-  cozy_backend_list {
-    20 = USER
-    20 {
-      userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
-      templateName = ListElements
+    tx_cozybackend_doubletext < .text
+    tx_cozybackend_doubletext {
+        templateName = DoubleText
     }
-    templateName = Generic
-  }
+
+    tx_cozybackend_slider < .image
+    tx_cozybackend_slider {
+        templateName = Slider
+    }
+
+    // Plugin Configuration
+    cozy_backend_list =< lib.contentElement
+    cozy_backend_list {
+        20 = USER
+        20 {
+            userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
+            templateName = ListElements
+        }
+
+        templateName = Generic
+    }
 }

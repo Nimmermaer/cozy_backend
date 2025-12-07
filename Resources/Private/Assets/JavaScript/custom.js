@@ -1,3 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('cozy_backend: JavaScript geladen und bereit!');
+
+    let deferredPrompt;
+    const installButton = document.getElementById('installButton');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+
+        e.preventDefault();
+        deferredPrompt = e;
+        installButton.hidden = false;
+        console.log('beforeinstallprompt wurde ausgelöst und gespeichert.');
+    });
+
+    installButton.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            installButton.hidden = true;
+            deferredPrompt.prompt();
+            const {outcome} = await deferredPrompt.userChoice;
+            console.log(`Benutzerantwort: ${outcome}`);
+            deferredPrompt = null;
+        }
+    });
 });
+

@@ -3,5 +3,5 @@
 #
 CREATE TABLE tt_content
 (
-	alternative_bodytext text,
+    alternative_bodytext text,
 );

@@ -1,28 +1,28 @@
 mod {
-  wizards {
-    newContentElement {
-      wizardItems {
-        cozyBackend {
-          header = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:newContentElement.header.cozybackend
-          before = menu
-          after = default
-          elements {
-            text_left_image_right {
-              iconIdentifier = content-beside-text-img-right
-              title = Text links Bild rechts
-              description = Text und Bild vordefiniert
-              tt_content_defValues {
-                CType = textpic
-                layout = 2
-                imageorient = 6
-                header_layout = 3
-                header_position = center
-              }
-            }
+    wizards {
+        newContentElement {
+            wizardItems {
+                cozyBackend {
+                    header = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:newContentElement.header.cozybackend
+                    before = menu
+                    after = default
+                    elements {
+                        text_left_image_right {
+                            iconIdentifier = content-beside-text-img-right
+                            title = Text links Bild rechts
+                            description = Text und Bild vordefiniert
+                            tt_content_defValues {
+                                CType = textpic
+                                layout = 2
+                                imageorient = 6
+                                header_layout = 3
+                                header_position = center
+                            }
+                        }
 
-              cozy_backend_list {
-              tt_content_defValues {
-                pi_flexform (
+                        cozy_backend_list {
+                            tt_content_defValues {
+                                pi_flexform (
                 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
                   <T3FlexForms>
                       <data>
@@ -35,14 +35,14 @@ mod {
                           </sheet>
                       </data>
                   </T3FlexForms>
-                )
-              }
-            }
-          }
+                                )
+                            }
+                        }
+                    }
 
-          show := addToList(tx_cozybackend_slider, text_left_image_right, plugin_element)
+                    show := addToList(tx_cozybackend_slider, text_left_image_right, plugin_element)
+                }
+            }
         }
-      }
     }
-  }
 }

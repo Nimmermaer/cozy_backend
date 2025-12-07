@@ -2,8 +2,11 @@
 
 declare(strict_types=1);
 
+use Mblunck\CozyBackend\Hooks\Datahandler;
 use Mblunck\CozyBackend\Component\ComponentCollection;
+use Mblunck\CozyBackend\Controller\JsonNewsController;
 use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') || die();
 
@@ -18,8 +21,8 @@ call_user_func(
                 'EXT:cozy_backend/Resources/Public/Backend/Css/Live/';
         }
 
-// Backend Login Customization
-//  system/additional.php
+        // Backend Login Customization
+        //  system/additional.php
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend'] = [
             'backendFavicon' => 'EXT:cozy_backend/Resources/Public/Backend/Images/favicon.ico',
             'backendLogo' => 'EXT:cozy_backend/Resources/Public/Backend/Images/icon.png',
@@ -34,6 +37,18 @@ call_user_func(
             ComponentCollection::class
         ];
 
+        ExtensionUtility::configurePlugin(
+            $extensionKey,
+            'jsonNewsList',
+            [
+                JsonNewsController::class => 'list, show',
+            ],
+            [],
+            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+        );
+
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
+            Datahandler::class;
     },
     'cozy_backend'
 );

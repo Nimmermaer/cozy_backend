@@ -17,3 +17,11 @@ services:
 
   Mblunck\CozyBackend\UserFunc\ElementListUserFunc:
     public: true
+
+  Mblunck\CozyBackend\Hooks\Datahandler:
+    public: true
+
+  Mblunck\CozyBackend\DataProcessing\VapidPublicKeyDataProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'cozy-backend/vapid-public-key'

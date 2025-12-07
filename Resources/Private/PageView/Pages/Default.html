@@ -1,15 +1,15 @@
 <html
-        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-        xmlns:cozybackend="http://typo3.org/ns/Mblunck\CozyBackend\Component\ComponentCollection"
         data-namespace-typo3-fluid="true"
+        xmlns:cozybackend="http://typo3.org/ns/Mblunck\CozyBackend\Component\ComponentCollection"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
 
-<f:layout name="Default" />
+<f:layout name="Default"/>
 <f:section name="Main">
     <cozybackend:atom.button text="my text">
         Button label
     </cozybackend:atom.button>
-    <cozybackend:atom.button.close />
+    <cozybackend:atom.button.close/>
     <cozybackend:atom.heading tag="5">
         <f:fragment name="heading">
             Titel
@@ -36,15 +36,17 @@
             <p>My first paragraph</p>
             <p>My second paragraph</p>
         </f:fragment>
-        <f:fragment name="link"><f:uri.external uri="google.de" /></f:fragment>
+        <f:fragment name="link">
+            <f:uri.external uri="google.de"/>
+        </f:fragment>
         <f:fragment name="linktext">
-            <f:uri.external uri="google.de" />
+            <f:uri.external uri="google.de"/>
         </f:fragment>
     </cozybackend:atom.card>
 
     <div class="row">
         <div class="col-lg">
-            <f:render partial="Content" arguments="{records: content.main.records}"/>
+            <f:render arguments="{records: content.main.records}" partial="Content"/>
         </div>
     </div>
 

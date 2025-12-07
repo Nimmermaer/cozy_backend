@@ -1,22 +1,23 @@
 {
-	"name": "mblunck/cozy-backend",
-	"description": "Accompanying extension for the TYPO3 housekeeping presentation",
-	"type": "typo3-cms-extension",
-	"license": [
-		"GPL-2.0-or-later"
-	],
-	"version": "1.0.0",
-	"require": {
-		"typo3/cms-core": "^13.4"
-	},
-	"autoload": {
-		"psr-4": {
-			"Mblunck\\CozyBackend\\": "Classes/"
-		}
-	},
-	"extra": {
-		"typo3/cms": {
-			"extension-key": "cozy_backend"
-		}
-	}
+  "name": "mblunck/cozy-backend",
+  "description": "Accompanying extension for the TYPO3 housekeeping presentation",
+  "type": "typo3-cms-extension",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "version": "1.0.0",
+  "require": {
+    "typo3/cms-core": "^13.4",
+    "minishlink/web-push": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mblunck\\CozyBackend\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "cozy_backend"
+    }
+  }
 }

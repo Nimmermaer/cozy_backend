@@ -10,3 +10,5 @@ routeEnhancers:
       sitemap.xml: 1533906435
       site.webmanifest: 3478304621
       site.mobile: 176505346
+      news.mobile: 176510296
+      service-worker.js: 176510299

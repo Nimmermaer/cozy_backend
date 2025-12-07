@@ -9,7 +9,7 @@
 @import 'EXT:cozy_backend/Configuration/TsConfig/Page/Mod/Recycler/Configuration.tsconfig'
 
 templates {
-  typo3/cms-backend {
-    100 = mblunck/cozy-backend:Resources/Private/TemplateOverrides/
-  }
+    typo3/cms-backend {
+        100 = mblunck/cozy-backend:Resources/Private/TemplateOverrides/
+    }
 }

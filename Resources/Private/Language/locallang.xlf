@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-25T21:59:16Z"
-		  product-name="cozy-backend">
-		<header/>
-		<body>
-			<trans-unit id="tt_content.subheader.altlabel">
-				<source>Alternativer Untertitel</source>
-			</trans-unit>
-			<trans-unit id="tt_content.subheader.bodytext.altlabel">
-				<source>Alternativer Untertitel für Bodytext</source>
-			</trans-unit>
-			<trans-unit id="tt_content.layout.option.1">
-				<source>Das ist eine ganz neue Option</source>
-			</trans-unit>
-			<trans-unit id="tt_content.alternative_bodytext.label">
-				<source>Zweiter Text</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_cozybackend_doubletext">
-				<source>Element mit zwei Textblöcken</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_cozybackend_doubletext.description">
-				<source>Element mit zwei Textblöcken</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_cozybackend_slider">
-				<source>Slider</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_cozybackend_slider.description">
-				<source>Image Slider</source>
-			</trans-unit>
-			<trans-unit id="newContentElement.header.cozybackend">
-				<source>Cozy Backend</source>
-			</trans-unit>
-			<trans-unit id="tt_content.cozy_backend_list.description">
-				<source>gibt alle gepflegten Elemente aus</source>
-			</trans-unit>
-			<trans-unit id="tt_content.cozy_backend_list">
-				<source>Element Liste</source>
-			</trans-unit>
-			<trans-unit id="cozy_backend.tt_content.group">
-				<source>Cozy Backend Elements</source>
-			</trans-unit>
-			<trans-unit id="field.definition.1763910501719">
-				<source>Field Definition</source>
-			</trans-unit>
-		</body>
-	</file>
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-02-25T21:59:16Z"
+          product-name="cozy-backend">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.subheader.altlabel">
+                <source>Alternativer Untertitel</source>
+            </trans-unit>
+            <trans-unit id="tt_content.subheader.bodytext.altlabel">
+                <source>Alternativer Untertitel für Bodytext</source>
+            </trans-unit>
+            <trans-unit id="tt_content.layout.option.1">
+                <source>Das ist eine ganz neue Option</source>
+            </trans-unit>
+            <trans-unit id="tt_content.alternative_bodytext.label">
+                <source>Zweiter Text</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_cozybackend_doubletext">
+                <source>Element mit zwei Textblöcken</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_cozybackend_doubletext.description">
+                <source>Element mit zwei Textblöcken</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_cozybackend_slider">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_cozybackend_slider.description">
+                <source>Image Slider</source>
+            </trans-unit>
+            <trans-unit id="newContentElement.header.cozybackend">
+                <source>Cozy Backend</source>
+            </trans-unit>
+            <trans-unit id="tt_content.cozy_backend_list.description">
+                <source>gibt alle gepflegten Elemente aus</source>
+            </trans-unit>
+            <trans-unit id="tt_content.cozy_backend_list">
+                <source>Element Liste</source>
+            </trans-unit>
+            <trans-unit id="cozy_backend.tt_content.group">
+                <source>Cozy Backend Elements</source>
+            </trans-unit>
+            <trans-unit id="field.definition.1763910501719">
+                <source>Field Definition</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

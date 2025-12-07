@@ -1,0 +1,6 @@
+# cat=Login/vapid/public/key; type=string; label=Logo: vapid public key
+vapidPublicKey =
+# cat=Login/vapid/private/key; type=string; label=Logo: vapid private key
+vapidPrivateKey =
+# cat=Login/vapid/email; type=string; label=Logo: E-Mail
+subject =
