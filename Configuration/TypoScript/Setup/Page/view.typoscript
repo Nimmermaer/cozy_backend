@@ -12,17 +12,20 @@ page {
             0 = EXT:cozy_backend/Resources/Private/PageView/
             1 = {$page.pageview.paths}
         }
+
         dataProcessing {
             10 = files
             10 {
                 references.fieldName = media
             }
+
             20 = menu
             20 {
                 levels = 2
                 includeSpacer = 1
                 as = mainnavigation
             }
+
             30 = page-content
         }
     }
@@ -39,12 +42,31 @@ page {
     }
 
     includeCSS {
-        main =  EXT:cozy_backend/Resources/Public/Assets/Css/main.css
-        main.inline = 1
+        main = EXT:cozy_backend/Resources/Public/Assets/Css/main.css
     }
 
     includeJSFooter {
         bootrap = EXT:cozy_backend/Resources/Public/Assets/JavaScript/bootstrap.min.js
         custom = EXT:cozy_backend/Resources/Public/Assets/JavaScript/custom.js
+    }
+
+    headerData {
+        1765049981229 = TEXT
+        1765049981229 {
+            value (
+<link rel="apple-touch-icon" sizes="180x180" href="{path:EXT:cozy_backend/Resources/Public/Icons/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="32x32" href="{path:EXT:cozy_backend/Resources/Public/Icons/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="194x194" href="{path:EXT:cozy_backend/Resources/Public/Icons/favicon-194x194.png}">
+<link rel="icon" type="image/png" sizes="192x192" href="{path:EXT:cozy_backend/Resources/Public/Icons/android-chrome-192x192.png}">
+<link rel="icon" type="image/png" sizes="16x16" href="{path:EXT:cozy_backend/Resources/Public/Icons/favicon-16x16.png}">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="{path:EXT:cozy_backend/Resources/Public/Icons/safari-pinned-tab.svg" color="#5bbad5}">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="{$pages.browser.color}">
+<meta name="msapplication-TileImage" content="{path:EXT:cozy_backend/Resources/Public/Icons/mstile-144x144.png}">
+<meta name="theme-color" content="{$pages.browser.color}">
+            )
+            insertData = 1
+        }
     }
 }
