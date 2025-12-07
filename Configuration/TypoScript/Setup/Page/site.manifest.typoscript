@@ -1,0 +1,56 @@
+site\.webmanifest = PAGE
+site\.webmanifest {
+    typeNum = 3478304621
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-type:application/json
+        admPanel = 0
+        debug = 0
+    }
+
+    10 = COA
+    10 {
+        stdWrap.wrap = {|}
+
+        10 = TEXT
+        10 {
+            dataWrap (
+                "name":"{siteLanguage:websiteTitle // site:websiteTitle}",
+                "short_name":"{siteLanguage:websiteTitle // site:websiteTitle}",
+                "description": "{site:webmanifest_description}",
+                "icons":[|],
+                "lang": "{siteLanguage:hreflang}",
+                "dir":"auto"
+                "theme_color":"{$pages.browser.color}",
+                "background_color":"{$pages.browser.color}",
+                "display":"standalone",
+                "start_url": "/site.mobile"
+            )
+
+            # Insert available icon sizes here
+            value = 36x36, 48x48, 72x72, 96x96, 144x144, 192x192, 256x256, 384x384, 512x512
+            split {
+                token = ,
+                wrap = {|},|*|{|},|*|{|}
+                cObjNum = 1
+                1.cObject = COA
+                1.cObject {
+                    10 = TEXT
+                    10 {
+                        current = 1
+                        trim = 1
+                        dataWrap = "src":"{path:EXT:cozy_backend/Resources/Public/Icons/android-chrome-|.png}",
+                        insertData = 1
+                    }
+
+                    20 = TEXT
+                    20 {
+                        current = 1
+                        trim = 1
+                        wrap = "sizes":"|","type":"image/png"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,6 @@
 @import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Page/config.typoscript'
 @import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Page/view.typoscript'
+@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Page/site.manifest.typoscript'
+@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Page/site.mobile.typoscript'
 @import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Contentelements.typoscript'
 @import 'EXT:cozy_backend/Configuration/TypoScript/Setup/CaseElement.typoscript'

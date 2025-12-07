@@ -43,3 +43,8 @@ settings:
     category: CozyBackend.defaults.pages
     type: string
     default: 'Hier kommt ein Abstrakt'
+  pages.browser.color:
+    label: 'Browser color for mobile'
+    category: CozyBackend.defaults.pages
+    type: color
+    default: '#FF8700'

@@ -1,0 +1,12 @@
+websiteTitle: 'Cozy Backend'
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: /
+    index: ''
+    map:
+      /: 0
+      feed.rss: 9818
+      sitemap.xml: 1533906435
+      site.webmanifest: 3478304621
+      site.mobile: 176505346
