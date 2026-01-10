@@ -1,0 +1,9 @@
+@import './TsConfig/Page/*'
+@import './TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
+@import './TsConfig/Page/Mod/Wizard/NewContentElementWizard.tsconfig'
+@import './TsConfig/Page/Mod/WebList/Configuration.tsconfig'
+@import './TsConfig/Page/Mod/WebInfo/Configuration.tsconfig'
+@import './TsConfig/Page/Mod/WebInfo/Configuration.tsconfig'
+@import './TsConfig/Page/Mod/Recycler/Configuration.tsconfig'
+
+

@@ -1,0 +1,7 @@
+mod.SHARED.colPos_list = 0,1,2,3,
+
+@import './BackendLayouts/Default.tsconfig'
+
+[1 in backend.user.userGroupIds]
+  @import './BackendLayouts/Sidebar.tsconfig'
+[END]

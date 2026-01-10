@@ -1,0 +1,2 @@
+@import './NewContentElementWizard/Common.tsconfig'
+@import './NewContentElementWizard/CozyBackend.tsconfig'
