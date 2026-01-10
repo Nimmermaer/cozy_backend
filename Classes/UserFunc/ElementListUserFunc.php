@@ -13,6 +13,7 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use \TYPO3\CMS\Core\Attribute\AsAllowedCallable;
 
 final class ElementListUserFunc extends UserFuncHelper
 {
@@ -29,6 +30,7 @@ final class ElementListUserFunc extends UserFuncHelper
      * @throws AspectPropertyNotFoundException
      * @throws Exception
      */
+    #[AsAllowedCallable]
     public function listElements(string $content, array $conf, ServerRequestInterface $request): string
     {
         /** @var ContentObjectRenderer $currentContentObject */

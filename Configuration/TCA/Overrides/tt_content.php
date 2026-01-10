@@ -48,8 +48,7 @@ call_user_func(static function ($table, $extensionKey): void {
                 'cozyBackend',
                 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType . '.description',
             ),
-            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
-            $extensionKey
+            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
         );
         ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;Configuration,pi_flexform,', $pluginType,
             'after:subheader');
@@ -81,15 +80,15 @@ call_user_func(static function ($table, $extensionKey): void {
     $GLOBALS['TCA']['tt_content']['types']['tx_cozybackend_slider'] = $GLOBALS['TCA']['tt_content']['types']['image'];
 
     $GLOBALS['TCA']['tt_content']['types']['tx_cozybackend_doubletext'] = [
-        'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, --palette--;;general, --palette--;;headers,
-         bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
+        'showitem' => '--div--;core.form.tabs:general, --palette--;;general, --palette--;;headers,
+         bodytext,
          alternative_bodytext,
          --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,--palette--;;frames, --palette--;;appearanceLinks,
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, --palette--;;language,
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, --palette--;;hidden, --palette--;;access,
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories, categories,
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes, rowDescription,
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+         --div--;core.form.tabs:language, --palette--;;language,
+         --div--;core.form.tabs:access, --palette--;;hidden, --palette--;;access,
+         --div--;core.form.tabs:categories, categories,
+         --div--;core.form.tabs:notes, rowDescription,
+         --div--;core.form.tabs:extended,',
         'columnsOverrides' => [
             'alternative_bodytext' => [
                 'config' => [
