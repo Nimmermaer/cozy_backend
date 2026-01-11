@@ -39,6 +39,7 @@ call_user_func(
             [
                 JsonNewsController::class => 'list, show',
             ],
+            [],
             pluginType: ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
         );
 

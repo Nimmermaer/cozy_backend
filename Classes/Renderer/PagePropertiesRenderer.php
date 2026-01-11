@@ -47,7 +47,7 @@ class PagePropertiesRenderer
         }
         $view->assignMultiple([
             'page' => $page,
-            'returnUrl' => $request->getAttribute('normalizedParams')->getRequestUri(),
+            'returnUrl' => $request->getAttribute('normalizedParams')->getRequestUrl(),
         ]);
         return $view->render('Backend/PageProperties');
     }

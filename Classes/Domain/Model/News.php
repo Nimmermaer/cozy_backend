@@ -20,6 +20,7 @@ class News extends AbstractEntity
 
     public function getId(): int
     {
+        // @extensionScannerIgnoreLine
         return $this->id;
     }
 
@@ -41,6 +42,7 @@ class News extends AbstractEntity
 
     public function getContent(): string
     {
+        // @extensionScannerIgnoreLine
         return $this->content;
     }
 

@@ -48,18 +48,13 @@ call_user_func(static function ($table, $extensionKey): void {
                 'cozyBackend',
                 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType . '.description',
             ),
-            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+            'FILE:EXT:cozy_backend/Configuration/FlexForms/' . $pluginType . '.xml',
         );
         ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',
             '--div--;Configuration,pi_flexform,',
             $pluginType,
             'after:subheader'
-        );
-        ExtensionManagementUtility::addPiFlexFormValue(
-            '*',
-            'FILE:EXT:cozy_backend/Configuration/FlexForms/' . $pluginType . '.xml',
-            $pluginType
         );
     }
 

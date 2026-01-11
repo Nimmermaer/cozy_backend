@@ -36,6 +36,8 @@ final class ElementListUserFunc extends UserFuncHelper
     public function listElements(string $content, array $conf, ServerRequestInterface $request): string
     {
         $cObj = $request->getAttribute('currentContentObject');
+
+        // @extensionScannerIgnoreLine
         $record = $this->recordFactory->createResolvedRecordFromDatabaseRow('tt_content', $cObj->data);
 
         $settings = $record->get('pi_flexform')->get('settings');
