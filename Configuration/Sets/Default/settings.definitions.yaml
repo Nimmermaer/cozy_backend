@@ -59,21 +59,25 @@ settings:
     default: '#FF8700'
   page.webmanifest.name:
     type: string
-    default: 'TYPO3 Sitepackage'
+    default: 'Cozy Backend'
     category: CozyBackend.webmanifest
   page.webmanifest.short_name:
     type: string
-    default: 'Sitepackage'
+    default: 'CozyB'
     category: CozyBackend.webmanifest
   page.webmanifest.icons.sizes:
     type: stringlist
     default:
+      - 48x48
+      - 72x72
+      - 144x144
       - 192x192
+      - 384x384
       - 512x512
     category: CozyBackend.webmanifest
   page.webmanifest.icons.file.prefix:
     type: string
-    default: 'web-app-manifest-'
+    default: 'android-chrome-'
     category: CozyBackend.webmanifest
   page.webmanifest.icons.file.type:
     type: string
