@@ -32,6 +32,7 @@ call_user_func(
             'loginLogoAlt' => 'Cozy Backend logo',
         ];
 
+
         ExtensionUtility::configurePlugin(
             $extensionKey,
             'jsonNewsList',
