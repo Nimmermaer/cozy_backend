@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-use Mblunck\CozyBackend\Hooks\Datahandler;
-use Mblunck\CozyBackend\Component\ComponentCollection;
 use Mblunck\CozyBackend\Controller\JsonNewsController;
+use Mblunck\CozyBackend\Hooks\Datahandler;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
@@ -33,18 +32,13 @@ call_user_func(
             'loginLogoAlt' => 'Cozy Backend logo',
         ];
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['cozybackend'] = [
-            ComponentCollection::class
-        ];
-
         ExtensionUtility::configurePlugin(
             $extensionKey,
             'jsonNewsList',
             [
                 JsonNewsController::class => 'list, show',
             ],
-            [],
-            ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+            pluginType: ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
         );
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =

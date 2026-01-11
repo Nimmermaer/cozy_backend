@@ -8,40 +8,52 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
+
 namespace Mblunck\CozyBackend\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 final class Subscription extends AbstractEntity
 {
     protected string $auth;
+
     protected string $authToken;
+
     protected string $contentEncoding;
+
     protected string $endpoint;
+
     protected string $publicKey;
 
     protected string $p256dh;
+
     public function getAuth(): string
     {
         return $this->auth;
     }
+
     public function setAuth(string $auth): self
     {
         $this->auth = $auth;
         return $this;
     }
+
     public function getEndpoint(): string
     {
         return $this->endpoint;
     }
+
     public function setEndpoint(string $endpoint): self
     {
         $this->endpoint = $endpoint;
         return $this;
     }
+
     public function getP256dh(): string
     {
         return $this->p256dh;
     }
+
     public function setP256dh(string $p256dh): self
     {
         $this->p256dh = $p256dh;
@@ -80,6 +92,4 @@ final class Subscription extends AbstractEntity
         $this->publicKey = $publicKey;
         return $this;
     }
-
-
 }

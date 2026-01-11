@@ -1,16 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mblunck\CozyBackend\Controller;
 
 use Mblunck\CozyBackend\Domain\Repository\NewsRepository;
 use Mblunck\CozyBackend\Event\JsonNewsEvent;
-use Mblunck\CozyBackend\Interface\SinglePageApplicationNewsInterface;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class JsonNewsController extends ActionController
 {
-
     public function __construct(
         protected NewsRepository $newsRepository,
     ) {
@@ -20,7 +20,6 @@ class JsonNewsController extends ActionController
     {
         $news = $this->newsRepository->findAll();
         $json = [];
-        /** @var SinglePageApplicationNewsInterface $newsItem */
         foreach ($news as $newsItem) {
             $json[] = $newsItem->getArray();
         }

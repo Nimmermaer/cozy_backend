@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mblunck\CozyBackend\Domain\Repository;
 
 use Mblunck\CozyBackend\Domain\Model\News;

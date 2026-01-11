@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Mblunck\CozyBackend\Domain\Model\News;
 
 return [
@@ -25,6 +24,5 @@ return [
                 'fieldName' => 'crdate',
             ],
         ],
-
     ],
 ];

@@ -1,16 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mblunck\CozyBackend\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class News extends AbstractEntity
 {
-
     protected int $id = 0;
+
     protected string $title = '';
+
     protected string $content = '';
+
     protected int $date = 0;
+
     protected string $teaser = '';
 
     public function getId(): int
@@ -48,5 +53,4 @@ class News extends AbstractEntity
     {
         return $this->teaser;
     }
-
 }

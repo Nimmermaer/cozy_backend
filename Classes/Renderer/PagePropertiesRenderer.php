@@ -29,7 +29,7 @@ class PagePropertiesRenderer
     {
         $view = $this->backendViewFactory->create($request, ['mblunck/cozy-backend']);
         $queryParams = $request->getQueryParams();
-        $page = $this->pageRepository->getPage((int)$queryParams['id']);
+        $page = $this->pageRepository->getPage((int) $queryParams['id']);
 
         if (array_key_exists('language', $queryParams) && $queryParams['language'] > 0) {
             $page = $this->pageRepository->getPageOverlay(

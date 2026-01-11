@@ -18,6 +18,9 @@ services:
   Mblunck\CozyBackend\UserFunc\ElementListUserFunc:
     public: true
 
+  Mblunck\CozyBackend\Processors\SortingItemsProcessor:
+    public: true
+
   Mblunck\CozyBackend\Hooks\Datahandler:
     public: true
 

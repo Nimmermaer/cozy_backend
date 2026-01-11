@@ -15,16 +15,11 @@
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
-                            <items type="array">
-                                <numIndex index="0" type="array">
-                                    <numIndex index="0">Erstellungsdatum</numIndex>
-                                    <numIndex index="1">crdate</numIndex>
+                            <itemsProcessors>
+                                <numIndex index="100">
+                                    <class>Mblunck\CozyBackend\Processors\SortingItemsProcessor</class>
                                 </numIndex>
-                                <numIndex index="1" type="array">
-                                    <numIndex index="0">Titel</numIndex>
-                                    <numIndex index="1">header</numIndex>
-                                </numIndex>
-                            </items>
+                            </itemsProcessors>
                         </config>
                     </settings.sorting>
                     <settings.singlePid>

@@ -10,7 +10,7 @@ use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 final readonly class PageModulePreviewEventListener
 {
     public function __construct(
-        protected PagePropertiesRenderer $pageRenderer
+        private PagePropertiesRenderer $pageRenderer
     ) {
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Mblunck\CozyBackend\Middleware\PushNotificationMiddleware;
 
 return [
@@ -7,11 +9,11 @@ return [
         'middleware-identifier' => [
             'target' => PushNotificationMiddleware::class,
             'before' => [
-                'typo3/cms-redirects/redirecthandler'
+                'typo3/cms-redirects/redirecthandler',
             ],
             'after' => [
-                'typo3/cms-frontend/authentication'
-            ]
+                'typo3/cms-frontend/authentication',
+            ],
         ],
     ],
 ];

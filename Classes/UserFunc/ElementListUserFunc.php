@@ -6,21 +6,23 @@ namespace Mblunck\CozyBackend\UserFunc;
 
 use Doctrine\DBAL\Exception;
 use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Core\Attribute\AsAllowedCallable;
+use TYPO3\CMS\Core\Collection\LazyRecordCollection;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Context\Exception\AspectNotFoundException;
 use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Domain\RecordFactory;
 use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use \TYPO3\CMS\Core\Attribute\AsAllowedCallable;
 
 final class ElementListUserFunc extends UserFuncHelper
 {
     public function __construct(
         private readonly ViewFactoryInterface $viewFactory,
         private readonly ConnectionPool $connectionPool,
-        private readonly Context $context
+        private readonly Context $context,
+        private readonly RecordFactory $recordFactory,
     ) {
         parent::__construct($this->viewFactory);
     }
@@ -33,12 +35,17 @@ final class ElementListUserFunc extends UserFuncHelper
     #[AsAllowedCallable]
     public function listElements(string $content, array $conf, ServerRequestInterface $request): string
     {
-        /** @var ContentObjectRenderer $currentContentObject */
-        $currentContentObject = $request->getAttribute('currentContentObject');
+        $cObj = $request->getAttribute('currentContentObject');
+        $record = $this->recordFactory->createResolvedRecordFromDatabaseRow('tt_content', $cObj->data);
+
+        $settings = $record->get('pi_flexform')->get('settings');
+
         $view = $this->getView($request);
-        $settings = $this->getSettings($currentContentObject->data['pi_flexform']);
-        $view->assign('data', $currentContentObject->data);
-        $view->assign('elements', $this->getElements($settings));
+        $view->assignMultiple([
+            'data' => $record,
+            'elements' => $this->getElements($settings),
+        ]);
+
         return $view->render($conf['templateName']);
     }
 
@@ -49,6 +56,7 @@ final class ElementListUserFunc extends UserFuncHelper
      */
     private function getElements(array $settings = []): array
     {
+
         $connectionPool = $this->connectionPool->getConnectionForTable('tt_content');
         $identifiers = [
             'deleted' => 0,
@@ -61,9 +69,11 @@ final class ElementListUserFunc extends UserFuncHelper
                 'sys_language_uid' => $languageAspect->get('id'),
             ];
         }
-        if (array_key_exists('singlePid', $settings) && $settings['singlePid'] > 0) {
+        /** @var LazyRecordCollection $lazyRecord */
+        $lazyRecord = $settings['singlePid'];
+        if (array_key_exists('singlePid', $settings) && (string) $lazyRecord > 0) {
             $identifiers += [
-                'pid' => $settings['singlePid'],
+                'pid' => (string) $lazyRecord,
             ];
         }
 

@@ -40,7 +40,7 @@ call_user_func(static function ($table, $extensionKey): void {
     ];
     foreach ($plugins as $pluginType => $iconIdentifier) {
         ExtensionManagementUtility::addPlugin(
-            new SelectItem (
+            new SelectItem(
                 '',
                 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.' . $pluginType,
                 $pluginType,
@@ -50,15 +50,18 @@ call_user_func(static function ($table, $extensionKey): void {
             ),
             ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
         );
-        ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;Configuration,pi_flexform,', $pluginType,
-            'after:subheader');
+        ExtensionManagementUtility::addToAllTCAtypes(
+            'tt_content',
+            '--div--;Configuration,pi_flexform,',
+            $pluginType,
+            'after:subheader'
+        );
         ExtensionManagementUtility::addPiFlexFormValue(
             '*',
             'FILE:EXT:cozy_backend/Configuration/FlexForms/' . $pluginType . '.xml',
             $pluginType
         );
     }
-
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'alternative_bodytext' => [

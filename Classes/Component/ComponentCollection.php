@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mblunck\CozyBackend\Component;
 
 use TYPO3\CMS\Core\Site\Entity\Site;
@@ -9,6 +11,8 @@ use TYPO3Fluid\Fluid\View\TemplatePaths;
 
 class ComponentCollection extends AbstractComponentCollection
 {
+    private ?array $designTokens = null;
+
     private Site|null $site = null;
 
     public function getTemplatePaths(): TemplatePaths
@@ -25,11 +29,10 @@ class ComponentCollection extends AbstractComponentCollection
 
     public function getAdditionalVariables(string $viewHelperName): array
     {
-        $designTokens ??= json_decode(file_get_contents(ExtensionManagementUtility::extPath('cozy_backend',
-            $this->site->getSettings()->get('designTokens'))), true);
+        $this->designTokens ??= json_decode(file_get_contents(ExtensionManagementUtility::extPath('cozy_backend', $this->site->getSettings()->get('designTokens'))), true);
 
         return [
-            'designTokens' => $designTokens,
+            'designTokens' => $this->designTokens,
         ];
     }
 
