@@ -9,6 +9,6 @@ site\.serviceworker {
     }
     10 = FLUIDTEMPLATE
     10 {
-        file = EXT:cozy_backend/Resources/Public/Assets/Mobile/service-worker.js
+        file = EXT:cozy_backend/Resources/Public/Assets/Mobile/sw.js
     }
 }

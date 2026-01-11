@@ -1,29 +1,23 @@
 {
-  "name": "cozy_backend",
-  "version": "1.0.0",
-  "description": "Frontend assets for cozy_backend TYPO3 extension, including Design Tokens.",
-  "main": "index.js",
-  "scripts": {
-    "build:tokens": "node config.js",
-    "build:css": "npm run build:tokens && sass --quiet-deps --update --style=compressed Resources/Private/Assets/Scss/:Resources/Public/Assets/Css/",
-    "watch:css": "npm run build:tokens && sass --quiet-deps --watch Resources/Private/Assets/Scss/:Resources/Public/Assets/Css/ --no-poll",
-    "build:js": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js Resources/Public/Assets/JavaScript/bootstrap.min.js && cp Resources/Private/Assets/JavaScript/*.js Resources/Public/Assets/JavaScript/",
-    "build:mobile:js": "cp node_modules/materialize-css/dist/js/materialize.min.js Resources/Public/Assets/JavaScript/materialize.min.js && cp Resources/Private/Assets/JavaScript/Mobile/*.js Resources/Public/Assets/JavaScript/mobile.custom.js",
-    "watch:js": "npx onchange 'Resources/Private/Assets/JavaScript/**/*.js' -- cp Resources/Private/Assets/JavaScript/ Resources/Public/Assets/JavaScript/",
-    "build:all": "npm run build:css && npm run build:js && npm run build:mobile:js",
-    "build": "npm run build:all",
-    "watch": "npm run build:all && concurrently \"npm run watch:css\" \"npm run watch:js\""
-  },
-  "author": "",
-  "license": "GPL-2.0-or-later",
-  "devDependencies": {
-    "bootstrap": "^5.3.8",
-    "concurrently": "^8.2.2",
-    "onchange": "^7.1.0",
-    "sass": "^1.74.1",
-    "style-dictionary": "^3.9.0"
-  },
-  "dependencies": {
-    "materialize-css": "^1.0.0-rc.2"
-  }
+	"name": "cozy_all_in_one",
+	"version": "1.0.0",
+	"scripts": {
+		"tokens": "node config.js",
+		"build": "npm run tokens && vite build",
+		"watch": "npm run tokens && vite build --watch",
+		"dev": "vite"
+	},
+	"devDependencies": {
+		"vite": "^7.3.1",
+		"sass": "^1.94.2",
+		"typescript": "^5.9.3",
+		"style-dictionary": "^3.9.0",
+		"concurrently": "^8.2.2"
+	},
+	"dependencies": {
+		"@picocss/pico": "^2.1.1",
+		"bootstrap": "^5.3.8",
+		"htmx.org": "^2.0.8",
+		"materialize-css": "^1.0.0-rc.2"
+	}
 }

@@ -21,7 +21,9 @@ site\.mobile {
             #app-content { min-height: 80vh; }
         )
     }
-
+    includeCSS {
+      main = EXT:cozy_backend/Resources/Public/Assets/Mobile/Css/mobile-bundle.css
+    }
     includeJSFooter >
     includeJSFooterlibs {
         custom = EXT:cozy_backend/Resources/Public/Assets/Mobile/bundle.js

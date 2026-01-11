@@ -2,9 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let deferredPrompt;
     const installButton = document.getElementById('installButton');
-
+    if(!installButton) {
+        return;
+    }
     window.addEventListener('beforeinstallprompt', (e) => {
-
         e.preventDefault();
         deferredPrompt = e;
         installButton.hidden = false;
@@ -20,5 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             deferredPrompt = null;
         }
     });
+
 });
 

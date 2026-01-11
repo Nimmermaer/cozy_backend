@@ -1,8 +1,6 @@
 // src/service-worker.ts
 const sw = self as unknown as ServiceWorkerGlobalScope;
- // console.log('Service Worker geladen und aktiv.');
 
-// Event-Listener, um die Push-Nachricht zu empfangen
 sw.addEventListener('push', (event: any) => {
     // Daten aus der Push-Nachricht extrahieren
     const data = event.data ? event.data.json() : {
