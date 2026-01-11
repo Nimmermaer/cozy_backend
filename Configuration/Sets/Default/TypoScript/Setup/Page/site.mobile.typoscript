@@ -1,4 +1,4 @@
-site\.mobile < page
+site\.mobile = PAGE
 site\.mobile {
     typeNum = 176505346
     10 = PAGEVIEW
