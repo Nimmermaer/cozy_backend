@@ -13,6 +13,8 @@ use TYPO3\CMS\Core\Context\Exception\AspectNotFoundException;
 use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Domain\RecordFactory;
+use TYPO3\CMS\Core\Pagination\ArrayPaginator;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
@@ -41,11 +43,13 @@ final class ElementListUserFunc extends UserFuncHelper
         $record = $this->recordFactory->createResolvedRecordFromDatabaseRow('tt_content', $cObj->data);
 
         $settings = $record->get('pi_flexform')->get('settings');
-
+        $currentPageNumber = 1;
+        $paginator = new ArrayPaginator($this->getElements($settings), $currentPageNumber, 3);
+        $pagination = new SimplePagination($paginator);
         $view = $this->getView($request);
         $view->assignMultiple([
             'data' => $record,
-            'elements' => $this->getElements($settings),
+            'paginator' => $pagination,
         ]);
 
         return $view->render($conf['templateName']);
@@ -89,8 +93,7 @@ final class ElementListUserFunc extends UserFuncHelper
             ['*'],
             'tt_content',
             $identifiers,
-            ['CType'],
-            $sorting,
+            orderBy: $sorting,
         )->fetchAllAssociative();
     }
 }
