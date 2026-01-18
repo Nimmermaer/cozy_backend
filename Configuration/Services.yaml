@@ -28,3 +28,7 @@ services:
     tags:
       - name: 'data.processor'
         identifier: 'cozy-backend/vapid-public-key'
+  Mblunck\CozyBackend\EventListener\TrackingInterceptor:
+    tags:
+      - name: event.listener
+        event: TYPO3\CMS\Extbase\Event\Mvc\BeforeActionCallEvent

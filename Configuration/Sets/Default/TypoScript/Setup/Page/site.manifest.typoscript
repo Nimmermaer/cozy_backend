@@ -1,20 +1,21 @@
 site\.webmanifest = PAGE
 site\.webmanifest {
-    typeNum = 3478304621
-    config {
-        disableAllHeaderCode = 1
-        additionalHeaders.10.header = Content-type:application/json
-        admPanel = 0
-        debug = 0
+  typeNum = 3478304621
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders.10.header = Content-type:application/json
+    admPanel = 0
+    debug = 0
+  }
+
+  10 = FLUIDTEMPLATE
+  10 {
+    file = EXT:cozy_backend/Resources/Private/PageView/Pages/WebManifest.html
+    dataProcessing {
+      10 = site
+      10 {
+        as = site
+      }
     }
-    10 = FLUIDTEMPLATE
-    10 {
-        file = EXT:cozy_backend/Resources/Private/PageView/Pages/WebManifest.html
-        dataProcessing {
-            10 = site
-            10 {
-                as = site
-            }
-        }
-    }
+  }
 }

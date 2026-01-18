@@ -8,11 +8,12 @@
 		"dev": "vite"
 	},
 	"devDependencies": {
-		"vite": "^7.3.1",
+		"concurrently": "^8.2.2",
 		"sass": "^1.94.2",
-		"typescript": "^5.9.3",
 		"style-dictionary": "^3.9.0",
-		"concurrently": "^8.2.2"
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1",
+		"vite-plugin-pwa": "^1.2.0"
 	},
 	"dependencies": {
 		"@picocss/pico": "^2.1.1",

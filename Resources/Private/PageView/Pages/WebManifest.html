@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:alias map="{lb: '{', rb: '}', webmanifest:site.settings.page.webmanifest}">
     <f:variable name="imageMimeType">
         <f:switch expression="{webmanifest.icons.file.type}">
@@ -12,13 +12,16 @@
     {lb}
     "name": "{webmanifest.name}",
     "short_name": "{webmanifest.short_name}",
+    "start_url": "/site.mobile",
+    "scope": "/site.mobile"
     "icons": [
-    <f:for each="{webmanifest.icons.sizes}" as="size" iteration="iterator">
+    <f:for as="size" each="{webmanifest.icons.sizes}" iteration="iterator">
         {lb}
         "src": "/{webmanifest.icons.file.prefix}{size}.{webmanifest.icons.file.type}",
         "sizes": "{size}",
         "type": "image/{imageMimeType -> f:format.trim()}",
-        "purpose": "{webmanifest.icons.file.purpose}"
+        "purpose": "{webmanifest.icons.file.purpose}",
+        "form_factor": "narrow"
         {rb}
         <f:if condition="!({iterator.isLast})">,</f:if>
     </f:for>

@@ -19,6 +19,9 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
+        'typeicon_classes' => [
+            'default' => 'content-messages',
+        ],
     ],
     'types' => [
         [

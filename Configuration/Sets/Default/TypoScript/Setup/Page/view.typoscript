@@ -3,59 +3,59 @@
 ##############
 page = PAGE
 page {
-    typeNum = 0
-    shortcutIcon = EXT:cozy_backend/Resources/Public/Icons/favicon.ico
+  typeNum = 0
+  shortcutIcon = EXT:cozy_backend/Resources/Public/Icons/favicon.ico
 
-    10 = PAGEVIEW
-    10 {
-        paths {
-            0 = EXT:cozy_backend/Resources/Private/PageView/
-            1 = {$page.pageview.paths}
-        }
-
-        dataProcessing {
-            10 = files
-            10 {
-                references.fieldName = media
-            }
-
-            20 = menu
-            20 {
-                levels = 2
-                includeSpacer = 1
-                as = mainnavigation
-            }
-
-            30 = page-content
-        }
+  10 = PAGEVIEW
+  10 {
+    paths {
+      0 = EXT:cozy_backend/Resources/Private/PageView/
+      1 = {$page.pageview.paths}
     }
 
-    meta {
-        viewport = {$page.meta.viewport}
-        robots = {$page.meta.robots}
-        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+    dataProcessing {
+      10 = files
+      10 {
+        references.fieldName = media
+      }
 
-        X-UA-Compatible = {$page.meta.compatible}
-        X-UA-Compatible {
-            attribute = http-equiv
-        }
+      20 = menu
+      20 {
+        levels = 2
+        includeSpacer = 1
+        as = mainnavigation
+      }
+
+      30 = page-content
     }
+  }
 
-    includeCSS {
-        main = EXT:cozy_backend/Resources/Public/Assets/Css/main.css
+  meta {
+    viewport = {$page.meta.viewport}
+    robots = {$page.meta.robots}
+    apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+
+    X-UA-Compatible = {$page.meta.compatible}
+    X-UA-Compatible {
+      attribute = http-equiv
     }
+  }
 
-    includeJSFooter {
-        main = EXT:cozy_backend/Resources/Public/Assets/JavaScript/main.js
-        main {
-            type = module
-        }
+  includeCSS {
+    main = EXT:cozy_backend/Resources/Public/Assets/Css/main.css
+  }
+
+  includeJSFooter {
+    main = EXT:cozy_backend/Resources/Public/Assets/JavaScript/main.js
+    main {
+      type = module
     }
+  }
 
-    headerData {
-        1765049981229 = TEXT
-        1765049981229 {
-            value (
+  headerData {
+    1765049981229 = TEXT
+    1765049981229 {
+      value (
               <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
               <link rel="icon" type="image/png" sizes="16x16" href="/android-chrome-16x16.png">
               <link rel="icon" type="image/png" sizes="32x32" href="/android-chrome-32x32.png">
@@ -68,8 +68,22 @@ page {
               <meta name="theme-color" content="{$pages.browser.color}">
               <link rel="manifest" href="/site.webmanifest" />
               <script src="/service-worker.js"></script>
-            )
-            insertData = 1
-        }
+      )
+      insertData = 1
     }
+  }
 }
+[request && traverse(request.getQueryParams(), 'pdf') == 1]
+
+  page{
+    includeJSFooter.main.inline = 1
+    includeCSS.main.inline = 1
+  }
+  config {
+    forceAbsoluteUrls = 1
+    compressJs = 1
+    compressCss = 1
+    concatenateJs = 1
+    concatenateCss = 1
+  }
+[END]

@@ -5,4 +5,5 @@ import "../Scss/main.scss"
 
 import "bootstrap";
 import "./custom.js";
+
 window.htmx = htmx;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mblunck\CozyBackend\Hooks;
 
+use ErrorException;
 use Mblunck\CozyBackend\Domain\Repository\SubscriptionRepository;
 use Minishlink\WebPush\Subscription;
 use Minishlink\WebPush\WebPush;
@@ -16,11 +17,16 @@ readonly class Datahandler
     }
 
     /**
-     * @throws \ErrorException
+     * @throws ErrorException
      * @noinspection PhpUnused
      */
-    public function processDatamap_afterDatabaseOperations($status, $table, $id, $fieldArray, \TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler): void
-    {
+    public function processDatamap_afterDatabaseOperations(
+        $status,
+        $table,
+        $id,
+        $fieldArray,
+        \TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler
+    ): void {
         if ($table !== 'tt_content' && $status !== 'new') {
             return;
         }

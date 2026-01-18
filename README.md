@@ -5,9 +5,11 @@
 
 ## Overview
 
-**Cozy Backend** is a development-focused TYPO3 extension designed to demonstrate modern configuration techniques in
-TYPO3 v13.  
-It is not meant for production use. Instead, it provides a clean, isolated playground for developers to learn and
+**Cozy Backend** is a development-focused TYPO3 extension designed to
+demonstrate modern configuration techniques in
+TYPO3 v13.
+It is not meant for production use. Instead, it provides a clean, isolated
+playground for developers to learn and
 understand new TYPO3 backend customization options.
 
 Install it only as a development dependency:
@@ -45,7 +47,8 @@ Implemented using the **TYPO3 Backend API** directly in PHP.
 
 ### 3. New Site Configuration via SiteSets
 
-Shows how to structure global configuration using TYPO3 **SiteSets**, introduced in v13:
+Shows how to structure global configuration using TYPO3 **SiteSets**, introduced
+in v13:
 
 - Centralized setup
 - Reusable configuration
@@ -118,14 +121,16 @@ Once installed, TYPO3 automatically loads all configuration examples.
 
 ## Purpose
 
-This extension is **educational** and intended for developers who want to explore TYPO3’s capabilities in v13 — from
-backend UI styling to new configuration paradigms and lightweight content elements.
+This extension is **educational** and intended for developers who want to
+explore TYPO3’s capabilities in v14 — from
+backend UI styling to new configuration paradigms and lightweight content
+elements.
 
 ---
 
-## VAPID 
+## VAPID
 
-https://vapidkeys.com/ 
+https://vapidkeys.com/
 
 ## License
 

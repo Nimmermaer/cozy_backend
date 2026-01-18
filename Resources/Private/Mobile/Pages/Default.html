@@ -1,37 +1,37 @@
 <html
-        data-namespace-typo3-fluid="true"
-        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
 
 <f:layout name="Default"/>
 <f:section name="Main">
 
-  <header class="container">
-    <nav>
-      <ul>
-        <li><a class="secondary" data-route="/" href="#">🏠 News</a></li>
-        <li><a class="secondary" data-route="/saved" href="#">💾 Gemerkt (<span id="saved-count">0</span>)</a>
-        </li>
-        <li><a class="secondary" data-route="/imprint" href="#">ℹ️ Impressum</a></li>
-      </ul>
-    </nav>
-    <button id="subscribe-push" class="secondary" style="margin-top: 1rem;">
-      🔔 News-Benachrichtigungen abonnieren
-    </button>
-  </header>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a class="secondary" data-route="/" href="#">🏠 News</a></li>
+                <li><a class="secondary" data-route="/saved" href="#">💾 Gemerkt (<span id="saved-count">0</span>)</a>
+                </li>
+                <li><a class="secondary" data-route="/imprint" href="#">ℹ️ Impressum</a></li>
+            </ul>
+        </nav>
+        <button class="secondary" id="subscribe-push" style="margin-top: 1rem;">
+            🔔 News-Benachrichtigungen abonnieren
+        </button>
+    </header>
 
-  <main class="container">
-    <div id="app-content">
-      <article aria-live="polite" id="offline-status" style="display: none;">
-        <p><strong>⚠️ Leider offline</strong>, aber Ihre gemerkten News sind gespeichert und abrufbar.
-        </p>
-      </article>
-      <h1 id="page-title">Willkommen</h1>
-    </div>
-  </main>
+    <main class="container">
+        <div id="app-content">
+            <article aria-live="polite" id="offline-status" style="display: none;">
+                <p><strong>⚠️ Leider offline</strong>, aber Ihre gemerkten News sind gespeichert und abrufbar.
+                </p>
+            </article>
+            <h1 id="page-title">Willkommen</h1>
+        </div>
+    </main>
 
-  <footer class="container">
-    <small>SPA</small>
-  </footer>
+    <footer class="container">
+        <small>SPA</small>
+    </footer>
 </f:section>
 </html>

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mblunck\CozyBackend\Component;
 
+use Override;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3Fluid\Fluid\Core\Component\AbstractComponentCollection;
@@ -27,15 +28,20 @@ class ComponentCollection extends AbstractComponentCollection
         return $templatePaths;
     }
 
+    #[Override]
     public function getAdditionalVariables(string $viewHelperName): array
     {
-        $this->designTokens ??= json_decode(file_get_contents(ExtensionManagementUtility::extPath('cozy_backend', $this->site->getSettings()->get('designTokens'))), true);
+        $this->designTokens ??= json_decode(file_get_contents(ExtensionManagementUtility::extPath(
+            'cozy_backend',
+            $this->site->getSettings()->get('designTokens')
+        )), true);
 
         return [
             'designTokens' => $this->designTokens,
         ];
     }
 
+    #[Override]
     protected function additionalArgumentsAllowed(string $viewHelperName): bool
     {
         return true;

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Mblunck\CozyBackend\Controller\ExportPdfController;
 use Mblunck\CozyBackend\Controller\JsonNewsController;
 use Mblunck\CozyBackend\Hooks\Datahandler;
 use TYPO3\CMS\Core\Core\Environment;
@@ -32,7 +33,6 @@ call_user_func(
             'loginLogoAlt' => 'Cozy Backend logo',
         ];
 
-
         ExtensionUtility::configurePlugin(
             $extensionKey,
             'jsonNewsList',
@@ -40,11 +40,19 @@ call_user_func(
                 JsonNewsController::class => 'list, show',
             ],
             [],
-            pluginType: ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+        );
+        ExtensionUtility::configurePlugin(
+            $extensionKey,
+            'download',
+            [
+                ExportPdfController::class => 'download',
+            ],
+            [],
         );
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
             Datahandler::class;
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'pdf';
     },
     'cozy_backend'
 );

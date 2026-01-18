@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import { execSync } from 'child_process';
+import {defineConfig} from 'vite';
+import {resolve} from 'path';
+import {execSync} from 'child_process';
 
 console.log('Generating Design Tokens...');
-execSync('node config.js', { stdio: 'inherit' });
+execSync('node config.js', {stdio: 'inherit'});
 
 export default defineConfig({
   build: {

@@ -1,0 +1,18 @@
+download = PAGE
+download {
+  typeNum = 1768750779
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders {
+      10 {
+        header = Cache-Control: no-cache, no-store, must-revalidate
+      }
+      20 {
+        header = Content-Type: application/pdf
+      }
+    }
+    admPanel = 0
+    debug = 0
+  }
+  10 < tt_content.cozybackend_download.20
+}

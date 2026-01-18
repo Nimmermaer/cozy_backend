@@ -1,7 +1,19 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <ul>
-    <f:for as="element" each="{elements}">
+    <f:for as="element" each="{paginator.paginator.paginatedItems}">
         <li>{element.uid}: {element.header}</li>
+    </f:for>
+</ul>
+<ul class="pagination">
+    <f:for as="page" each="{paginator.allPageNumbers}">
+        <li class="page-item">
+
+            <button hx-get="/page_change" hx-put="/messages">
+                Put To Messages
+            </button>
+            {page}
+
+        </li>
     </f:for>
 </ul>
 </html>

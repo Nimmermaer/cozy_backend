@@ -10,61 +10,50 @@ routeEnhancers:
       sitemap.xml: 1533906435
       site.webmanifest: 3478304621
       site.mobile: 176505346
+      download.pdf: 1768750779
       news.mobile: 176510296
       service-worker.js: 176510299
+      page-change: 176510299
 dependencies:
   - mblunck/cozy-backend
 routes:
-  -
-    route: robots.txt
+  - route: robots.txt
     type: staticText
     content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
-  -
-    route: favicon.ico
+  - route: favicon.ico
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/favicon.ico'
-  -
-    route: android-chrome-16x16.png
+  - route: android-chrome-16x16.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/favicon-16x16.png'
-  -
-    route: android-chrome-32x32.png
+  - route: android-chrome-32x32.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-32x32.png'
-  -
-    route: android-chrome-36x36.png
+  - route: android-chrome-36x36.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-36x36.png'
-  -
-    route: android-chrome-48x48.png
+  - route: android-chrome-48x48.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-48x48.png'
-  -
-    route: apple-touch-icon.png
+  - route: apple-touch-icon.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-72x72.png'
-  -
-    route: android-chrome-72x72.png
+  - route: android-chrome-72x72.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-72x72.png'
-  -
-    route: android-chrome-144x144.png
+  - route: android-chrome-144x144.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-144x144.png'
-  -
-    route: android-chrome-192x192.png
+  - route: android-chrome-192x192.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-192x192.png'
-  -
-    route: android-chrome-256x256.png
+  - route: android-chrome-256x256.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-256x256.png'
-  -
-    route: android-chrome-384x384.png
+  - route: android-chrome-384x384.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-384x384.png'
-  -
-    route: android-chrome-512x512.png
+  - route: android-chrome-512x512.png
     type: asset
     asset: 'EXT:cozy_backend/Resources/Public/Icons/android-chrome-512x512.png'
 
