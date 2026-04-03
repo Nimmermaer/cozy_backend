@@ -6,9 +6,11 @@ namespace Mblunck\CozyBackend\Service;
 
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Site\Entity\SiteSettings;
 use TYPO3\CMS\Core\View\ViewFactoryData;
 use TYPO3\CMS\Core\View\ViewFactoryInterface;
+use TYPO3\CMS\Extbase\Mvc\Request;
 
 readonly class PdfViewService
 {
@@ -21,9 +23,8 @@ readonly class PdfViewService
      * @throws NotFoundExceptionInterface
      * @throws ContainerExceptionInterface
      */
-    public function renderTemplate(string $templateName, array $variables = []): string
+    public function renderTemplate(string $templateName, Request|ServerRequest $request, array $variables = []): string
     {
-        $request = $GLOBALS['TYPO3_REQUEST'];
         /** @var SiteSettings $settings */
         $settings = $request->getAttribute('site')->getSettings();
         $viewData = new ViewFactoryData(

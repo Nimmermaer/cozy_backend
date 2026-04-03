@@ -13,6 +13,7 @@ use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\CMS\Core\Http\Uri;
 use TYPO3\CMS\Core\Routing\RouterInterface;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -28,11 +29,8 @@ class ExportPdfController extends ActionController
     #[TrackExport(description: 'Nutzer hat ein PDF generiert')]
     public function downloadAction(): ResponseInterface
     {
-        /** @var Site $site */
-
-        /** @var RequestFactory $requestFactory */
-
         try {
+            /** @var Site $site */
             $site = $this->request->getAttribute('site');
             /** @var Uri $route */
             $route = $site->getRouter()->generateUri(
@@ -49,11 +47,11 @@ class ExportPdfController extends ActionController
             if (Environment::getContext()->isDevelopment()) {
                 $route = (string) $route
                         |> trim(...)
-                        |> (fn ($str) => str_replace($site->getBase()->getHost(), 'web', $str))
-                        |> (fn ($str) => str_replace('https://', 'http://', $str));
+                        |> (fn ($str): string|array => str_replace($site->getBase()->getHost(), 'web', $str))
+                        |> (fn ($str): string|array => str_replace('https://', 'http://', $str));
             }
 
-            $html = $this->viewService->renderTemplate('Export/Pdf', [
+            $html = $this->viewService->renderTemplate('Export/Pdf', $this->request, [
                 'data' => $content,
             ]);
 

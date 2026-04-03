@@ -2,9 +2,12 @@ site\.serviceworker = PAGE
 site\.serviceworker {
   typeNum = 176510299
   config {
-    additionalHeaders.20.header = Cache-Control: no-cache, no-store, must-revalidate
+    additionalHeaders {
+      20.header = Cache-Control: no-cache, no-store, must-revalidate
+      10.header = Content-Type: text/javascript
+    }
+
     disableAllHeaderCode = 1
-    additionalHeaders.10.header = Content-Type: text/javascript
     admPanel = 0
     debug = 0
   }

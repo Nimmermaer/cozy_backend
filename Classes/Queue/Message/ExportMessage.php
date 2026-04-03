@@ -6,7 +6,7 @@ namespace Mblunck\CozyBackend\Queue\Message;
 
 use DateTimeImmutable;
 
-class ExportMessage
+readonly class ExportMessage
 {
     public function __construct(
         public int $feUserId,

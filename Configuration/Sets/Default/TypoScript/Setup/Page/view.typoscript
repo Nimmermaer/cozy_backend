@@ -73,12 +73,13 @@ page {
     }
   }
 }
-[request && traverse(request.getQueryParams(), 'pdf') == 1]
 
-  page{
+[request && traverse(request.getQueryParams(), 'pdf') == 1]
+  page {
     includeJSFooter.main.inline = 1
     includeCSS.main.inline = 1
   }
+
   config {
     forceAbsoluteUrls = 1
     compressJs = 1

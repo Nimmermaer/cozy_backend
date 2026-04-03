@@ -7,12 +7,15 @@ download {
       10 {
         header = Cache-Control: no-cache, no-store, must-revalidate
       }
+
       20 {
         header = Content-Type: application/pdf
       }
     }
+
     admPanel = 0
     debug = 0
   }
+
   10 < tt_content.cozybackend_download.20
 }

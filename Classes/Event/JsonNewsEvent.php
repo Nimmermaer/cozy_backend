@@ -11,7 +11,7 @@ final class JsonNewsEvent
     ) {
     }
 
-    public function getNews(): ?array
+    public function getNews(): array
     {
         return $this->news;
     }

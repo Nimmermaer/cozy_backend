@@ -24,7 +24,7 @@ readonly class Datahandler
         $status,
         $table,
         $id,
-        $fieldArray,
+        array $fieldArray,
         \TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler
     ): void {
         if ($table !== 'tt_content' && $status !== 'new') {

@@ -19,7 +19,6 @@ class ComponentCollection extends AbstractComponentCollection
     public function getTemplatePaths(): TemplatePaths
     {
 
-        /** @var Site $site */
         $this->site = $GLOBALS['TYPO3_REQUEST']->getAttribute('site');
         $templatePaths = new TemplatePaths();
         $templatePaths->setTemplateRootPaths([
