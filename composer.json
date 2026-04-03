@@ -10,7 +10,12 @@
 		"php": "^8.5",
 		"typo3/cms-core": "*",
 		"minishlink/web-push": "*",
-		"chrome-php/chrome": "*"
+		"chrome-php/chrome": "*",
+		"praetorius/vite-asset-collector": "*"
+	},
+	"require-dev": {
+		"helmich/typo3-typoscript-lint": "dev-master",
+		"symfony/translation": "*"
 	},
 	"autoload": {
 		"psr-4": {

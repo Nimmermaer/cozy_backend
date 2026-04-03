@@ -11,13 +11,16 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Http\JsonResponse;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class PushNotificationMiddleware implements MiddlewareInterface
 {
+    public function __construct(
+        protected readonly SubscriptionRepository $subscriptionRepository
+    ) {
+    }
+
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-
         if (str_contains($request->getUri()->getPath(), '/api/push-subscribe')) {
             $requestBody = json_decode($request->getBody()->getContents(), true);
             $subscription = Subscription::create([
@@ -28,9 +31,7 @@ class PushNotificationMiddleware implements MiddlewareInterface
                 ],
             ]);
             if (! $this->isSubscriptionExist($subscription)) {
-                /** @var SubscriptionRepository $subscriptionRepository */
-                $subscriptionRepository = GeneralUtility::makeInstance(SubscriptionRepository::class);
-                $subscriptionRepository->saveSubscription($subscription);
+                $this->subscriptionRepository->saveSubscription($subscription);
                 return new JsonResponse([
                     'status' => 'success',
                 ], 201);
@@ -44,9 +45,7 @@ class PushNotificationMiddleware implements MiddlewareInterface
 
     private function isSubscriptionExist(Subscription $subscription): bool
     {
-        /** @var SubscriptionRepository $subscriptionRepository */
-        $subscriptionRepository = GeneralUtility::makeInstance(SubscriptionRepository::class);
-        $subscriptionItem = $subscriptionRepository->findOneBy([
+        $subscriptionItem = $this->subscriptionRepository->findOneBy([
             'auth' => $subscription->getAuthToken(),
         ]);
         return (bool) $subscriptionItem;
