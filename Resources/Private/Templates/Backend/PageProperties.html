@@ -1,89 +1,123 @@
 <html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      xmlns:cozybackend="http://typo3.org/ns/Mblunck/CozyBackend/ViewHelper"
       xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
 <f:if condition="{page}">
-    <div class="row ">
-        <div class="col-sm-6">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">General</h5>
-                    <p class="card-text">
-                        {page.title} <br>
-                        {page.nav_title} <br>
-                        {page.subtitle} <br>
+    <div class="row g-4 mb-4">
+
+        <div class="col-md-6">
+            <div class="card h-100 border-primary shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary">General</h5>
+                    <p class="card-text flex-grow-1">
+                        <strong>Title:</strong> {page.title}<br>
+                        <strong>Nav:</strong> {page.nav_title}<br>
+                        <strong>Subtitle:</strong> {page.subtitle}
                     </p>
-                    <be:link.editRecord class="btn btn-default btn-sm" fields="title,nav_title,subtitle"
-                                        returnUrl="{returnUrl}"
-                                        table="pages" uid="{page.uid}">
-                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
-                    </be:link.editRecord>
-                    <be:link.editRecord class="btn btn-default btn-sm" returnUrl="{returnUrl}" table="pages"
-                                        uid="{page.uid}">
-                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-page-open"/>
-                        Seiteneigenschaften
-                    </be:link.editRecord>
+                    <div class="mt-auto">
+                        <cozybackend:link.contextualEditRecord
+                            class="btn btn-outline-secondary btn-sm"
+                            fields="title,nav_title,subtitle"
+                            returnUrl="{returnUrl}"
+                            table="pages"
+                            uid="{page.uid}"
+                        >
+                            <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
+                        </cozybackend:link.contextualEditRecord>
+
+                        <cozybackend:link.contextualEditRecord
+                            class="btn btn-default btn-sm"
+                            table="pages"
+                            uid="{page.uid}"
+                        >
+                            <core:icon identifier="actions-open" />
+                            Seiteneigenschaften
+                        </cozybackend:link.contextualEditRecord>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Seo</h5>
-                    <p class="card-text">
-                        {page.seo_title} <br>
-                        {page.description} <br>
-                        {page.og_title} <br>
-                        {page.og_description} <br>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-primary shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary">SEO</h5>
+                    <p class="card-text flex-grow-1">
+                        {page.seo_title}<br>
+                        {page.description}<br>
+                        {page.og_title}<br>
+                        {page.og_description}
                     </p>
-                    <be:link.editRecord class="btn btn-default btn-sm"
-                                        fields="seo_title,description,og_title,og_description "
-                                        returnUrl="{returnUrl}"
-                                        table="pages" uid="{page.uid}">
-                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
-                    </be:link.editRecord>
+                    <div class="mt-auto">
+                        <cozybackend:link.contextualEditRecord
+                            class="btn btn-outline-secondary btn-sm"
+                            fields="seo_title,description,og_title,og_description"
+                            returnUrl="{returnUrl}"
+                            table="pages"
+                            uid="{page.uid}"
+                        >
+                            <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
+                        </cozybackend:link.contextualEditRecord>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card text-dark bg-info mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Images</h5>
-                    <p class="card-text">
+
+        <div class="col-md-6">
+            <div class="card h-100 border-info shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-info">Images</h5>
+                    <div class="card-text flex-grow-1 mb-3">
                         <f:if condition="{twitterImage}">
-                            <f:image image="{twitterImage.0}" width="50px"/>
+                            <f:image image="{twitterImage.0}" width="50" class="img-thumbnail me-1"/>
                         </f:if>
                         <f:if condition="{facebookImage}">
-                            <f:image image="{facebookImage.0}" width="50px"/>
+                            <f:image image="{facebookImage.0}" width="50" class="img-thumbnail me-1"/>
                         </f:if>
                         <f:if condition="{media}">
-                            <f:image image="{media.0}" width="50px"/>
+                            <f:image image="{media.0}" width="50" class="img-thumbnail me-1"/>
                         </f:if>
-                    </p>
-                    <be:link.editRecord class="btn btn-default btn-sm" fields="og_image,twitter_image,media"
-                                        returnUrl="{returnUrl}"
-                                        table="pages" uid="{page.uid}">
-                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
-                    </be:link.editRecord>
+                    </div>
+                    <div class="mt-auto">
+                        <cozybackend:link.contextualEditRecord
+                            class="btn btn-outline-info btn-sm"
+                            fields="og_image,twitter_image,media"
+                            returnUrl="{returnUrl}"
+                            table="pages"
+                            uid="{page.uid}"
+                        >
+                            <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
+                        </cozybackend:link.contextualEditRecord>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card text-dark bg-info mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Metadata</h5>
-                    <p class="card-text">
-                        {page.abstract} <br>
-                        {page.keywords} <br>
-                        {page.author} <br>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-info shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-info">Metadata</h5>
+                    <p class="card-text flex-grow-1">
+                        {page.abstract}<br>
+                        {page.keywords}<br>
+                        {page.author}
                     </p>
-                    <be:link.editRecord class="btn btn-default btn-sm" fields="abstract,keywords,author"
-                                        returnUrl="{returnUrl}"
-                                        table="pages" uid="{page.uid}">
-                        <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
-                    </be:link.editRecord>
+                    <div class="mt-auto">
+                        <cozybackend:link.contextualEditRecord
+                            class="btn btn-outline-info btn-sm"
+                            fields="abstract,keywords,author"
+                            returnUrl="{returnUrl}"
+                            table="pages"
+                            uid="{page.uid}"
+                        >
+                            <core:icon alternativeMarkupIdentifier="inline" identifier="actions-open"/>
+                        </cozybackend:link.contextualEditRecord>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </f:if>
 </html>

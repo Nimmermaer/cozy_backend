@@ -7,5 +7,6 @@ use Mblunck\CozyBackend\Component\ComponentCollection;
 return [
     'cozybackend' => [
         ComponentCollection::class,
+        'Mblunck\\CozyBackend\\ViewHelper',
     ],
 ];
