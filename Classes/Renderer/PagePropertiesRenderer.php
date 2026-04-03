@@ -30,7 +30,14 @@ class PagePropertiesRenderer
         $view = $this->backendViewFactory->create($request, ['mblunck/cozy-backend']);
         $queryParams = $request->getQueryParams();
         $page = $this->pageRepository->getPage((int) $queryParams['id']);
-
+        if (in_array((int) $page['doktype'], [
+            $this->pageRepository::DOKTYPE_SYSFOLDER,
+            $this->pageRepository::DOKTYPE_SPACER,
+            $this->pageRepository::DOKTYPE_MOUNTPOINT,
+            $this->pageRepository::DOKTYPE_SHORTCUT,
+        ], true)) {
+            return '';
+        }
         if (array_key_exists('language', $queryParams) && $queryParams['language'] > 0) {
             $page = $this->pageRepository->getPageOverlay(
                 $queryParams['id'],
