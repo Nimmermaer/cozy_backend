@@ -4,14 +4,21 @@ declare(strict_types=1);
 
 namespace Mblunck\CozyBackend\EventListener;
 
+use DateTimeImmutable;
 use Mblunck\CozyBackend\Attributes\TrackExport;
 use Mblunck\CozyBackend\Queue\Message\ExportMessage;
+use ReflectionAttribute;
 use ReflectionException;
 use ReflectionMethod;
 use Symfony\Component\Messenger\Exception\ExceptionInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 use TYPO3\CMS\Extbase\Event\Mvc\BeforeActionCallEvent;
 
+#[AsEventListener(
+    identifier: 'cozy-backend/tracking-interceptor',
+    event: BeforeActionCallEvent::class
+)]
 readonly class TrackingInterceptor
 {
     public function __construct(
@@ -30,7 +37,7 @@ readonly class TrackingInterceptor
 
         $reflection = new ReflectionMethod($controllerClassName, $actionName);
 
-        /** @var \ReflectionAttribute<TrackExport> */
+        /** @var ReflectionAttribute<TrackExport> */
         $attributes = $reflection->getAttributes(TrackExport::class);
         $request = $GLOBALS['TYPO3_REQUEST'];
 
@@ -45,8 +52,8 @@ readonly class TrackingInterceptor
                 $userId,
                 $referrer,
                 $description,
-                new \DateTimeImmutable(),
-                new \DateTimeImmutable(),
+                new DateTimeImmutable(),
+                new DateTimeImmutable(),
             ));
         }
     }

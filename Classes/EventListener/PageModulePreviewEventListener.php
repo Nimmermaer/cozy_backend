@@ -6,7 +6,12 @@ namespace Mblunck\CozyBackend\EventListener;
 
 use Mblunck\CozyBackend\Renderer\PagePropertiesRenderer;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 
+#[AsEventListener(
+    identifier: 'cozy-backend/page-module-preview',
+    event: ModifyPageLayoutContentEvent::class
+)]
 final readonly class PageModulePreviewEventListener
 {
     public function __construct(

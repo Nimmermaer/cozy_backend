@@ -7,11 +7,6 @@ services:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
-  Mblunck\CozyBackend\EventListener\PageModulePreviewEventListener:
-    tags:
-      - name: event.listener
-        identifier: 'page-properties-to-page-module'
-
   Mblunck\CozyBackend\UserFunc\AbstractUserFunc:
     public: true
 
@@ -28,7 +23,3 @@ services:
     tags:
       - name: 'data.processor'
         identifier: 'cozy-backend/vapid-public-key'
-  Mblunck\CozyBackend\EventListener\TrackingInterceptor:
-    tags:
-      - name: event.listener
-        event: TYPO3\CMS\Extbase\Event\Mvc\BeforeActionCallEvent
