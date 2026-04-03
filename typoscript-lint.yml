@@ -1,0 +1,29 @@
+paths:
+  - packages/cozy_backend/Configuration/Sets/Default/TsConfig/
+  - packages/cozy_backend/Configuration/Sets/Default/TypoScript/
+  - packages/cozy_backend/Configuration/Sets/Default/page.tsconfig
+  - packages/cozy_backend/Configuration/Sets/Default/setup.typoscript
+sniffs:
+  - class: Indentation
+    parameters:
+      useSpaces: true
+      indentPerLevel: 2
+      indentConditions: true
+  - class: DeadCode
+  - class: OperatorWhitespace
+  - class: RepeatingRValue
+    parameters:
+      allowedRightValues:
+        - "TYPO3\\CMS\\Frontend\\DataProcessing\\DatabaseQueryProcessor"
+        - "PAGEVIEW"
+        - "Cache-Control: no-cache, no-store, must-revalidate"
+        - "EXT:cozy_backend/Resources/Public/Backend/Images/logo.png"
+  - class: DuplicateAssignment
+  - class: EmptySection
+  - class: NestingConsistency
+    parameters:
+      commonPathPrefixThreshold: 1
+filePatterns:
+  - "*.typoscript"
+  - "*.tsconfig"
+
