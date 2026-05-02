@@ -43,6 +43,9 @@
       <trans-unit id="field.definition.1763910501719">
         <source>Field Definition</source>
       </trans-unit>
+      <trans-unit id="page_type.news">
+        <source>Custom Type</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
