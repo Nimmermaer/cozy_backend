@@ -1,10 +1,18 @@
 options {
   pageTree {
     showPageIdWithTitle = 1
-    backgroundColor {
-      2 = red
-      3 = #AFAFAF
-      4 = rgba(255,204,7,0.7)
+    label {
+      2 {
+        color = red
+        label = Warnung
+      }
+      6 {
+        color = #AFAFAF
+        label = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:label.pageTree
+      }
+      5 {
+        color = rgba(255,204,7,0.7)
+      }
     }
   }
 
