@@ -30,6 +30,9 @@
       <trans-unit id="settings.componentsPath">
         <source>Component Path</source>
       </trans-unit>
+      <trans-unit id="settings.backendPath">
+        <source>Backend Path</source>
+      </trans-unit>
       <trans-unit id="settings.designTokens">
         <source>Design Token Path</source>
       </trans-unit>

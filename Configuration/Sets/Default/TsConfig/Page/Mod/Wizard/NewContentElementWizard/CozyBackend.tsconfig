@@ -40,7 +40,7 @@ mod {
             }
           }
 
-          show := addToList(tx_cozybackend_slider, text_left_image_right, plugin_element)
+          show := addToList(cozybackend_slider, text_left_image_right, plugin_element)
         }
       }
     }

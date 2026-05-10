@@ -1,11 +1,11 @@
 tt_content {
-  tx_cozybackend_doubletext < .text
-  tx_cozybackend_doubletext {
+  cozybackend_doubletext < .text
+  cozybackend_doubletext {
     templateName = DoubleText
   }
 
-  tx_cozybackend_slider < .image
-  tx_cozybackend_slider {
+  cozybackend_slider < .image
+  cozybackend_slider {
     templateName = Slider
   }
 

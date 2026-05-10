@@ -17,7 +17,7 @@ mod {
                     colPos = 1
                     identifier = header
                     slideMode = slide
-                    allowedContentTypes = tx_cozybackend_slider
+                    allowedContentTypes = cozybackend_slider
                   }
                 }
               }
@@ -35,7 +35,7 @@ mod {
                     colPos = 0
                     colspan = 5
                     identifier = main
-                    disallowedContentTypes = tx_cozybackend_slider
+                    disallowedContentTypes = header
                   }
                 }
               }

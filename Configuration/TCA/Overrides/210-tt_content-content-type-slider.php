@@ -12,11 +12,11 @@ call_user_func(static function ($table, string $extensionKey): void {
     ExtensionManagementUtility::addRecordType(
         new SelectItem(
             'select',
-            label: 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider',
-            value: 'tx_cozybackend_slider',
+            label: 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:tt_content.cozybackend_slider',
+            value: 'cozybackend_slider',
             icon: 'content-carousel-image',
             group: 'cozyBackend',
-            description: 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_slider.description',
+            description: 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozybackend_slider.description',
         ),
         $GLOBALS['TCA'][$table]['types']['image']['showitem']
     );

@@ -1,4 +1,7 @@
 styles:
+  content:
+    image:
+      imageDecoding: 'async'
   templates:
     layoutRootPath: 'EXT:cozy_backend/Resources/Private/Layouts/'
     partialRootPath: 'EXT:cozy_backend/Resources/Private/Partials/'

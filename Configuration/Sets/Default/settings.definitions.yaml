@@ -18,6 +18,11 @@ settings:
     description: 'Paths für components'
     type: string
     default: 'Resources/Private/Components/'
+  backendPath:
+    category: CozyBackend.defaults.paths
+    description: 'Paths für Backend components'
+    type: string
+    default: 'mblunck/cozy-backend:Resources/Private/Backend/'
   designTokens:
     category: CozyBackend.defaults.paths
     description: 'Paths für designTokens'

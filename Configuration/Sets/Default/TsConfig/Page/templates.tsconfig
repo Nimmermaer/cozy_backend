@@ -1,8 +1,8 @@
 templates {
   typo3/cms-backend {
-    100 = mblunck/cozy-backend:Resources/Private/Backend/
+    100 = {$backendPath}
   }
   mblunck/cozy-backend {
-    100 = mblunck/cozy-backend:Resources/Private/Backend/
+    100 = {$backendPath}
   }
 }

@@ -1,5 +1,5 @@
 config {
-  forceAbsoluteUrls  = 1
+  forceAbsoluteUrls = 1
   no_cache = {$config.no_cache}
   linkVars = L
   doctype = html5

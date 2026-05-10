@@ -26,5 +26,8 @@
 		"typo3/cms": {
 			"extension-key": "cozy_backend"
 		}
+	},
+	"scripts": {
+		"lint:typoscript": "vendor/bin/typoscript-lint -c packages/cozy_backend/typoscript-lint.yml",
 	}
 }

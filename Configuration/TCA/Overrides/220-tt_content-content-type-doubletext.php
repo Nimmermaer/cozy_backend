@@ -12,11 +12,11 @@ call_user_func(static function ($table, string $extensionKey): void {
     ExtensionManagementUtility::addRecordType(
         new SelectItem(
             type: 'select',
-            label: 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_doubletext',
-            value: 'tx_cozybackend_doubletext',
+            label: 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:tt_content.cozybackend_doubletext',
+            value: 'cozybackend_doubletext',
             icon: 'content-text-columns',
             group: 'cozyBackend',
-            description: 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.tx_cozybackend_doubletext.description',
+            description: 'LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozybackend_doubletext.description',
         ),
         '--div--;core.form.tabs:general, --palette--;;general, --palette--;;headers,
          bodytext,

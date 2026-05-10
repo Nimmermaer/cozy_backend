@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en"
+        target-language="de"
+        datatype="plaintext"
+        original="labels"
+        date="2024-05-10T12:00:00Z"
+        product-name="cozy_backend">
     <header/>
     <body>
       <trans-unit id="label">
@@ -38,6 +43,10 @@
       <trans-unit id="settings.componentsPath">
         <source>Component Path</source>
         <target>Komponenten-Pfad</target>
+      </trans-unit>
+      <trans-unit id="settings.backendPath">
+        <source>Backend Path</source>
+        <target>Backend Path</target>
       </trans-unit>
       <trans-unit id="settings.designTokens">
         <source>Design Token Path</source>
