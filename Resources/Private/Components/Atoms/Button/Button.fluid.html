@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:argument name="text" type="string" optional="{true}" default="" />
+<f:argument name="variant" type="string" optional="{true}" default="primary" />
+<f:argument name="size" type="string" optional="{true}" default="md" />
+<f:argument name="type" type="string" optional="{true}" default="button" />
+
+<button type="{type}"
+        class="btn btn-{variant} btn-{size}"
+        style="background-color: {designTokens.color.brand.primary.value}; border-color: {designTokens.color.brand.primary.value};">
+
+    <f:if condition="{text}">
+        <f:then>{text}</f:then>
+        <f:else>
+            <f:slot />
+        </f:else>
+    </f:if>
+</button>
+
+</html>

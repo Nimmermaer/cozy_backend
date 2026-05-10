@@ -1,0 +1,19 @@
+<f:argument name="tag" type="string" default="2" />
+
+<div class="heading-wrapper mb-4">
+    <f:render section="badge" optional="true">
+        <span class="badge bg-secondary mb-2"><f:render section="badge" /></span>
+    </f:render>
+
+    <f:render section="tag" arguments="{tag: tag}">
+        <f:render section="heading" />
+    </f:render>
+</div>
+
+<f:section name="tag">
+    <f:switch expression="{tag}">
+        <f:case value="3"><h3><f:render section="heading" /></h3></f:case>
+        <f:case value="5"><h5><f:render section="heading" /></h5></f:case>
+        <f:defaultCase><h2><f:render section="heading" /></h2></f:defaultCase>
+    </f:switch>
+</f:section>

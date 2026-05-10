@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="Header">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span class="fs-4">Cozy Project</span>
+    </a>
+</f:section>
+
+<f:section name="Main">
+        <f:if condition="{content.header.records}">
+            <header class="content-header mb-5">
+                <f:render arguments="{records: content.header.records}" partial="Content"/>
+            </header>
+        </f:if>
+        <div class="row">
+            <div class="col-12">
+                <f:render arguments="{records: content.main.records}" partial="Content"/>
+            </div>
+        </div>
+</f:section>
+
+</html>

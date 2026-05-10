@@ -1,0 +1,9 @@
+<f:argument name="image" type="object" />
+<f:argument name="title" type="string" optional="true" />
+
+<li class="slide text-white text-center"
+    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({f:uri.image(image:image, width:'1440c')});">
+    <div class="slide-content p-5">
+        <h2 class="display-3 fw-bold">{title}</h2>
+    </div>
+</li>

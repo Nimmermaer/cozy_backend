@@ -1,10 +1,5 @@
 @use "bootstrap" as *;
 
 @use "tokens" as *;
-
-body {
-    background-color: $color-brand-primary;
-    padding: $spacing-lg;
-
-    color: $color-brand-secondary;
-}
+@use "textmedia" as *;
+@use "slider" as *;

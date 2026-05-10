@@ -1,0 +1,42 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cozybackend="http://typo3.org/ns/Cozy/Backend/Components/ComponentCollection"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <section class="text-media-custom py-5">
+        <div class="container-fluid p-0">
+            <div class="row g-0 align-items-stretch">
+
+                <div class="col-lg-6">
+                    <f:for as="image" each="{files}">
+                        <img alt="{image.title}" class="tm-img" src="{f:uri.image(image:image, width: '925c', height: '634c')}">
+                    </f:for>
+                </div>
+
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div class="p-4 p-md-5">
+                        <h2 class="display-5 fw-bold mb-4">{data.header}</h2>
+
+                        <div class="mb-4">
+                            <f:format.html>{data.bodytext}</f:format.html>
+                        </div>
+
+                        <f:if condition="{data.header_link}">
+                            <f:link.typolink parameter="{data.header_link}">
+                                <cozybackend:atoms.button
+                                    variant="primary"
+                                    size="md"
+                                    text="{data.subheader}"
+                                />
+                            </f:link.typolink>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</f:section>
+</html>

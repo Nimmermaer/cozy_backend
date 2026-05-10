@@ -1,0 +1,25 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cozybackend="http://typo3.org/ns/Cozy/Backend/Components/ComponentCollection"
+    data-namespace-typo3-fluid="true"
+>
+<div class="cozybackend-{data.uid}">
+    <h2 class="mb-4">Element Liste mit HTMX-Pagination</h2>
+
+    <div id="content-to-swap">
+        <cozybackend:molecules.pagination paginator="{paginator.paginator}" />
+    </div>
+
+    <hr class="cozybackend-5">
+    <div class="card p-3 bg-light">
+        <h5>HTMX Test Action</h5>
+        <button class="btn btn-warning w-auto"
+                hx-put="/messages"
+                hx-target="#message-box">
+            Update Messages
+        </button>
+        <div id="message-box" class="mt-2"></div>
+    </div>
+</div>
+
+</html>

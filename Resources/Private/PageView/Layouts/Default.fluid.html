@@ -1,0 +1,67 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<header class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="/">Cozy Project</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigation umschalten">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <f:for as="mainnavigationItem" each="{mainnavigation}">
+                    <f:if condition="{mainnavigationItem.children}">
+                        <f:then>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle {f:if(condition: mainnavigationItem.active, then: 'active')}"
+                                   href="#"
+                                   role="button"
+                                   data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    {mainnavigationItem.title}
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <f:for as="child" each="{mainnavigationItem.children}">
+                                        <li>
+                                            <a class="dropdown-item {f:if(condition: child.active, then: 'active')}"
+                                               href="{child.link}"
+                                               target="{child.target}"
+                                               title="{child.title}">
+                                                {child.title}
+                                            </a>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li class="nav-item">
+                                <a class="nav-link {f:if(condition: mainnavigationItem.active, then: 'active')}"
+                                   href="{mainnavigationItem.link}"
+                                   target="{mainnavigationItem.target}"
+                                   title="{mainnavigationItem.title}">
+                                    {mainnavigationItem.title}
+                                </a>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <f:render section="Main"/>
+    </div>
+</main>
+
+<footer class="py-3 my-4 border-top text-center">
+    <div class="container">
+        <span class="text-muted">&copy; {f:format.date(date: 'now', format: 'Y')} Cozy Backend</span>
+    </div>
+</footer>
+
+</html>

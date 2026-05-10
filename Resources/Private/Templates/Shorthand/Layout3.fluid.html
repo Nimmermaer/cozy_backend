@@ -1,0 +1,38 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:my="http://typo3.org/ns/Cozy/Backend/Components/ComponentCollection"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <section class="text-media-custom tm-no-bg py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 order-last order-lg-first">
+                    <h2 class="fw-bold mb-3">{data.header}</h2>
+                    <f:format.html>{data.bodytext}</f:format.html>
+                    <f:if condition="{data.header_link}">
+                        <div class="mt-3">
+                            <f:link.typolink parameter="{data.header_link}">
+                                <f:comment>
+                                    Nutzung der Button-Komponente über den Slot.
+                                    Inhalte zwischen den Tags landen im <f:slot /> der Komponente.
+                                </f:comment>
+                                <my:atoms.button variant="primary">
+                                    {data.subheader}
+                                </my:atoms.button>
+                            </f:link.typolink>
+                        </div>
+                    </f:if>
+                </div>
+                <div class="col-lg-6 order-first order-lg-last">
+                    <f:for as="image" each="{files}">
+                        <img alt="{image.title}" class="tm-img rounded" src="{f:uri.image(image:image, width: '925c', height: '634c')}">
+                    </f:for>
+                </div>
+            </div>
+        </div>
+    </section>
+</f:section>
+</html>

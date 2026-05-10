@@ -1,0 +1,19 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cozybackend="http://typo3.org/ns/Cozy/Backend/Components/ComponentCollection"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <div class="my-4">
+        <cozybackend:molecules.slider showArrows="true" class="shadow-lg">
+            <f:for as="image" each="{files}">
+                <f:if condition="{image}">
+                    <cozybackend:atoms.slide image="{image}" title="{image.title}" />
+                </f:if>
+            </f:for>
+        </cozybackend:molecules.slider>
+    </div>
+</f:section>
+</html>

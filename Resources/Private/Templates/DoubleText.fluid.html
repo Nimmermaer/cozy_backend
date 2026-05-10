@@ -1,0 +1,24 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:my="http://typo3.org/ns/Cozy/Backend/Components/ComponentCollection"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <div class="my-5">
+        <section class="row g-4 g-lg-5 align-items-start">
+            <div class="col-12 col-lg-6">
+                <div class="text-content p-2">
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="text-content p-2 border-start-lg ps-lg-4">
+                    <f:format.html>{data.alternative_bodytext}</f:format.html>
+                </div>
+            </div>
+        </section>
+    </div>
+</f:section>
+</html>

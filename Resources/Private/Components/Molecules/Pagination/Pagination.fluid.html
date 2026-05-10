@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:argument name="paginator" type="object" />
+
+<nav aria-label="Page navigation">
+    <ul class="pagination pagination-md justify-content-center my-4">
+        <f:for as="page" each="{paginator.allPageNumbers}">
+            <f:variable name="isActive" value="{f:if(condition: '{page} == {paginator.currentPageNumber}', then: 'active')}" />
+
+            <li class="page-item {isActive}">
+                <button class="page-link"
+                        hx-get="/page_change?page={page}"
+                        hx-target="#content-to-swap"
+                        hx-push-url="true">
+                    {page}
+                </button>
+            </li>
+        </f:for>
+    </ul>
+</nav>
+
+<ul class="list-group mb-4">
+    <f:for as="element" each="{paginator.paginatedItems}">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>{element.header}</span>
+            <span class="badge bg-secondary rounded-pill">ID: {element.uid}</span>
+        </li>
+    </f:for>
+</ul>
+</html>

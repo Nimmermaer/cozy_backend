@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:argument name="showArrows" type="boolean" default="true" />
+<f:argument name="class" type="string" default="" />
+
+<section class="custom-slider shadow {class}">
+    <f:if condition="{showArrows}">
+        <button class="slide-arrow slide-arrow-prev" aria-label="Prev">&#8249;</button>
+        <button class="slide-arrow slide-arrow-next" aria-label="Next">&#8250;</button>
+    </f:if>
+
+    <ul class="slides-container list-unstyled m-0 p-0">
+        <f:slot />
+    </ul>
+</section>
+</html>

@@ -1,0 +1,14 @@
+<f:argument name="pageId" type="int" />
+<f:argument name="label" type="string" default="Download" />
+
+<f:link.action
+    action="download"
+    arguments="{page: pageId}"
+    class="btn btn-primary"
+    controller="ExportPdf"
+    extensionName="cozy_backend"
+    pageType="1768750779"
+    pluginName="download"
+    target="_blank">
+    <i class="bi bi-file-pdf"></i> {label}
+</f:link.action>

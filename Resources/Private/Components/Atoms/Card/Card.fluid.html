@@ -1,0 +1,18 @@
+<f:argument name="image" type="string" optional="true" />
+
+<div class="card shadow-sm h-100">
+    <f:if condition="{image}">
+        <img src="{image}" class="card-img-top" alt="Card image">
+    </f:if>
+    <div class="card-body">
+        <h5 class="card-title"><f:render section="title" /></h5>
+        <div class="card-text">
+            <f:render section="content" />
+        </div>
+        <f:if condition="{f:render(name: 'link')}">
+            <a href='<f:render name="link" />' class="btn btn-outline-primary mt-3">
+                <f:render section="linktext" />
+            </a>
+        </f:if>
+    </div>
+</div>

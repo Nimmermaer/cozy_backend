@@ -1,0 +1,27 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cozybackend="http://typo3.org/ns/Cozy/Backend/Components/ComponentCollection"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <div class="container cozybackend-5">
+
+        <f:comment>
+            Beispiel für eine PDF-Download-Komponente (Action-Link gekapselt)
+        </f:comment>
+        <div class="mb-5">
+            <cozybackend:atoms.pdfDownload pageId="{page.id}" label="PDF Download" />
+        </div>
+
+        <f:comment>Das eigentliche TYPO3 Content Rendering</f:comment>
+        <div class="row">
+            <div class="col-12">
+                <f:render arguments="{records: content.main.records}" partial="Content"/>
+            </div>
+        </div>
+
+    </div>
+</f:section>
+</html>

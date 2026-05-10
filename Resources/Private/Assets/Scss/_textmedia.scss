@@ -1,0 +1,47 @@
+
+.text-media-custom {
+    --text-media-bg: #c3d0fa;
+    --text-media-accent: #154aeb;
+    --text-media-secondary: #ff26cc;
+
+    background-color: var(--text-media-bg);
+    transition: margin 200ms ease;
+
+    &.tm-no-bg {
+        background-color: transparent;
+    }
+
+    .tm-img {
+        object-fit: cover;
+        aspect-ratio: 3/2;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-custom {
+        background-color: var(--text-media-accent);
+        color: white;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border: none;
+
+        &:hover {
+            background-color: color-mix(in srgb, var(--text-media-accent), black 20%);
+        }
+
+        &.btn-secondary {
+            background-color: var(--text-media-secondary);
+            color: black;
+            &:hover {
+                background-color: color-mix(in srgb, var(--text-media-secondary), black 20%);
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        &:nth-child(even) .row {
+            flex-direction: row-reverse;
+        }
+    }
+}
