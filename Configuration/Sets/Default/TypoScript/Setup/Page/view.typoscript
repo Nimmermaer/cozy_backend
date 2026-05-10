@@ -1,11 +1,7 @@
-##############
-#### PAGE ####
-##############
 page = PAGE
 page {
   typeNum = 0
   shortcutIcon = EXT:cozy_backend/Resources/Public/Icons/favicon.ico
-
   10 = PAGEVIEW
   10 {
     paths {
@@ -29,18 +25,10 @@ page {
       30 = page-content
     }
   }
-
   meta {
-    viewport = {$page.meta.viewport}
-    robots = {$page.meta.robots}
-    apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
-
-    X-UA-Compatible = {$page.meta.compatible}
-    X-UA-Compatible {
-      attribute = http-equiv
-    }
+    generator = Cozy Backend
+    generator.replace = 1
   }
-
   includeCSS {
     main = EXT:cozy_backend/Resources/Public/Assets/Css/main.css
   }
@@ -62,7 +50,6 @@ page {
               <link rel="icon" type="image/png" sizes="48x48" href="/android-chrome-48x48.png"  />
               <link rel="icon" type="image/png" sizes="144x144" href="/android-chrome-144x144.png">
               <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-              <link rel="shortcut icon" href="/favicon.ico" />
               <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
               <link rel="mask-icon" href="{path:EXT:cozy_backend/Resources/Public/Icons/safari-pinned-tab.svg}" color="#5bbad5">
               <meta name="theme-color" content="{$pages.browser.color}">
@@ -78,13 +65,5 @@ page {
   page {
     includeJSFooter.main.inline = 1
     includeCSS.main.inline = 1
-  }
-
-  config {
-    forceAbsoluteUrls = 1
-    compressJs = 1
-    compressCss = 1
-    concatenateJs = 1
-    concatenateCss = 1
   }
 [END]

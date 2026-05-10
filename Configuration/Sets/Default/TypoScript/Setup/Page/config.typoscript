@@ -1,34 +1,22 @@
-################
-#### CONFIG ####
-################
 config {
-  absRefPrefix = auto
+  forceAbsoluteUrls  = 1
   no_cache = {$config.no_cache}
   linkVars = L
-  metaCharset = utf-8
   doctype = html5
+  // decrypts email addresses.
   removeDefaultJS = {$config.removeDefaultJS}
-  inlineStyle2TempFile = 1
   admPanel = {$config.admPanel}
   debug = 0
   cache_period = 86400
   sendCacheHeaders = {$config.sendCacheHeaders}
-  intTarget =
-  extTarget =
   disablePrefixComment = 1
   index_enable = 1
   index_externals = 1
   index_metatags = 1
   headerComment = {$config.headerComment}
-
-  // Compression and Concatenation of CSS and JS Files
-  compressJs = 0
-  compressCss = 0
-  concatenateJs = 0
-  concatenateCss = 0
-
+  // New in version 14.2
+  linkSecurityRelValue = noopener
   // Page Title configuration
-
   // website : page title
   pageTitleFirst = 0
   pageTitleSeparator = :
