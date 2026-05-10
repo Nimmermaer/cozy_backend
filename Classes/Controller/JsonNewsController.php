@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mblunck\CozyBackend\Controller;
 
+use Mblunck\CozyBackend\Domain\Model\News;
 use Mblunck\CozyBackend\Domain\Repository\NewsRepository;
 use Mblunck\CozyBackend\Event\JsonNewsEvent;
 use Psr\Http\Message\ResponseInterface;
@@ -18,8 +19,10 @@ class JsonNewsController extends ActionController
 
     public function listAction(): ResponseInterface
     {
+
         $news = $this->newsRepository->findAll();
         $json = [];
+        /** @var News $newsItem */
         foreach ($news as $newsItem) {
             $json[] = $newsItem->getArray();
         }

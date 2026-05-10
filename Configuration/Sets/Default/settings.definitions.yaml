@@ -2,58 +2,37 @@ categories:
   CozyBackend: ~
   CozyBackend.defaults.paths:
     parent: CozyBackend
-    label: 'Paths'
   CozyBackend.defaults.tt_content:
     parent: CozyBackend
-    label: 'TTContent'
   CozyBackend.defaults.pages:
     parent: CozyBackend
-    label: 'Pages'
   CozyBackend.templates:
     parent: CozyBackend
-    label: 'Templates'
   CozyBackend.meta:
     parent: CozyBackend
-    label: 'Meta'
   CozyBackend.webmanifest:
     parent: CozyBackend
-    label: 'Webmanifest'
-
 settings:
   componentsPath:
-    label: 'Component Path'
     category: CozyBackend.defaults.paths
     description: 'Paths für components'
     type: string
     default: 'Resources/Private/Components/'
   designTokens:
-    label: 'Design Token Path'
     category: CozyBackend.defaults.paths
     description: 'Paths für designTokens'
     type: string
     default: 'Tokens/designTokens.json'
   tt_content.default.header:
-    label: 'Default Text für Inhaltselemente'
     category: CozyBackend.defaults.tt_content
     description: 'Overrides default text'
     type: string
     default: 'Hier ist ein Headertext'
-  tt_content.default.layout:
-    category: CozyBackend.defaults.tt_content
-    type: string
-    default: 2
-    enum:
-      0: 'Default'
-      1: 'Container'
-      2: 'Text'
-      3: 'Kachel'
   pages.default.abstract:
-    label: 'Default Abstract of Page'
     category: CozyBackend.defaults.pages
     type: string
     default: 'Hier kommt ein Abstrakt'
   pages.browser.color:
-    label: 'Browser color for mobile'
     category: CozyBackend.defaults.pages
     type: color
     default: '#FF8700'
@@ -65,43 +44,10 @@ settings:
     type: string
     default: 'CozyB'
     category: CozyBackend.webmanifest
-  page.webmanifest.icons.sizes:
-    type: stringlist
-    default:
-      - 48x48
-      - 72x72
-      - 144x144
-      - 192x192
-      - 384x384
-      - 512x512
-    category: CozyBackend.webmanifest
   page.webmanifest.icons.file.prefix:
     type: string
     default: 'android-chrome-'
     category: CozyBackend.webmanifest
-  page.webmanifest.icons.file.type:
-    type: string
-    default: 'png'
-    category: CozyBackend.webmanifest
-    enum:
-      'apng': 'Animated Portable Network Graphics (APNG) image'
-      'avif': 'Archive document (multiple files embedded)'
-      'bmp': 'Windows OS/2 Bitmap Graphics'
-      'gif': 'Graphics Interchange Format (GIF)'
-      'ico': 'Icon format'
-      'jpg': 'JPEG images'
-      'png': 'Portable Network Graphics'
-      'svg': 'Scalable Vector Graphics (SVG)'
-      'tif': 'Tagged Image File Format (TIFF)'
-      'webp': 'WEBP image'
-  page.webmanifest.icons.file.purpose:
-    type: string
-    default: 'maskable'
-    category: CozyBackend.webmanifest
-    enum:
-      'maskable': 'Maskable'
-      'monochrome': 'Monochrome'
-      'any': 'Any'
   page.webmanifest.theme_color:
     type: color
     default: '#ffffff'
@@ -110,12 +56,3 @@ settings:
     type: color
     default: '#ffffff'
     category: CozyBackend.webmanifest
-  page.webmanifest.display:
-    type: string
-    default: 'standalone'
-    category: CozyBackend.webmanifest
-    enum:
-      'fullscreen': 'Fullscreen'
-      'standalone': 'Standalone'
-      'minimal-ui': 'Minimal UI'
-      'browser': 'Browser'

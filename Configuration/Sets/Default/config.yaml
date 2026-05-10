@@ -1,4 +1,5 @@
 name: mblunck/cozy-backend
 label: Cozy Backend
 dependencies:
-  - typo3/fluid-styled-content
+  0: typo3/fluid-styled-content
+  1: typo3/email

@@ -8,51 +8,46 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class News extends AbstractEntity
 {
-    protected int $id = 0;
+    protected int $id = 0 {
+        get {
+            // @extensionScannerIgnoreLine
+            return $this->id;
+        }
+    }
 
-    protected string $title = '';
+    protected string $title = '' {
+        get {
+            return $this->title;
+        }
+    }
 
-    protected string $content = '';
+    protected string $content = '' {
+        get {
+            // @extensionScannerIgnoreLine
+            return $this->content;
+        }
+    }
 
-    protected int $date = 0;
+    protected int $date = 0 {
+        get {
+            return $this->date;
+        }
+    }
 
-    protected string $teaser = '';
-
-    public function getId(): int
-    {
-        // @extensionScannerIgnoreLine
-        return $this->id;
+    protected string $teaser = '' {
+        get {
+            return $this->teaser;
+        }
     }
 
     public function getArray(): array
     {
         return [
             'id' => $this->getUid(),
-            'title' => $this->getTitle(),
-            'content' => $this->getContent(),
-            'date' => $this->getDate(),
-            'teaser' => $this->getTeaser(),
+            'title' => $this->title,
+            'content' => $this->content,
+            'date' => $this->date,
+            'teaser' => $this->teaser,
         ];
-    }
-
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    public function getContent(): string
-    {
-        // @extensionScannerIgnoreLine
-        return $this->content;
-    }
-
-    public function getDate(): int
-    {
-        return $this->date;
-    }
-
-    public function getTeaser(): string
-    {
-        return $this->teaser;
     }
 }

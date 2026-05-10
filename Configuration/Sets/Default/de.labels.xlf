@@ -1,64 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+  <file source-language="en" target-language="de" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
     <header/>
     <body>
       <trans-unit id="label">
         <source>Cozy Backend</source>
+        <target>Cozy Backend</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend">
         <source>Cozy Backend</source>
+        <target>Cozy Backend</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend.defaults.paths">
         <source>Paths</source>
+        <target>Pfade</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend.defaults.pages">
         <source>Cozy Backend default settings for pages</source>
+        <target>Cozy Backend Default Einstellungen für Seiten</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend.templates">
         <source>Templates</source>
+        <target>Templates</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend.meta">
         <source>Meta</source>
+        <target>Meta</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend.webmanifest">
         <source>Webmanifest</source>
+        <target>Webmanifest</target>
       </trans-unit>
       <trans-unit id="categories.CozyBackend.defaults.tt_content">
         <source>Cozy Backend default settings for content elements</source>
+        <target>Cozy Backend Default Einstellungen für Seiteninhalte</target>
       </trans-unit>
       <trans-unit id="settings.componentsPath">
         <source>Component Path</source>
+        <target>Komponenten-Pfad</target>
       </trans-unit>
       <trans-unit id="settings.designTokens">
         <source>Design Token Path</source>
+        <target>Design-Token-Pfad</target>
       </trans-unit>
       <trans-unit id="settings.tt_content.default.header">
         <source>Default text for content elements</source>
+        <target>Default Text für Inhaltselemente</target>
       </trans-unit>
       <trans-unit id="settings.pages.default.abstract">
         <source>Default abstract of page</source>
+        <target>Standard-Abstract der Seite</target>
       </trans-unit>
       <trans-unit id="settings.pages.browser.color">
         <source>Browser color for mobile</source>
+        <target>Browserfarbe für Mobilgeräte</target>
       </trans-unit>
       <trans-unit id="settings.page.webmanifest.name">
         <source>Cozy Backend</source>
+        <target>Cozy Backend</target>
       </trans-unit>
       <trans-unit id="settings.page.webmanifest.short_name">
         <source>Webmanifest short name</source>
+        <target>Webmanifest Kurzname</target>
       </trans-unit>
       <trans-unit id="settings.page.webmanifest.icons.file.prefix">
         <source>Webmanifest prefix</source>
+        <target>Webmanifest Präfix</target>
       </trans-unit>
       <trans-unit id="settings.page.webmanifest.theme_color">
         <source>Webmanifest theme color</source>
+        <target>Webmanifest Theme-Farbe</target>
       </trans-unit>
       <trans-unit id="settings.page.webmanifest.background_color">
         <source>Webmanifest background color</source>
+        <target>Webmanifest Hintergrundfarbe</target>
       </trans-unit>
       <trans-unit id="settings.description.tt_content.default.layout">
         <source>The layout settings of all content elements can be preset here</source>
+        <target>Die Layout-Einstellungen aller Inhaltselemente können hier voreingestellt werden</target>
       </trans-unit>
     </body>
   </file>
