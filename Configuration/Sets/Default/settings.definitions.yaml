@@ -61,3 +61,19 @@ settings:
     type: color
     default: '#ffffff'
     category: CozyBackend.webmanifest
+  page.webmanifest.icons.file.type:
+    type: string
+    default: 'png'
+    category: CozyBackend.webmanifest
+  page.webmanifest.scope:
+    type: string
+    default: '/'
+    category: CozyBackend.webmanifest
+  page.webmanifest.start_url:
+    type: string
+    default: '/'
+    category: CozyBackend.webmanifest
+  page.webmanifest.display:
+    type: string
+    default: 'standalone'
+    category: CozyBackend.webmanifest

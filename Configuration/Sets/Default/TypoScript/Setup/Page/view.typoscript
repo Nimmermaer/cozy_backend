@@ -26,6 +26,9 @@ page {
     }
   }
   meta {
+    viewport = width=device-width, initial-scale=1, minimum-scale=1
+    mobile-web-app-capable = no
+    google = notranslate
     generator = Cozy Backend
     generator.replace = 1
   }

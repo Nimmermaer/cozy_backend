@@ -14,8 +14,6 @@ page:
   meta:
     viewport: 'width=device-width, initial-scale=1'
     robots: 'index,follow'
-    apple-mobile-web-app-capable: 'no'
-    compatible: 'IE=edge'
 
 config:
   no_cache: '0'
@@ -24,3 +22,12 @@ config:
   prefixLocalAnchors: 'all'
   headerComment: 'build by Nimmermaer'
   sendCacheHeaders: '1'
+
+email:
+  format: both
+  templateRootPaths:
+    - 'EXT:cozy_backend/Resources/Private/Email/Templates/'
+  layoutRootPaths:
+    - 'EXT:cozy_backend/Resources/Private/Email/Layouts/'
+  partialRootPaths:
+    - 'EXT:cozy_backend/Resources/Private/Email/Partials/'

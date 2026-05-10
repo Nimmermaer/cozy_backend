@@ -60,6 +60,18 @@
       <trans-unit id="settings.page.webmanifest.background_color">
         <source>Webmanifest background color</source>
       </trans-unit>
+      <trans-unit id="settings.page.webmanifest.start_url">
+        <source>Start url</source>
+      </trans-unit>
+      <trans-unit id="settings.page.webmanifest.scope">
+        <source>Scope</source>
+      </trans-unit>
+      <trans-unit id="settings.page.webmanifest.icons.file.type">
+        <source>File type</source>
+      </trans-unit>
+      <trans-unit id="settings.webmanifest.display">
+        <source>Display</source>
+      </trans-unit>
       <trans-unit id="settings.description.tt_content.default.layout">
         <source>The layout settings of all content elements can be preset here</source>
       </trans-unit>

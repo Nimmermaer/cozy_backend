@@ -10,7 +10,7 @@ site\.webmanifest {
 
   10 = FLUIDTEMPLATE
   10 {
-    file = EXT:cozy_backend/Resources/Private/PageView/Pages/WebManifest.html
+    file = EXT:cozy_backend/Resources/Private/PageView/Pages/WebManifest.fluid.html
     dataProcessing {
       10 = site
       10 {
