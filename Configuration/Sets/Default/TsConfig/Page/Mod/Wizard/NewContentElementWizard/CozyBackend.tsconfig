@@ -20,7 +20,7 @@ mod {
               }
             }
 
-            cozy_backend_list {
+            cozybackend_list {
               tt_content_defValues {
                 pi_flexform (
                 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>

@@ -10,8 +10,8 @@ tt_content {
   }
 
   // Plugin Configuration
-  cozy_backend_list =< lib.contentElement
-  cozy_backend_list {
+  cozybackend_list =< lib.contentElement
+  cozybackend_list {
     20 = USER
     20 {
       userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
