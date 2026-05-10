@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'ctrl' => [
         'title' => 'Download log',
-        'label' => 'uid',
+        'label' => 'description',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'versioningWS' => true,

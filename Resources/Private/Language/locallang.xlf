@@ -46,6 +46,9 @@
       <trans-unit id="page_type.news">
         <source>Custom Type</source>
       </trans-unit>
+      <trans-unit id="label.pageTree">
+        <source>Custom Page Tree Label</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
