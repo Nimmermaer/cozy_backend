@@ -9,4 +9,8 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:cozy_backend/Resources/Public/Icons/puzzle.svg',
     ],
+    'icon-doktype-news' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:cozy_backend/Resources/Public/Icons/icon-doktype-news.svg',
+    ],
 ];
