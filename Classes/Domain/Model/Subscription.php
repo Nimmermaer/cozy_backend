@@ -15,17 +15,17 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 final class Subscription extends AbstractEntity
 {
-    protected string $auth;
+    private string $auth;
 
-    protected string $authToken;
+    private string $authToken;
 
-    protected string $contentEncoding;
+    private string $contentEncoding;
 
-    protected string $endpoint;
+    private string $endpoint;
 
-    protected string $publicKey;
+    private string $publicKey;
 
-    protected string $p256dh;
+    private string $p256dh;
 
     public function getAuth(): string
     {

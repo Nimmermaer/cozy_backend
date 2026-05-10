@@ -31,8 +31,8 @@ readonly class Datahandler
             return;
         }
         $subscriptions = $this->subscriptionRepository->findAll();
-        $auth = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['cozy_backend'] ?? [];
-        if ($auth === []) {
+        $auth = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['cozy_backend']['vapidPublicKey'];
+        if ($auth === '') {
             return;
         }
         $webPush = new WebPush([

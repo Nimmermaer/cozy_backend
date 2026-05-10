@@ -10,10 +10,10 @@ use TYPO3\CMS\Core\Schema\Struct\SelectItem;
 use TYPO3\CMS\Core\Schema\Struct\SelectItemCollection;
 use TYPO3\CMS\Core\Schema\TcaSchemaFactory;
 
-class SortingItemsProcessor implements ItemsProcessorInterface
+readonly class SortingItemsProcessor implements ItemsProcessorInterface
 {
     public function __construct(
-        protected readonly TcaSchemaFactory $schemaFactory,
+        protected TcaSchemaFactory $schemaFactory,
     ) {
     }
 
