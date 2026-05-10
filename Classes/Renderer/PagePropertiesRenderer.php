@@ -56,7 +56,7 @@ class PagePropertiesRenderer
             'page' => $page,
             'returnUrl' => $request->getAttribute('normalizedParams')->getRequestUrl(),
         ]);
-        return $view->render('Backend/PageProperties');
+        return $view->render('PageProperties');
     }
 
     protected function getBackendUser(): BackendUserAuthentication
