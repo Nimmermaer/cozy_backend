@@ -28,6 +28,6 @@
 		}
 	},
 	"scripts": {
-		"lint:typoscript": "vendor/bin/typoscript-lint -c packages/cozy_backend/typoscript-lint.yml",
+		"lint:typoscript": "vendor/bin/typoscript-lint -c packages/cozy_backend/typoscript-lint.yml"
 	}
 }

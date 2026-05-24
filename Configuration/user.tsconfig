@@ -1,2 +1,2 @@
-@import 'EXT:cozy_backend/Configuration/Sets/Default/TsConfig/User/options.tsconfig'
-@import 'EXT:cozy_backend/Configuration/Sets/Default/TsConfig/User/Mod/Recycler/Configuration.tsconfig'
+@import 'EXT:cozy_backend/Configuration/TsConfig/User/options.tsconfig'
+@import 'EXT:cozy_backend/Configuration/TsConfig/User/Mod/Recycler/Configuration.tsconfig'

@@ -1,2 +1,2 @@
-@import './TypoScript/Setup/*'
-@import './TypoScript/Setup/Page/*'
+@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/*'
+@import 'EXT:cozy_backend/Configuration/TypoScript/Setup/Page/*'
