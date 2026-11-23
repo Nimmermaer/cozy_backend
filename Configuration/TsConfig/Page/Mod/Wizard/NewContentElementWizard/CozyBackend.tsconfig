@@ -20,27 +20,32 @@ mod {
               }
             }
 
-              cozy_backend_list {
+            cozy_backend_list {
+              iconIdentifier = cozy-puzzle
+              title = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list
+              description = LLL:EXT:cozy_backend/Resources/Private/Language/locallang.xlf:tt_content.cozy_backend_list.description
               tt_content_defValues {
+                CType = cozy_backend_list
+                # No XML declaration: it would have to start at column 0,
+                # which the indented multiline value does not guarantee.
                 pi_flexform (
-                <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-                  <T3FlexForms>
-                      <data>
-                          <sheet index="sDEF">
-                              <language index="lDEF">
-                                  <field index="settings.sorting">
-                                      <value index="vDEF">header</value>
-                                  </field>
-                              </language>
-                          </sheet>
-                      </data>
-                  </T3FlexForms>
+<T3FlexForms>
+    <data>
+        <sheet index="sDEF">
+            <language index="lDEF">
+                <field index="settings.sorting">
+                    <value index="vDEF">header</value>
+                </field>
+            </language>
+        </sheet>
+    </data>
+</T3FlexForms>
                 )
               }
             }
           }
 
-          show := addToList(tx_cozybackend_slider, text_left_image_right, plugin_element)
+          show := addToList(tx_cozybackend_slider, text_left_image_right, cozy_backend_list)
         }
       }
     }

@@ -29,9 +29,12 @@ abstract class UserFuncHelper
         return $this->viewFactory->create($viewFactoryData);
     }
 
-    public function getSettings(string $piFlexForm): array
+    public function getSettings(?string $piFlexForm): array
     {
+        if ($piFlexForm === null || trim($piFlexForm) === '') {
+            return [];
+        }
         $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
-        return $flexFormService->convertFlexFormContentToArray($piFlexForm);
+        return $flexFormService->convertFlexFormContentToArray($piFlexForm)['settings'] ?? [];
     }
 }

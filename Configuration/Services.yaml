@@ -12,8 +12,5 @@ services:
       - name: event.listener
         identifier: 'page-properties-to-page-module'
 
-  Mblunck\CozyBackend\UserFunc\AbstractUserFunc:
-    public: true
-
   Mblunck\CozyBackend\UserFunc\ElementListUserFunc:
     public: true
