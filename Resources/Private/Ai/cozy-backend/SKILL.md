@@ -23,6 +23,9 @@ example file in the `mblunck/cozy-backend` extension (paths relative to the exte
    Site Set setting → Page TSconfig → User TSconfig → TCA override → TypoScript/Fluid → PSR-14 event → new PHP.
    Put configuration into the project's site set, not into `ext_localconf.php`.
 5. **Check the TYPO3 version** (`composer.lock` → `typo3/cms-core`) and read `version_notes` of the recipe.
+   If a `search_changelogs` tool is available (stefanfroemken/changelog-mcp), use it to verify the
+   version notes and every API or option you are about to use against the target version
+   (deprecations, breaking changes). Otherwise check the core changelog on docs.typo3.org.
 6. **Only if no recipe fits:** write custom code, and say briefly why configuration was not enough.
 7. **Explain the result for editors**: what changes in the backend and where it is configured.
 
@@ -38,6 +41,7 @@ example file in the `mblunck/cozy-backend` extension (paths relative to the exte
 - Hard-coded labels in TCA → XLF labels.
 - Configuration in `ext_localconf.php` that belongs into a site set or `settings.php`.
 - Using options that no longer exist (e.g. wizard `show`, `config.linkVars = L`) – check `version_notes`.
+- Relying on memory for APIs and options instead of the core changelog of the target version.
 
 ## Recipes
 

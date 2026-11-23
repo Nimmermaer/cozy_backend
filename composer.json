@@ -10,7 +10,8 @@
 		"typo3/cms-core": "^13.4"
 	},
 	"suggest": {
-		"hn/typo3-mcp-server": "Adds the developer tools GetBackendRecipe and GetPageTsConfig to its MCP server (Development context only)"
+		"hn/typo3-mcp-server": "Adds the developer tools GetBackendRecipe and GetPageTsConfig to its MCP server (Development context only)",
+		"stefanfroemken/changelog-mcp": "Lets the AI skill verify the version notes of the recipes against the TYPO3 core changelogs (TYPO3 14)"
 	},
 	"autoload": {
 		"psr-4": {

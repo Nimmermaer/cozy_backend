@@ -151,6 +151,14 @@ vendor/bin/typo3 mcp:test GetBackendRecipe '{"id":"tceform-hide-rename"}'
 vendor/bin/typo3 mcp:test GetPageTsConfig '{"pageId":1,"path":"TCEFORM.tt_content"}'
 ```
 
+#### Related MCP servers
+
+- [hn/typo3-mcp-server](https://github.com/hauptsacheNet/typo3-mcp-server) – content layer: read and
+  change content of an instance in workspaces, with the rights of a backend user.
+- [stefanfroemken/changelog-mcp](https://github.com/froemken/changelog-mcp) – version knowledge:
+  searches the TYPO3 core changelogs (`search_changelogs`). The skill uses it, if available, to verify
+  the version notes of the recipes. Requires TYPO3 14.
+
 ---
 
 
