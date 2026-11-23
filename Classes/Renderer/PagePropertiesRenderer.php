@@ -27,22 +27,28 @@ class PagePropertiesRenderer
 
     public function showPageProperties(ServerRequestInterface $request): string
     {
-        $view = $this->backendViewFactory->create($request, ['mblunck/cozy-backend']);
         $queryParams = $request->getQueryParams();
-        $page = $this->pageRepository->getPage((int)$queryParams['id']);
+        $pageId = (int)($queryParams['id'] ?? 0);
+        $languageId = (int)($queryParams['language'] ?? 0);
 
-        if (array_key_exists('language', $queryParams) && $queryParams['language'] > 0) {
-            $page = $this->pageRepository->getPageOverlay(
-                $queryParams['id'],
-                $queryParams['language']
-            );
-            $page['uid'] = $page['_LOCALIZED_UID'];
+        // No page selected (e.g. the page tree root) or no access: render nothing
+        $page = $pageId > 0 ? $this->pageRepository->getPage($pageId) : [];
+        if ($page === []) {
+            return '';
         }
+
+        if ($languageId > 0) {
+            $page = $this->pageRepository->getPageOverlay($page, $languageId);
+            // Fall back to the default language record if no translation exists
+            $page['uid'] = (int)($page['_LOCALIZED_UID'] ?? $page['uid']);
+        }
+
+        $view = $this->backendViewFactory->create($request, ['mblunck/cozy-backend']);
 
         foreach ($this->imageFields as $variableName => $field) {
             $view->assign(
                 $variableName,
-                $this->fileRepository->findByRelation('pages', $field, $page['uid'])
+                $this->fileRepository->findByRelation('pages', $field, (int)$page['uid'])
             );
         }
         $view->assignMultiple([

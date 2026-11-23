@@ -99,9 +99,66 @@ Demonstrates small backend UI enhancements using TYPO3’s own tools:
 ---
 
 
-### 7. Fluid Components 
+### 8. Fluid Components
 
-- Component Example 
+- Component examples with design tokens (`Resources/Private/Components/`)
+
+---
+
+### 9. AI support: core-first recipes and a Claude skill
+
+AI assistants tend to build new content elements, Extbase plugins or XCLASSes for editor wishes that
+TYPO3 already solves with configuration. This extension ships its examples as **machine-readable recipes**
+plus a **Claude skill** that makes the assistant check the core solution first.
+
+```
+Resources/Private/Ai/cozy-backend/
+  SKILL.md                 # workflow, priorities, anti-patterns
+  recipes/_decision-tree.md # editor need -> recipe
+  recipes/*.md             # one recipe per pattern, with frontmatter and example paths
+```
+
+Use the skill in a project (Claude Code):
+
+```
+mkdir -p .claude/skills
+ln -s ../../vendor/mblunck/cozy-backend/Resources/Private/Ai/cozy-backend .claude/skills/cozy-backend
+```
+
+Validate the recipes (frontmatter, ids, example paths):
+
+```
+php Build/Scripts/validate-recipes.php
+```
+
+#### MCP: built on hn/typo3-mcp-server
+
+There is no own MCP server. [hn/typo3-mcp-server](https://github.com/hauptsacheNet/typo3-mcp-server)
+already lets an AI edit content in workspaces with the rights of a backend user – and it respects
+TCEFORM, item lists, TCAdefaults and permissions. A clean editor backend is therefore also a clean AI
+interface (recipe `ai-ready-backend`).
+
+If `hn/typo3-mcp-server` is installed and TYPO3 runs in **Development** context, cozy_backend adds two
+read-only developer tools (registered in `Configuration/Services.php`):
+
+| Tool | Purpose |
+|---|---|
+| `GetBackendRecipe(id?)` | Decision tree and core-first recipes from this extension |
+| `GetPageTsConfig(pageId, path?)` | Effective page TSconfig of a page (admins only) |
+
+```
+vendor/bin/typo3 mcp:test GetBackendRecipe '{"id":"tceform-hide-rename"}'
+vendor/bin/typo3 mcp:test GetPageTsConfig '{"pageId":1,"path":"TCEFORM.tt_content"}'
+```
+
+#### Related MCP servers
+
+- [hn/typo3-mcp-server](https://github.com/hauptsacheNet/typo3-mcp-server) – content layer: read and
+  change content of an instance in workspaces, with the rights of a backend user.
+- [stefanfroemken/changelog-mcp](https://github.com/froemken/changelog-mcp) – version knowledge:
+  searches the TYPO3 core changelogs (`search_changelogs`). The skill uses it, if available, to verify
+  the version notes of the recipes. Requires TYPO3 14.
+
 ---
 
 

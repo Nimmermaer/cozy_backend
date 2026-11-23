@@ -10,13 +10,18 @@ tt_content {
   }
 
   // Plugin Configuration
+  // lib.contentElement is a FLUIDTEMPLATE, which ignores numeric sub-objects
+  // like "20 = USER". The USER object is therefore passed in as a variable
+  // and rendered inside the CozyBackendList template.
   cozy_backend_list =< lib.contentElement
   cozy_backend_list {
-    20 = USER
-    20 {
-      userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
-      templateName = ListElements
+    templateName = CozyBackendList
+    variables {
+      elementList = USER
+      elementList {
+        userFunc = Mblunck\CozyBackend\UserFunc\ElementListUserFunc->listElements
+        templateName = ListElements
+      }
     }
-    templateName = Generic
   }
 }

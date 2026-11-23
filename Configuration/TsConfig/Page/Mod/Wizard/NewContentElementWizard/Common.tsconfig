@@ -14,7 +14,8 @@ mod {
               }
             }
           }
-          show := addToList(tx_cozybackend_doubletext)
+          # "show" is not evaluated since TYPO3 v13 (Breaking #102834).
+          # Elements are listed automatically; hide entries with removeItems instead.
         }
       }
     }
