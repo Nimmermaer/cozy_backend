@@ -9,6 +9,9 @@
 	"require": {
 		"typo3/cms-core": "^13.4"
 	},
+	"suggest": {
+		"hn/typo3-mcp-server": "Adds the developer tools GetBackendRecipe and GetPageTsConfig to its MCP server (Development context only)"
+	},
 	"autoload": {
 		"psr-4": {
 			"Mblunck\\CozyBackend\\": "Classes/"

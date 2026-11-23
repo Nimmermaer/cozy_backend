@@ -23,6 +23,9 @@ Read top to bottom, take the first match. Recipe ids in backticks.
 - Info module columns, recycler, forbid record types in list module → `module-tsconfig`
 - Logo, login image, colours, backend CSS → `backend-branding`
 
+## AI / MCP
+- An AI assistant should edit content safely, within the editors' rules → `ai-ready-backend`
+
 ## None of the above?
 Check the TSconfig reference and the TCA reference first. If configuration really is not enough,
 build the smallest custom piece (event listener before XCLASS, TCA+Fluid before Extbase) and

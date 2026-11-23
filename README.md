@@ -131,9 +131,25 @@ Validate the recipes (frontmatter, ids, example paths):
 php Build/Scripts/validate-recipes.php
 ```
 
-Planned next step: a read-only MCP server (`vendor/bin/typo3 cozy:mcp`) that serves the same recipes
-and exposes the live state of the instance (effective page TSconfig, content types, TCA fields,
-backend layouts, site settings).
+#### MCP: built on hn/typo3-mcp-server
+
+There is no own MCP server. [hn/typo3-mcp-server](https://github.com/hauptsacheNet/typo3-mcp-server)
+already lets an AI edit content in workspaces with the rights of a backend user – and it respects
+TCEFORM, item lists, TCAdefaults and permissions. A clean editor backend is therefore also a clean AI
+interface (recipe `ai-ready-backend`).
+
+If `hn/typo3-mcp-server` is installed and TYPO3 runs in **Development** context, cozy_backend adds two
+read-only developer tools (registered in `Configuration/Services.php`):
+
+| Tool | Purpose |
+|---|---|
+| `GetBackendRecipe(id?)` | Decision tree and core-first recipes from this extension |
+| `GetPageTsConfig(pageId, path?)` | Effective page TSconfig of a page (admins only) |
+
+```
+vendor/bin/typo3 mcp:test GetBackendRecipe '{"id":"tceform-hide-rename"}'
+vendor/bin/typo3 mcp:test GetPageTsConfig '{"pageId":1,"path":"TCEFORM.tt_content"}'
+```
 
 ---
 

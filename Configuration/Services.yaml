@@ -5,7 +5,10 @@ services:
     public: false
   Mblunck\CozyBackend\:
     resource: '../Classes/*'
-    exclude: '../Classes/Domain/Model/*'
+    exclude:
+      - '../Classes/Domain/Model/*'
+      # Registered conditionally in Services.php (needs hn/typo3-mcp-server)
+      - '../Classes/Mcp/*'
 
   Mblunck\CozyBackend\EventListener\PageModulePreviewEventListener:
     tags:

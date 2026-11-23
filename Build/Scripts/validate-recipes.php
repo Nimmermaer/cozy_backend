@@ -11,53 +11,22 @@ declare(strict_types=1);
  * Usage: php Build/Scripts/validate-recipes.php [recipe-dir]
  */
 
+use Mblunck\CozyBackend\Ai\RecipeRepository;
+
 $extensionRoot = dirname(__DIR__, 2);
-$recipeDir = $argv[1] ?? $extensionRoot . '/Resources/Private/Ai/cozy-backend/recipes';
+// Loaded directly so the script also works without Composer autoloading
+require_once $extensionRoot . '/Classes/Ai/RecipeRepository.php';
+
+$repository = new RecipeRepository($argv[1] ?? null);
+$recipeDir = $repository->getRecipeDirectory();
 
 const REQUIRED_KEYS = ['id', 'title', 'editor_need', 'mechanism', 'typo3', 'version_notes', 'examples', 'anti_pattern'];
 const MECHANISMS = ['page-tsconfig', 'user-tsconfig', 'tca-override', 'site-set', 'event', 'typoscript', 'fluid', 'system-config'];
 const TYPO3_VERSIONS = [13, 14];
 
-/**
- * Minimal parser for the flat frontmatter used by the recipes:
- * "key: value", "key: [a, b]" and "key:" followed by "  - item" lines.
- */
-function parseFrontmatter(string $content): ?array
-{
-    if (!preg_match('/\A---\n(.*?)\n---\n/s', $content, $match)) {
-        return null;
-    }
-    $data = [];
-    $currentList = null;
-    foreach (explode("\n", $match[1]) as $line) {
-        if (trim($line) === '') {
-            continue;
-        }
-        if ($currentList !== null && preg_match('/^\s+-\s+(.*)$/', $line, $item)) {
-            $data[$currentList][] = trim($item[1], " \"'");
-            continue;
-        }
-        if (!preg_match('/^([a-z0-9_]+):\s*(.*)$/', $line, $pair)) {
-            throw new RuntimeException('Cannot parse frontmatter line: ' . $line);
-        }
-        [$key, $value] = [$pair[1], trim($pair[2])];
-        $currentList = null;
-        if ($value === '') {
-            $data[$key] = [];
-            $currentList = $key;
-        } elseif (preg_match('/^\[(.*)\]$/', $value, $inline)) {
-            $data[$key] = array_map(static fn(string $v): string => trim($v, " \"'"), explode(',', $inline[1]));
-        } else {
-            $data[$key] = trim($value, "\"'");
-        }
-    }
-    return $data;
-}
-
 $errors = [];
 $ids = [];
-$files = glob($recipeDir . '/*.md') ?: [];
-$recipes = array_filter($files, static fn(string $f): bool => !str_starts_with(basename($f), '_'));
+$recipes = $repository->getRecipeFiles();
 
 if ($recipes === []) {
     fwrite(STDERR, "No recipes found in $recipeDir\n");
@@ -67,7 +36,7 @@ if ($recipes === []) {
 foreach ($recipes as $file) {
     $name = basename($file);
     try {
-        $meta = parseFrontmatter((string)file_get_contents($file));
+        $meta = RecipeRepository::parseFrontmatter((string)file_get_contents($file));
     } catch (RuntimeException $e) {
         $errors[] = "$name: " . $e->getMessage();
         continue;
@@ -105,8 +74,8 @@ foreach ($recipes as $file) {
 }
 
 // Every recipe should be reachable from the decision tree
-$tree = @file_get_contents($recipeDir . '/_decision-tree.md');
-if ($tree === false) {
+$tree = $repository->getDecisionTree();
+if ($tree === null) {
     $errors[] = '_decision-tree.md is missing';
 } else {
     foreach (array_keys($ids) as $id) {
