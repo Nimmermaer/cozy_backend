@@ -99,9 +99,42 @@ Demonstrates small backend UI enhancements using TYPO3’s own tools:
 ---
 
 
-### 7. Fluid Components 
+### 8. Fluid Components
 
-- Component Example 
+- Component examples with design tokens (`Resources/Private/Components/`)
+
+---
+
+### 9. AI support: core-first recipes and a Claude skill
+
+AI assistants tend to build new content elements, Extbase plugins or XCLASSes for editor wishes that
+TYPO3 already solves with configuration. This extension ships its examples as **machine-readable recipes**
+plus a **Claude skill** that makes the assistant check the core solution first.
+
+```
+Resources/Private/Ai/cozy-backend/
+  SKILL.md                 # workflow, priorities, anti-patterns
+  recipes/_decision-tree.md # editor need -> recipe
+  recipes/*.md             # one recipe per pattern, with frontmatter and example paths
+```
+
+Use the skill in a project (Claude Code):
+
+```
+mkdir -p .claude/skills
+ln -s ../../vendor/mblunck/cozy-backend/Resources/Private/Ai/cozy-backend .claude/skills/cozy-backend
+```
+
+Validate the recipes (frontmatter, ids, example paths):
+
+```
+php Build/Scripts/validate-recipes.php
+```
+
+Planned next step: a read-only MCP server (`vendor/bin/typo3 cozy:mcp`) that serves the same recipes
+and exposes the live state of the instance (effective page TSconfig, content types, TCA fields,
+backend layouts, site settings).
+
 ---
 
 
